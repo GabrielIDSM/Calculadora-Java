@@ -379,13 +379,19 @@ public class Operacoes {
             return;
         }
         if (char_operacoes[0] == '/'
-                || char_operacoes[0] == '*') {
+                || char_operacoes[0] == '*'
+                || char_operacoes[0] == '.'
+                || char_operacoes[0] == 'R'
+                || char_operacoes[0] == 'p') {
             setvalidade(false);
             return;
         }
         if (char_operacoes[(char_operacoes.length - 1)] == '/'
                 || char_operacoes[(char_operacoes.length - 1)] == '*'
-                || char_operacoes[(char_operacoes.length - 1)] == 'r') {
+                || char_operacoes[(char_operacoes.length - 1)] == 'r'
+                || char_operacoes[(char_operacoes.length - 1)] == '.'
+                || char_operacoes[(char_operacoes.length - 1)] == 'R'
+                || char_operacoes[(char_operacoes.length - 1)] == 'p') {
             setvalidade(false);
             return;
         }
@@ -396,6 +402,8 @@ public class Operacoes {
                     || char_operacoes[cont - 1] == '/'
                     || char_operacoes[cont - 1] == 'r'
                     || char_operacoes[cont - 1] == '^'
+                    || char_operacoes[cont - 1] == 'R'
+                    || char_operacoes[cont - 1] == 'p'
                     || char_operacoes[cont - 1] == '(')) {
                 setvalidade(false);
                 break;
@@ -405,6 +413,8 @@ public class Operacoes {
                     || char_operacoes[cont + 1] == '/'
                     || char_operacoes[cont + 1] == 'r'
                     || char_operacoes[cont + 1] == '^'
+                    || char_operacoes[cont + 1] == 'R'
+                    || char_operacoes[cont + 1] == 'p'
                     || char_operacoes[cont + 1] == ')')) {
                 setvalidade(false);
                 break;
@@ -470,7 +480,10 @@ public class Operacoes {
                             || char_string[f] == '-'
                             || char_string[f] == '*'
                             || char_string[f] == '/'
-                            || char_string[f] == 'r') {
+                            || char_string[f] == 'r'
+                            || char_string[f] == '^'
+                            || char_string[f] == 'R'
+                            || char_string[f] == 'p') {
                         break;
                     }
                     if (char_string[f] == ')') {

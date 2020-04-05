@@ -10,6 +10,8 @@ public class Funcionamento {
     private int cont_operadores;
     private int cont_raiz;
     private int cont_exp;
+    private int cont_raiz2;
+    private int cont_p;
     private int cont_sp1;
     private int cont_sp2;
     private int cont_mul;
@@ -22,6 +24,8 @@ public class Funcionamento {
     private boolean validade = true;
     private boolean raiz = false;
     private boolean exp = false;
+    private boolean raiz2 = false;
+    private boolean p = false;
     private boolean sp1 = false;
     private boolean mul = false;
     private boolean div = false;
@@ -59,6 +63,8 @@ public class Funcionamento {
         float resultado = 0;
         verifica_raiz();
         verifica_exp();
+        verifica_raiz2();
+        verifica_porc();
         verifica_mul_div();
         verifica_sp1();
         verifica_sp2();
@@ -136,7 +142,9 @@ public class Funcionamento {
         for (int i = 1; i < aux_operacoes.length - 1; i++) {
             if ((aux_operacoes[i - 1] == '/'
                     || aux_operacoes[i - 1] == '*'
-                    || aux_operacoes[i - 1] == '^')
+                    || aux_operacoes[i - 1] == '^'
+                    || aux_operacoes[i - 1] == 'R'
+                    || aux_operacoes[i - 1] == 'p')
                     && aux_operacoes[i] == '-'
                     && aux_operacoes[i + 1] == 'r') {
                 cont_sp1++;
@@ -156,7 +164,9 @@ public class Funcionamento {
             }
             if ((aux_operacoes[i - 1] == '/'
                     || aux_operacoes[i - 1] == '*'
-                    || aux_operacoes[i - 1] == '^')
+                    || aux_operacoes[i - 1] == '^'
+                    || aux_operacoes[i - 1] == 'R'
+                    || aux_operacoes[i - 1] == 'p')
                     && aux_operacoes[i] == '-'
                     && aux_operacoes[i + 1] == 'r') {
                 index_sp1[aux_cont_sp1] = aux_cont_raiz;
@@ -170,7 +180,9 @@ public class Funcionamento {
         for (int i = 1; i < aux_operacoes.length - 1; i++) {
             if ((aux_operacoes[i - 1] == '/'
                     || aux_operacoes[i - 1] == '*'
-                    || aux_operacoes[i - 1] == '^')
+                    || aux_operacoes[i - 1] == '^'
+                    || aux_operacoes[i - 1] == 'R'
+                    || aux_operacoes[i - 1] == 'p')
                     && aux_operacoes[i] == '+'
                     && aux_operacoes[i + 1] == 'r') {
                 cont_sp2++;
@@ -202,6 +214,32 @@ public class Funcionamento {
         }
         cont_exp = cont;
         exp = ver;
+    }
+    
+    private void verifica_raiz2(){
+        boolean ver_rad2 = false;
+        int cont = 0;
+        for (int i = 0; i < aux_operacoes.length; i++) {
+            if (aux_operacoes[i] == 'R') {
+                ver_rad2 = true;
+                cont++;
+            }
+        }
+        cont_raiz2 = cont;
+        raiz2 = ver_rad2;
+    }
+    
+    private void verifica_porc(){
+        boolean ver_p = false;
+        int cont = 0;
+        for (int i = 0; i < aux_operacoes.length; i++) {
+            if (aux_operacoes[i] == 'p') {
+                ver_p = true;
+                cont++;
+            }
+        }
+        cont_p = cont;
+        p = ver_p;
     }
 
     private void verifica_mul_div() {
@@ -303,6 +341,44 @@ public class Funcionamento {
         //FIM
         index_r = 0;
         index_op = 0;
+        //Radiciação 2 IN
+        String sinal_raiz2 = "-";
+        float aux_raiz2 = 0;
+        if (raiz2) {
+            while (index_r != operadores.length) {
+                if ("r".equals(operadores[index_r])) {
+                    index_r++;
+                } else if ("+".equals(operadores[index_r])
+                        || "-".equals(operadores[index_r])
+                        || "*".equals(operadores[index_r])
+                        || "/".equals(operadores[index_r])
+                        || "p".equals(operadores[index_r])) {
+                    index_op++;
+                    index_r++;
+                } else {
+                    //Verifica o sinal IN
+                    if (index_r > 0) {
+                        if ("-".equals(operadores[(index_r - 1)])) {
+                            sinal_raiz2 += operandos[index_r];
+                            operandos[index_r] = sinal_raiz2;
+                            sinal_raiz2 = "-";
+                            operadores[(index_r - 1)] = "+";
+                        }
+                    }
+                    //FIM
+                    aux_raiz2 = calculando(operandos[index_op], operandos[(index_op + 1)], operadores[index_r]);
+                    //Substituição dos operandos IN                    
+                    operandos[index_op] = "S";
+                    operandos[(index_op + 1)] = Float.toString(aux_raiz2);
+                    //FIM
+                    index_op++;
+                    index_r++;
+                }
+            }
+        }
+        //FIM
+        index_r = 0;
+        index_op = 0;
         //Exponenciação IN
         String sinal_exp = "-";
         float aux_exp = 0;
@@ -345,12 +421,14 @@ public class Funcionamento {
         int cont_index = 0;
         cont_operadores -= cont_raiz;
         cont_operadores -= cont_exp;
+        cont_operadores -= cont_raiz2;
         cont_operandos -= cont_exp;
+        cont_operandos -= cont_raiz2;
         Array_rad_exp = new String[2][];
         Array_rad_exp[0] = new String[cont_operadores];
         Array_rad_exp[1] = new String[cont_operandos];
         for (int i = 0; i < operadores.length; i++) {
-            if (!("r".equals(operadores[i]) || "^".equals(operadores[i]))) {
+            if (!("r".equals(operadores[i]) || "^".equals(operadores[i]) || "R".equals(operadores[i]))) {
                 Array_rad_exp[0][cont_index] = operadores[i];
                 cont_index++;
             }
@@ -369,11 +447,11 @@ public class Funcionamento {
         //Verifical o sinal IN
         sinal(operadores, operandos);
         //FIM
-        if (div || mul) {
+        if (div || mul || p) {
             float aux_mul_div = 0;
             int i = 0;
             while (i < operadores.length) {
-                if ("*".equals(operadores[i]) || "/".equals(operadores[i])) {
+                if ("*".equals(operadores[i]) || "/".equals(operadores[i]) || "p".equals(operadores[i])) {
                     aux_mul_div = calculando(operandos[i], operandos[(i + 1)], operadores[i]);
                     operandos[i] = "S";
                     operandos[(i + 1)] = Float.toString(aux_mul_div);
@@ -390,13 +468,15 @@ public class Funcionamento {
         int cont_index = 0;
         cont_operadores -= cont_mul;
         cont_operadores -= cont_div;
+        cont_operadores -= cont_p;
         cont_operandos -= cont_mul;
         cont_operandos -= cont_div;
+        cont_operandos -= cont_p;
         Array_mul_div = new String[2][];
         Array_mul_div[0] = new String[cont_operadores];
         Array_mul_div[1] = new String[cont_operandos];
         for (int i = 0; i < operadores.length; i++) {
-            if (!("/".equals(operadores[i]) || "*".equals(operadores[i]))) {
+            if (!("/".equals(operadores[i]) || "*".equals(operadores[i]) || "p".equals(operadores[i]))) {
                 Array_mul_div[0][cont_index] = operadores[i];
                 cont_index++;
             }
@@ -438,17 +518,26 @@ public class Funcionamento {
                 if (aux_operacoes[i] == '*'
                         || aux_operacoes[i] == '/'
                         || aux_operacoes[i] == '^'
-                        || aux_operacoes[i] == 'r') {
+                        || aux_operacoes[i] == 'r'
+                        || aux_operacoes[i] == 'R'
+                        || aux_operacoes[i] == 'p') {
                     cont_operadores++;
                 } else if (aux_operacoes[i] == '+'
                         || aux_operacoes[i] == '-') {
-                    if(aux_operacoes[i - 1] == 'r'){
+                    if(aux_operacoes[i - 1] == 'r'
+                            || aux_operacoes[i - 1] == '*'
+                            || aux_operacoes[i - 1] == '/'
+                            || aux_operacoes[i - 1] == '^'
+                            || aux_operacoes[i - 1] == 'R'
+                            || aux_operacoes[i - 1] == 'p'){
                         i++;
                         continue;
                     }
                     if (!(aux_operacoes[i + 1] == '*'
                             || aux_operacoes[i + 1] == '/'
-                            || aux_operacoes[i + 1] == '^')) {
+                            || aux_operacoes[i + 1] == '^'
+                            || aux_operacoes[i + 1] == 'R'
+                            || aux_operacoes[i + 1] == 'p')) {
                         cont_operadores++;
                     }
                 }
@@ -508,7 +597,9 @@ public class Funcionamento {
                         if (i > 0) {
                             if ((aux_operacoes[i - 1] == '/'
                                     || aux_operacoes[i - 1] == '*'
-                                    || aux_operacoes[i - 1] == '^')
+                                    || aux_operacoes[i - 1] == '^'
+                                    || aux_operacoes[i - 1] == 'R'
+                                    || aux_operacoes[i - 1] == 'p')
                                     && (aux_operacoes[i] == '-' || aux_operacoes[i] == '+')
                                     && aux_operacoes[i + 1] == 'r') {
                                 i++;
@@ -516,7 +607,12 @@ public class Funcionamento {
                             }
                             if (aux_operacoes[i] == '+'
                                     || aux_operacoes[i] == '-') {
-                                if (aux_operacoes[i - 1] == 'r') {
+                                if (aux_operacoes[i - 1] == 'r'
+                                        || aux_operacoes[i - 1] == '*'
+                                        || aux_operacoes[i - 1] == '/'
+                                        || aux_operacoes[i - 1] == '^'
+                                        || aux_operacoes[i - 1] == 'R'
+                                        || aux_operacoes[i - 1] == 'p') {
                                     i++;
                                     continue;
                                 }
@@ -525,7 +621,9 @@ public class Funcionamento {
                         if (aux_operacoes[i] == '*'
                                 || aux_operacoes[i] == '/'
                                 || aux_operacoes[i] == '^'
-                                || aux_operacoes[i] == 'r') {
+                                || aux_operacoes[i] == 'r'
+                                || aux_operacoes[i] == 'R'
+                                || aux_operacoes[i] == 'p') {
                             aux_atr += aux_operacoes[i];
                             operadores[aux_ind] = aux_atr;
                             aux_atr = "";
@@ -534,7 +632,9 @@ public class Funcionamento {
                                 || aux_operacoes[i] == '-') {
                             if (!(aux_operacoes[i + 1] == '*'
                                     || aux_operacoes[i + 1] == '/'
-                                    || aux_operacoes[i + 1] == '^')) {
+                                    || aux_operacoes[i + 1] == '^'
+                                    || aux_operacoes[i + 1] == 'R'
+                                    || aux_operacoes[i + 1] == 'p')) {
                                 aux_atr += aux_operacoes[i];
                                 operadores[aux_ind] = aux_atr;
                                 aux_atr = "";
@@ -553,14 +653,18 @@ public class Funcionamento {
                             || aux_operacoes[0] == '/'
                             || aux_operacoes[0] == '.'
                             || aux_operacoes[0] == 'r'
-                            || aux_operacoes[0] == '^') && aux_operacoes[1] != 'r') {
+                            || aux_operacoes[0] == '^'
+                            || aux_operacoes[0] == 'R'
+                            || aux_operacoes[0] == 'p') && aux_operacoes[1] != 'r') {
                         System.out.println("aux_operacoes[" + 0 + "] = " + aux_operacoes[0]);
                         aux_atr += aux_operacoes[0];
                     } else if (!(aux_operacoes[0] == '*'
                             || aux_operacoes[0] == '/'
                             || aux_operacoes[0] == '.'
                             || aux_operacoes[0] == 'r'
-                            || aux_operacoes[0] == '^') && aux_operacoes[1] == 'r') {
+                            || aux_operacoes[0] == '^'
+                            || aux_operacoes[0] == 'R'
+                            || aux_operacoes[0] == 'p') && aux_operacoes[1] == 'r') {
                         System.out.println("aux_operacoes[" + 0 + "] = " + aux_operacoes[0]);
                         i++;
                     }
@@ -569,7 +673,9 @@ public class Funcionamento {
                         if (i > 0 && i < aux_operacoes.length) {
                             if ((aux_operacoes[i - 1] == '/'
                                     || aux_operacoes[i - 1] == '*'
-                                    || aux_operacoes[i - 1] == '^')
+                                    || aux_operacoes[i - 1] == '^'
+                                    || aux_operacoes[i - 1] == 'R'
+                                    || aux_operacoes[i - 1] == 'p')
                                     && (aux_operacoes[i] == '-' || aux_operacoes[i] == '+')
                                     && aux_operacoes[i + 1] == 'r') {
                                 i += 2;
@@ -582,7 +688,9 @@ public class Funcionamento {
                                 && (aux_operacoes[(i - 1)] == '*'
                                 || aux_operacoes[(i - 1)] == '/'
                                 || aux_operacoes[(i - 1)] == 'r'
-                                || aux_operacoes[(i - 1)] == '^')) {
+                                || aux_operacoes[(i - 1)] == '^'
+                                || aux_operacoes[(i - 1)] == 'R'
+                                || aux_operacoes[(i - 1)] == 'p')) {
                             aux_atr += aux_operacoes[i];
                             i++;
                             continue;
@@ -594,7 +702,9 @@ public class Funcionamento {
                                     || aux_operacoes[i] == '/'
                                     || aux_operacoes[i] == '+'
                                     || aux_operacoes[i] == '-'
-                                    || aux_operacoes[i] == '^')
+                                    || aux_operacoes[i] == '^'
+                                    || aux_operacoes[i] == 'R'
+                                    || aux_operacoes[i] == 'p')
                                     && aux_operacoes[(i + 1)] == 'r') {
                                 i++;
                                 continue;
@@ -606,7 +716,9 @@ public class Funcionamento {
                                 || aux_operacoes[i] == '*'
                                 || aux_operacoes[i] == '/'
                                 || aux_operacoes[i] == 'r'
-                                || aux_operacoes[i] == '^')) {
+                                || aux_operacoes[i] == '^'
+                                || aux_operacoes[i] == 'R'
+                                || aux_operacoes[i] == 'p')) {
                             aux_atr += aux_operacoes[i];
                             i++;
                         } else {
@@ -651,6 +763,14 @@ public class Funcionamento {
                     break;
                 case "r":
                     resultado = (float) Math.sqrt(aux_op1);
+                    break;
+                case "R":
+                    float aux;
+                    aux = (float) 1/aux_op1;
+                    resultado = (float) Math.pow(aux_op2, aux);
+                    break;
+                case "p":
+                    resultado = (float) (aux_op1/100)*aux_op2;
                     break;
                 default:
                     break;
@@ -718,7 +838,9 @@ public class Funcionamento {
         if (aux_operacoes[0] == '*'
                 || aux_operacoes[0] == '/'
                 || aux_operacoes[0] == '.'
-                || aux_operacoes[0] == '^') {
+                || aux_operacoes[0] == '^'
+                || aux_operacoes[0] == 'R'
+                || aux_operacoes[0] == 'p') {
             //System.out.println("I");
             setvalidade(false);
             return validade;
@@ -728,7 +850,9 @@ public class Funcionamento {
                 || aux_operacoes[(aux_operacoes.length - 1)] == '/'
                 || aux_operacoes[(aux_operacoes.length - 1)] == '.'
                 || aux_operacoes[(aux_operacoes.length - 1)] == '^'
-                || aux_operacoes[(aux_operacoes.length - 1)] == 'r') {
+                || aux_operacoes[(aux_operacoes.length - 1)] == 'r'
+                || aux_operacoes[(aux_operacoes.length - 1)] == 'R'
+                || aux_operacoes[(aux_operacoes.length - 1)] == 'p') {
             //System.out.println("U");
             setvalidade(false);
             return validade;
@@ -737,7 +861,7 @@ public class Funcionamento {
             if (aux_operacoes[i] == '.' && aux_operacoes[(i + 1)] == '.') {
                 setvalidade(false);
                 break;
-            } else if (aux_operacoes[i] == 'r' && aux_operacoes[(i + 1)] == '-') {
+            } else if ((aux_operacoes[i] == 'r' || aux_operacoes[i] == 'R') && aux_operacoes[(i + 1)] == '-') {
                 //System.out.println("V");
                 setvalidade(false);
                 break;
@@ -746,7 +870,9 @@ public class Funcionamento {
                         || aux_operacoes[i] == '-'
                         || aux_operacoes[i] == '*'
                         || aux_operacoes[i] == '/'
-                        || aux_operacoes[i] == '^')) {
+                        || aux_operacoes[i] == '^'
+                        || aux_operacoes[i] == 'R'
+                        || aux_operacoes[i] == 'p')) {
                     //System.out.println("Y");
                     setvalidade(false);
                     break;
@@ -756,7 +882,9 @@ public class Funcionamento {
                     || aux_operacoes[(i + 1)] == '*'
                     || aux_operacoes[(i + 1)] == '/'
                     || aux_operacoes[(i + 1)] == '^'
-                    || aux_operacoes[(i + 1)] == 'r')) {
+                    || aux_operacoes[(i + 1)] == 'r'
+                    || aux_operacoes[(i + 1)] == 'R'
+                    || aux_operacoes[(i + 1)] == 'p')) {
                 //System.out.println("X");
                 setvalidade(false);
                 break;
@@ -765,7 +893,9 @@ public class Funcionamento {
                     || aux_operacoes[i] == '*'
                     || aux_operacoes[i] == '/'
                     || aux_operacoes[i] == '^'
-                    || aux_operacoes[i] == 'r') && aux_operacoes[(i + 1)] == '.') {
+                    || aux_operacoes[i] == 'r'
+                    || aux_operacoes[i] == 'R'
+                    || aux_operacoes[i] == 'p') && aux_operacoes[(i + 1)] == '.') {
                 //System.out.println("Z");
                 setvalidade(false);
                 break;

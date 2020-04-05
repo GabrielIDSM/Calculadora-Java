@@ -46,6 +46,8 @@ public class MainFrame extends javax.swing.JFrame {
         BopC = new javax.swing.JButton();
         Bclc = new javax.swing.JButton();
         Brad = new javax.swing.JButton();
+        Brad2 = new javax.swing.JButton();
+        Bpor = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora V1.4");
@@ -316,6 +318,24 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        Brad2.setBackground(new java.awt.Color(255, 255, 51));
+        Brad2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Brad2.setText("n√");
+        Brad2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Brad2ActionPerformed(evt);
+            }
+        });
+
+        Bpor.setBackground(new java.awt.Color(255, 255, 51));
+        Bpor.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Bpor.setText("%");
+        Bpor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BporActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -341,7 +361,13 @@ public class MainFrame extends javax.swing.JFrame {
                                 .addComponent(Bexp, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Brad, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(Brad, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(Brad2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(20, 20, 20)
+                        .addComponent(Bpor, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -353,7 +379,8 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Bmais, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bexp, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Bmul, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Bmul, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Bpor, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Bdiv, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -362,7 +389,8 @@ public class MainFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Bclc, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BopC, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BopC, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Brad2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -640,6 +668,14 @@ public class MainFrame extends javax.swing.JFrame {
                     aux += "²√";
                     A.append(aux);
                     aux = "";
+                }else if(Op_char[i] == 'p'){
+                    aux += "%";
+                    A.append(aux);
+                    aux = "";
+                }else if(Op_char[i] == 'R'){
+                    aux += "√";
+                    A.append(aux);
+                    aux = "";
                 }else{
                     aux += Op_char[i];
                     A.append(aux);
@@ -652,6 +688,24 @@ public class MainFrame extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_BDeleteActionPerformed
+
+    private void BporActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BporActionPerformed
+        if(PV){
+            A.setText("");
+            PV = false;
+        }
+        Operacoes += "p";
+        A.append("%");
+    }//GEN-LAST:event_BporActionPerformed
+
+    private void Brad2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Brad2ActionPerformed
+        if(PV){
+            A.setText("");
+            PV = false;
+        }
+        Operacoes += "R";
+        A.append("√");
+    }//GEN-LAST:event_Brad2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -710,7 +764,9 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton Bmenos;
     private javax.swing.JButton Bmul;
     private javax.swing.JButton BopC;
+    private javax.swing.JButton Bpor;
     private javax.swing.JButton Brad;
+    private javax.swing.JButton Brad2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
