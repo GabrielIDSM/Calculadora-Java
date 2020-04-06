@@ -415,7 +415,8 @@ public class Operacoes {
                     || char_operacoes[cont + 1] == '^'
                     || char_operacoes[cont + 1] == 'R'
                     || char_operacoes[cont + 1] == 'p'
-                    || char_operacoes[cont + 1] == ')')) {
+                    || char_operacoes[cont + 1] == ')'
+                    || char_operacoes[cont + 1] == '!')) {
                 setvalidade(false);
                 break;
             }

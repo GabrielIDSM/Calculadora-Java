@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Funcionamento {
 
     //Atributos IN
-    private final String operacoes;
+    private String operacoes;
     private int cont_operandos;
     private int cont_operadores;
     private int cont_raiz;
@@ -16,6 +16,7 @@ public class Funcionamento {
     private int cont_sp2;
     private int cont_mul;
     private int cont_div;
+    private int cont_fat;
     private String[] operandos;
     private String[] operadores;
     private String[][] Array_rad_exp;
@@ -29,9 +30,10 @@ public class Funcionamento {
     private boolean sp1 = false;
     private boolean mul = false;
     private boolean div = false;
+    private boolean fat = false;
     private boolean sem_operadores = false;
     private boolean unica_raiz = false;
-    private final char[] aux_operacoes;
+    private char[] aux_operacoes;
 
     //FIM
     //Construtor IN
@@ -61,6 +63,7 @@ public class Funcionamento {
     //Métodos IN
     public float main() {
         float resultado = 0;
+        verifica_fat();
         verifica_raiz();
         verifica_exp();
         verifica_raiz2();
@@ -68,6 +71,7 @@ public class Funcionamento {
         verifica_mul_div();
         verifica_sp1();
         verifica_sp2();
+        verifica_validade_fat();
         define_operandos_operadores();
         //Caso não haja operadores IN
         if(sem_operadores){
@@ -93,8 +97,8 @@ public class Funcionamento {
             return resultado;
         }
         //FIM
-        aux_validade("INICIO", operadores, operandos);
         if (validade) {
+            aux_validade("INICIO", operadores, operandos);
             if (verifica()) {
                 try {
                     calcula_rad_exp(operadores, operandos);
@@ -257,6 +261,100 @@ public class Funcionamento {
         }
     }
 
+    private void verifica_fat(){
+        boolean ver_fat = false;
+        int cont = 0;
+        for (int i = 0; i < aux_operacoes.length; i++) {
+            if (aux_operacoes[i] == '!') {
+                ver_fat = true;
+                cont++;
+            }
+        }
+        cont_fat = cont;
+        fat = ver_fat;
+    }
+    
+    private String calcula_fat(String ope){
+        String sfinal = "", aux = "";
+        char[] aux_ope = ope.toCharArray();
+        int i = 0, j = 0;
+        float auxf = 0;
+        while(i < aux_ope.length){
+            if(aux_ope[i] == '!'){
+                j = i;
+                aux_ope[j] = 'S';
+                j--;
+                while(aux_ope[j] != 'r' &&
+                        aux_ope[j] != 'R' &&
+                        aux_ope[j] != 'p' &&
+                        aux_ope[j] != '+' &&
+                        aux_ope[j] != '-' &&
+                        aux_ope[j] != '*' &&
+                        aux_ope[j] != '/' &&
+                        aux_ope[j] != '^'){
+                    aux += aux_ope[j];
+                    aux_ope[j] = 'S';
+                    j--;
+                    if(j < 0) break;
+                }
+                //Inverter o aux IN
+                StringBuffer sb = new StringBuffer(aux);
+                sb.reverse();
+                aux = sb.toString();
+                //FIM
+                System.out.println("AUX OPE IN");
+                for(int l = 0; l < aux_ope.length; l++) System.out.print(aux_ope[l]);
+                System.out.println();
+                System.out.println("AUX: "+aux);
+                System.out.println("AUX OPE FIM");
+                System.out.println("CALCULO IN");
+                System.out.println("AUX: "+aux);
+                auxf = calculofat(aux);
+                aux = Float.toString(auxf);
+                System.out.println("AUX POS: "+aux);
+                System.out.println("CALCULO FIM");
+                System.out.println("SUBSTITUICAO IN");
+                j = 0;
+                while(j < aux_ope.length){
+                    if(aux_ope[j] == 'S'){
+                        sfinal += aux;
+                        while(aux_ope[j] == 'S'){
+                            j++;
+                            if(j >= aux_ope.length) break;
+                        }
+                    }
+                    if(j >= aux_ope.length) break;
+                    sfinal += aux_ope[j];
+                    j++;
+                }
+                System.out.println("SFINAL : "+sfinal);
+                System.out.println("SUBSTITUICAO FIM");
+                ope = sfinal;
+                aux_ope = ope.toCharArray();
+                i = 0;
+                System.out.println("STRING F : "+ope);
+            }
+            i++;
+        }
+        return sfinal;
+    }
+    
+    private float calculofat(String op1){
+        float resultado = 1, aux_op1 = 0;
+        float i = 1;
+        try{
+            aux_op1 = Float.parseFloat(op1);
+            while(i <= aux_op1){
+                resultado *= i;
+                i++;
+            }
+        }catch(Exception e){
+            setvalidade(false);
+            resultado = 0;
+        }
+        return resultado;
+    }
+    
     private void calcula_rad_exp(String[] operadores, String[] operandos) {
         int index_r = 0, index_op = 0;
         //Exponenciação e radiciação IN
@@ -525,6 +623,15 @@ public class Funcionamento {
 
     private void define_operandos_operadores() {
         try {
+            //Verifica se há fatorial IN
+            if(fat){
+                System.out.println("OPERACOES FAT IN : "+operacoes);
+                operacoes = calcula_fat(operacoes);
+                System.out.println("OPERACOES FAT FIM : "+operacoes);
+                aux_operacoes = operacoes.toCharArray();
+                
+            }
+            //FIM
             //Determinar o número de operadores e operandos IN
             int i = 1; //O primeiro valor não será considerado
             //Número de operadores IN
@@ -929,6 +1036,37 @@ public class Funcionamento {
             }
         }
         return validade;
+    }
+    
+    public void verifica_validade_fat(){
+        boolean validadel = true;
+        if(aux_operacoes[0] == '!'){
+            setvalidade(false);
+        }
+        int i = 1;
+        while(i < aux_operacoes.length){
+            if(aux_operacoes[i] == '!' && (aux_operacoes[i - 1] == '!'
+                    || aux_operacoes[i - 1] == 'r'
+                    || aux_operacoes[i - 1] == 'R'
+                    || aux_operacoes[i - 1] == '^'
+                    || aux_operacoes[i - 1] == '.'
+                    || aux_operacoes[i - 1] == '+'
+                    || aux_operacoes[i - 1] == '-'
+                    || aux_operacoes[i - 1] == '*'
+                    || aux_operacoes[i - 1] == '/'
+                    || aux_operacoes[i - 1] == 'p')){
+                setvalidade(false);
+            }else if(aux_operacoes[i - 1] == '!' && !(aux_operacoes[i] == '+'
+                    || aux_operacoes[i] == '-'
+                    || aux_operacoes[i] == '*'
+                    || aux_operacoes[i] == '/'
+                    || aux_operacoes[i] == 'R'
+                    || aux_operacoes[i] == '^'
+                    || aux_operacoes[i] == 'p')){
+                setvalidade(false);
+            }
+            i++;
+        }
     }
 
     public void aux_validade(String situacao, String[] operadores, String[] operandos) {

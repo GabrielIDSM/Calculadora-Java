@@ -48,6 +48,7 @@ public class MainFrame extends javax.swing.JFrame {
         Brad = new javax.swing.JButton();
         Brad2 = new javax.swing.JButton();
         Bpor = new javax.swing.JButton();
+        Bfat = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora");
@@ -336,6 +337,15 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        Bfat.setBackground(new java.awt.Color(255, 255, 51));
+        Bfat.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Bfat.setText("!");
+        Bfat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BfatActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -364,9 +374,14 @@ public class MainFrame extends javax.swing.JFrame {
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Bexp, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Brad2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(20, 20, 20)
-                        .addComponent(Bpor, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(Bpor, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Bfat, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -384,13 +399,14 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Bdiv, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Brad, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Bmenos, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Bmenos, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Bfat, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Bclc, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BopC, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Brad2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -667,6 +683,10 @@ public class MainFrame extends javax.swing.JFrame {
                     aux += "²√";
                     A.append(aux);
                     aux = "";
+                }else if(Op_char[i] == '!'){
+                    aux += "!";
+                    A.append(aux);
+                    aux = "";
                 }else if(Op_char[i] == 'p'){
                     aux += "%";
                     A.append(aux);
@@ -705,6 +725,15 @@ public class MainFrame extends javax.swing.JFrame {
         Operacoes += "R";
         A.append("√");
     }//GEN-LAST:event_Brad2ActionPerformed
+
+    private void BfatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BfatActionPerformed
+        if(PV){
+            A.setText("");
+            PV = false;
+        }
+        Operacoes += "!";
+        A.append("!");
+    }//GEN-LAST:event_BfatActionPerformed
 
     /**
      * @param args the command line arguments
@@ -758,6 +787,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton Bdiv;
     private javax.swing.JButton Bdot;
     private javax.swing.JButton Bexp;
+    private javax.swing.JButton Bfat;
     private javax.swing.JButton Bigual;
     private javax.swing.JButton Bmais;
     private javax.swing.JButton Bmenos;
