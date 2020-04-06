@@ -19,7 +19,8 @@ public class Funcionamento {
     private int cont_fat;
     private String[] operandos;
     private String[] operadores;
-    private String[][] Array_rad_exp;
+    private String[][] Array_rad;
+    private String[][] Array_exp;
     private String[][] Array_mul_div;
     private int[] index_sp1;
     private boolean validade = true;
@@ -102,9 +103,11 @@ public class Funcionamento {
                 aux_validade("INICIO", operadores, operandos);
                 if (verifica()) {
                     try {
-                        calcula_rad_exp(operadores, operandos);
-                        aux_validade("RAD E EXP", Array_rad_exp[0], Array_rad_exp[1]);
-                        calcula_mul_div(Array_rad_exp[0], Array_rad_exp[1]);
+                        calcula_rad(operadores, operandos);
+                        aux_validade("RAD", Array_rad[0], Array_rad[1]);
+                        calcula_exp(Array_rad[0], Array_rad[1]);
+                        aux_validade("EXP", Array_exp[0], Array_exp[1]);
+                        calcula_mul_div(Array_exp[0], Array_exp[1]);
                         aux_validade("MUL E DIV", Array_mul_div[0], Array_mul_div[1]);
                         resultado += calcula_som_sub(Array_mul_div[0], Array_mul_div[1]);
                         return resultado;
@@ -372,7 +375,7 @@ public class Funcionamento {
         return resultado;
     }
     
-    private void calcula_rad_exp(String[] operadores, String[] operandos) {
+    private void calcula_rad(String[] operadores, String[] operandos) {
         int index_r = 0, index_op = 0;
         //Exponenciação e radiciação IN
         //Radiciação IN
@@ -502,10 +505,36 @@ public class Funcionamento {
             }
         }
         aux_validade("POS RAD 2", operadores, operandos);
-        //FIM
-        index_r = 0;
-        index_op = 0;
+        //FIM        
+        substitui_rad();
+    }
+
+    private void substitui_rad() {
+        int cont_index = 0;
+        cont_operadores -= cont_raiz;
+        cont_operadores -= cont_raiz2;
+        cont_operandos -= cont_raiz2;
+        Array_rad = new String[2][];
+        Array_rad[0] = new String[cont_operadores];
+        Array_rad[1] = new String[cont_operandos];
+        for (int i = 0; i < operadores.length; i++) {
+            if (!("r".equals(operadores[i]) || "R".equals(operadores[i]))) {
+                Array_rad[0][cont_index] = operadores[i];
+                cont_index++;
+            }
+        }
+        cont_index = 0;
+        for (int i = 0; i < operandos.length; i++) {
+            if (!("S".equals(operandos[i]))) {
+                Array_rad[1][cont_index] = operandos[i];
+                cont_index++;
+            }
+        }
+    }
+    
+    private void calcula_exp(String[] operadores, String[] operandos){
         //Exponenciação IN
+        int index_r = 0, index_op = 0;
         String sinal_exp = "-";
         float aux_exp = 0;
         if (exp) {
@@ -542,30 +571,26 @@ public class Funcionamento {
             }
         }
         aux_validade("POS EXP", operadores, operandos);
-        substitui_rad_exp();
-        //FIM
+        substitui_exp(Array_rad[0], Array_rad[1]);
     }
-
-    private void substitui_rad_exp() {
+    
+    private void substitui_exp(String[] operadores, String[] operandos){
         int cont_index = 0;
-        cont_operadores -= cont_raiz;
         cont_operadores -= cont_exp;
-        cont_operadores -= cont_raiz2;
         cont_operandos -= cont_exp;
-        cont_operandos -= cont_raiz2;
-        Array_rad_exp = new String[2][];
-        Array_rad_exp[0] = new String[cont_operadores];
-        Array_rad_exp[1] = new String[cont_operandos];
+        Array_exp = new String[2][];
+        Array_exp[0] = new String[cont_operadores];
+        Array_exp[1] = new String[cont_operandos];
         for (int i = 0; i < operadores.length; i++) {
-            if (!("r".equals(operadores[i]) || "^".equals(operadores[i]) || "R".equals(operadores[i]))) {
-                Array_rad_exp[0][cont_index] = operadores[i];
+            if (!("^".equals(operadores[i]))) {
+                Array_exp[0][cont_index] = operadores[i];
                 cont_index++;
             }
         }
         cont_index = 0;
         for (int i = 0; i < operandos.length; i++) {
             if (!("S".equals(operandos[i]))) {
-                Array_rad_exp[1][cont_index] = operandos[i];
+                Array_exp[1][cont_index] = operandos[i];
                 cont_index++;
             }
         }
@@ -589,7 +614,7 @@ public class Funcionamento {
             }
         }
         //FIM
-        substitui_mul_div(Array_rad_exp[0], Array_rad_exp[1]);
+        substitui_mul_div(Array_exp[0], Array_exp[1]);
     }
 
     private void substitui_mul_div(String[] operadores, String[] operandos) {

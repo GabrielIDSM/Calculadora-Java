@@ -36,6 +36,7 @@ public class MainFrame extends javax.swing.JFrame {
         B0 = new javax.swing.JButton();
         Bdot = new javax.swing.JButton();
         BDelete = new javax.swing.JButton();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         Bigual = new javax.swing.JButton();
         Bmais = new javax.swing.JButton();
@@ -47,27 +48,33 @@ public class MainFrame extends javax.swing.JFrame {
         Bclc = new javax.swing.JButton();
         Brad = new javax.swing.JButton();
         Brad2 = new javax.swing.JButton();
-        Bpor = new javax.swing.JButton();
-        Bfat = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        Bigual1 = new javax.swing.JButton();
+        Bpor1 = new javax.swing.JButton();
+        Bfat1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora");
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(java.awt.SystemColor.controlDkShadow);
 
         A.setEditable(false);
+        A.setBackground(new java.awt.Color(0, 0, 51));
         A.setColumns(20);
         A.setFont(new java.awt.Font("Arial", 0, 26)); // NOI18N
+        A.setForeground(new java.awt.Color(255, 255, 255));
         A.setLineWrap(true);
         A.setRows(2);
-        A.setSelectionColor(new java.awt.Color(255, 255, 255));
+        A.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        A.setCaretColor(new java.awt.Color(255, 255, 255));
+        A.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(A);
 
-        jPanel2.setBackground(java.awt.SystemColor.controlHighlight);
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
+        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
 
-        B1.setBackground(new java.awt.Color(255, 204, 102));
+        B1.setBackground(new java.awt.Color(204, 204, 204));
         B1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         B1.setText("1");
         B1.addActionListener(new java.awt.event.ActionListener() {
@@ -76,7 +83,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        B4.setBackground(new java.awt.Color(255, 204, 102));
+        B4.setBackground(new java.awt.Color(204, 204, 204));
         B4.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         B4.setText("4");
         B4.addActionListener(new java.awt.event.ActionListener() {
@@ -85,7 +92,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        B7.setBackground(new java.awt.Color(255, 204, 102));
+        B7.setBackground(new java.awt.Color(204, 204, 204));
         B7.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         B7.setText("7");
         B7.addActionListener(new java.awt.event.ActionListener() {
@@ -94,7 +101,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        B2.setBackground(new java.awt.Color(255, 204, 102));
+        B2.setBackground(new java.awt.Color(204, 204, 204));
         B2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         B2.setText("2");
         B2.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +110,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        B5.setBackground(new java.awt.Color(255, 204, 102));
+        B5.setBackground(new java.awt.Color(204, 204, 204));
         B5.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         B5.setText("5");
         B5.addActionListener(new java.awt.event.ActionListener() {
@@ -112,7 +119,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        B8.setBackground(new java.awt.Color(255, 204, 102));
+        B8.setBackground(new java.awt.Color(204, 204, 204));
         B8.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         B8.setText("8");
         B8.addActionListener(new java.awt.event.ActionListener() {
@@ -121,7 +128,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        B6.setBackground(new java.awt.Color(255, 204, 102));
+        B6.setBackground(new java.awt.Color(204, 204, 204));
         B6.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         B6.setText("6");
         B6.addActionListener(new java.awt.event.ActionListener() {
@@ -130,7 +137,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        B9.setBackground(new java.awt.Color(255, 204, 102));
+        B9.setBackground(new java.awt.Color(204, 204, 204));
         B9.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         B9.setText("9");
         B9.addActionListener(new java.awt.event.ActionListener() {
@@ -139,7 +146,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        B3.setBackground(new java.awt.Color(255, 204, 102));
+        B3.setBackground(new java.awt.Color(204, 204, 204));
         B3.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         B3.setText("3");
         B3.addActionListener(new java.awt.event.ActionListener() {
@@ -148,7 +155,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        B0.setBackground(new java.awt.Color(255, 204, 102));
+        B0.setBackground(new java.awt.Color(204, 204, 204));
         B0.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         B0.setText("0");
         B0.addActionListener(new java.awt.event.ActionListener() {
@@ -157,7 +164,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Bdot.setBackground(new java.awt.Color(255, 204, 102));
+        Bdot.setBackground(new java.awt.Color(204, 204, 204));
         Bdot.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         Bdot.setText(".");
         Bdot.addActionListener(new java.awt.event.ActionListener() {
@@ -166,7 +173,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        BDelete.setBackground(new java.awt.Color(255, 51, 51));
+        BDelete.setBackground(new java.awt.Color(211, 130, 115));
         BDelete.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         BDelete.setText("D");
         BDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -207,7 +214,7 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(11, 11, 11)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(B2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -232,13 +239,15 @@ public class MainFrame extends javax.swing.JFrame {
                         .addComponent(B4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(B7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(11, 11, 11))
         );
 
-        jPanel3.setBackground(java.awt.SystemColor.controlHighlight);
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
+        jTabbedPane1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
-        Bigual.setBackground(new java.awt.Color(102, 255, 102));
+        jPanel3.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
+
+        Bigual.setBackground(new java.awt.Color(204, 255, 204));
         Bigual.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
         Bigual.setText("=");
         Bigual.addActionListener(new java.awt.event.ActionListener() {
@@ -247,7 +256,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Bmais.setBackground(new java.awt.Color(255, 255, 51));
+        Bmais.setBackground(new java.awt.Color(255, 255, 204));
         Bmais.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Bmais.setText("+");
         Bmais.addActionListener(new java.awt.event.ActionListener() {
@@ -256,7 +265,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Bmul.setBackground(new java.awt.Color(255, 255, 51));
+        Bmul.setBackground(new java.awt.Color(255, 255, 204));
         Bmul.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Bmul.setText("x");
         Bmul.addActionListener(new java.awt.event.ActionListener() {
@@ -265,7 +274,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Bmenos.setBackground(new java.awt.Color(255, 255, 51));
+        Bmenos.setBackground(new java.awt.Color(255, 255, 204));
         Bmenos.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Bmenos.setText("-");
         Bmenos.addActionListener(new java.awt.event.ActionListener() {
@@ -274,7 +283,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Bdiv.setBackground(new java.awt.Color(255, 255, 51));
+        Bdiv.setBackground(new java.awt.Color(255, 255, 204));
         Bdiv.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Bdiv.setText("/");
         Bdiv.addActionListener(new java.awt.event.ActionListener() {
@@ -283,7 +292,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Bexp.setBackground(new java.awt.Color(255, 255, 51));
+        Bexp.setBackground(new java.awt.Color(255, 255, 204));
         Bexp.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Bexp.setText("^");
         Bexp.addActionListener(new java.awt.event.ActionListener() {
@@ -292,7 +301,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        BopC.setBackground(new java.awt.Color(51, 204, 255));
+        BopC.setBackground(new java.awt.Color(204, 204, 255));
         BopC.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         BopC.setText("(");
         BopC.addActionListener(new java.awt.event.ActionListener() {
@@ -301,7 +310,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Bclc.setBackground(new java.awt.Color(51, 204, 255));
+        Bclc.setBackground(new java.awt.Color(204, 204, 255));
         Bclc.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Bclc.setText(")");
         Bclc.addActionListener(new java.awt.event.ActionListener() {
@@ -310,7 +319,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Brad.setBackground(new java.awt.Color(255, 255, 51));
+        Brad.setBackground(new java.awt.Color(255, 255, 204));
         Brad.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Brad.setText("²√");
         Brad.addActionListener(new java.awt.event.ActionListener() {
@@ -319,30 +328,12 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Brad2.setBackground(new java.awt.Color(255, 255, 51));
+        Brad2.setBackground(new java.awt.Color(255, 255, 204));
         Brad2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Brad2.setText("n√");
         Brad2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Brad2ActionPerformed(evt);
-            }
-        });
-
-        Bpor.setBackground(new java.awt.Color(255, 255, 51));
-        Bpor.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        Bpor.setText("%");
-        Bpor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BporActionPerformed(evt);
-            }
-        });
-
-        Bfat.setBackground(new java.awt.Color(255, 255, 51));
-        Bfat.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        Bfat.setText("!");
-        Bfat.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BfatActionPerformed(evt);
             }
         });
 
@@ -374,14 +365,7 @@ public class MainFrame extends javax.swing.JFrame {
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Bexp, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Brad2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(Bpor, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Bfat, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -389,65 +373,122 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Bigual, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(11, 11, 11)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Bmais, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bexp, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Bmul, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Bpor, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Bmul, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Bdiv, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Brad, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Bmenos, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Bfat, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Bmenos, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Bclc, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BopC, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Brad2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jTabbedPane1.addTab("Básico", jPanel3);
+
+        jPanel4.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
+
+        Bigual1.setBackground(new java.awt.Color(204, 255, 204));
+        Bigual1.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
+        Bigual1.setText("=");
+        Bigual1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bigual1Fim(evt);
+            }
+        });
+
+        Bpor1.setBackground(new java.awt.Color(255, 255, 204));
+        Bpor1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Bpor1.setText("%");
+        Bpor1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bpor1ActionPerformed(evt);
+            }
+        });
+
+        Bfat1.setBackground(new java.awt.Color(255, 255, 204));
+        Bfat1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Bfat1.setText("!");
+        Bfat1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bfat1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Bigual1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Bpor1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Bfat1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 170, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Bigual1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(Bpor1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Bfat1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(98, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Avançado", jPanel4);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1))
-                .addContainerGap())
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(12, 12, 12)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
         );
 
         pack();
@@ -708,15 +749,6 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BDeleteActionPerformed
 
-    private void BporActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BporActionPerformed
-        if(PV){
-            A.setText("");
-            PV = false;
-        }
-        Operacoes += "p";
-        A.append("%");
-    }//GEN-LAST:event_BporActionPerformed
-
     private void Brad2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Brad2ActionPerformed
         if(PV){
             A.setText("");
@@ -726,14 +758,60 @@ public class MainFrame extends javax.swing.JFrame {
         A.append("√");
     }//GEN-LAST:event_Brad2ActionPerformed
 
-    private void BfatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BfatActionPerformed
+    private void Bigual1Fim(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bigual1Fim
+        if(null == A.getText()) {
+            PV = true;
+            A.setText("");
+            Operacoes O = new Operacoes(Operacoes);
+            float resultado = O.main();
+            boolean verifica = O.getvalidade();
+            if (verifica) {
+                String R = Float.toString(resultado);
+                A.append(R);
+            } else {
+                A.append("Erro");
+            }
+            Operacoes = "";
+        } else switch (A.getText()) {
+            case "Erro":
+                A.setText("");
+                break;
+            case "":
+                A.setText("");
+                break;
+            default:
+                PV = true;
+                A.setText("");
+                Operacoes O = new Operacoes(Operacoes);
+                float resultado = O.main();
+                boolean verifica = O.getvalidade();
+                if (verifica) {
+                    String R = Float.toString(resultado);
+                    A.append(R);
+                } else {
+                    A.append("Erro");
+                }   Operacoes = "";
+                break;
+        }
+    }//GEN-LAST:event_Bigual1Fim
+
+    private void Bpor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bpor1ActionPerformed
+        if(PV){
+            A.setText("");
+            PV = false;
+        }
+        Operacoes += "p";
+        A.append("%");
+    }//GEN-LAST:event_Bpor1ActionPerformed
+
+    private void Bfat1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bfat1ActionPerformed
         if(PV){
             A.setText("");
             PV = false;
         }
         Operacoes += "!";
         A.append("!");
-    }//GEN-LAST:event_BfatActionPerformed
+    }//GEN-LAST:event_Bfat1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -787,18 +865,21 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton Bdiv;
     private javax.swing.JButton Bdot;
     private javax.swing.JButton Bexp;
-    private javax.swing.JButton Bfat;
+    private javax.swing.JButton Bfat1;
     private javax.swing.JButton Bigual;
+    private javax.swing.JButton Bigual1;
     private javax.swing.JButton Bmais;
     private javax.swing.JButton Bmenos;
     private javax.swing.JButton Bmul;
     private javax.swing.JButton BopC;
-    private javax.swing.JButton Bpor;
+    private javax.swing.JButton Bpor1;
     private javax.swing.JButton Brad;
     private javax.swing.JButton Brad2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 }
