@@ -283,7 +283,7 @@ public class Funcionamento {
         String sfinal = "", aux = "";
         char[] aux_ope = ope.toCharArray();
         int i = 0, j = 0;
-        float auxf = 0;
+        float auxf = 0, resto = 0;
         while(i < aux_ope.length){
             if(aux_ope[i] == '!'){
                 j = i;
@@ -306,6 +306,18 @@ public class Funcionamento {
                 StringBuffer sb = new StringBuffer(aux);
                 sb.reverse();
                 aux = sb.toString();
+                //FIM
+                //Verifica parte decimal IN
+                auxf = Float.parseFloat(aux);
+                resto = auxf - (float) Math.floor((float) auxf);
+                if(resto != 0){
+                    auxf = 0;
+                    resto = 0;
+                    setvalidade(false);
+                    break;
+                }
+                auxf = 0;
+                resto = 0;
                 //FIM
                 System.out.println("AUX OPE IN");
                 for(int l = 0; l < aux_ope.length; l++) System.out.print(aux_ope[l]);
