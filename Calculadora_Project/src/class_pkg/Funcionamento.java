@@ -352,20 +352,11 @@ public class Funcionamento {
                         || "-".equals(operadores[index_r])
                         || "*".equals(operadores[index_r])
                         || "/".equals(operadores[index_r])
-                        || "p".equals(operadores[index_r])) {
+                        || "p".equals(operadores[index_r])
+                        || "^".equals(operadores[index_r])) {
                     index_op++;
                     index_r++;
                 } else {
-                    //Verifica o sinal IN
-                    if (index_r > 0) {
-                        if ("-".equals(operadores[(index_r - 1)])) {
-                            sinal_raiz2 += operandos[index_r];
-                            operandos[index_r] = sinal_raiz2;
-                            sinal_raiz2 = "-";
-                            operadores[(index_r - 1)] = "+";
-                        }
-                    }
-                    //FIM
                     aux_raiz2 = calculando(operandos[index_op], operandos[(index_op + 1)], operadores[index_r]);
                     //Substituição dos operandos IN                    
                     operandos[index_op] = "S";
@@ -375,7 +366,27 @@ public class Funcionamento {
                     index_r++;
                 }
             }
+            //Caso haja apenas um operador e um operando IN
+            //Caso haja sinal de + ou - IN
+            if (operadores.length == 1 && operandos.length == 2) {
+                switch (aux_operacoes[0]) {
+                    case '-':
+                        operandos[1] = Float.toString(aux_raiz2 * -1);
+                    case '+':
+                        operandos[1] = Float.toString(aux_raiz2);
+                    default:
+                        operandos[1] = Float.toString(aux_raiz2);
+                }
+            }
+            //FIM
+            //FIM
+            //Caso o primeiro valor tenha quer ser negativo IN
+            if (aux_operacoes[0] == '-' && "R".equals(operadores[0])) {
+                operandos[1] = sinal_raiz2 + operandos[1];
+                sinal_raiz2 = "-";
+            }
         }
+        aux_validade("POS RAD 2", operadores, operandos);
         //FIM
         index_r = 0;
         index_op = 0;
@@ -389,7 +400,9 @@ public class Funcionamento {
                 } else if ("+".equals(operadores[index_r])
                         || "-".equals(operadores[index_r])
                         || "*".equals(operadores[index_r])
-                        || "/".equals(operadores[index_r])) {
+                        || "/".equals(operadores[index_r])
+                        || "R".equals(operadores[index_r])
+                        || "p".equals(operadores[index_r])) {
                     index_op++;
                     index_r++;
                 } else {
@@ -413,6 +426,7 @@ public class Funcionamento {
                 }
             }
         }
+        aux_validade("POS EXP", operadores, operandos);
         substitui_rad_exp();
         //FIM
     }
@@ -897,6 +911,19 @@ public class Funcionamento {
                     || aux_operacoes[i] == 'R'
                     || aux_operacoes[i] == 'p') && aux_operacoes[(i + 1)] == '.') {
                 //System.out.println("Z");
+                setvalidade(false);
+                break;
+            } else if ((aux_operacoes[i] == '*'
+                    || aux_operacoes[i] == '/'
+                    || aux_operacoes[i] == '^'
+                    || aux_operacoes[i] == 'R'
+                    || aux_operacoes[i] == 'p') 
+                    && 
+                    (aux_operacoes[i + 1] == '*'
+                    || aux_operacoes[i + 1] == '/'
+                    || aux_operacoes[i + 1] == '^'
+                    || aux_operacoes[i + 1] == 'R'
+                    || aux_operacoes[i + 1] == 'p')){
                 setvalidade(false);
                 break;
             }
