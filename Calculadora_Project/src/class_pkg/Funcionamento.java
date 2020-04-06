@@ -44,6 +44,7 @@ public class Funcionamento {
         operacoes = operacoes.replace("\t", "");
         operacoes = operacoes.replace("\r", "");
         //FIM
+        operacoes = duplo_sinal(operacoes);
         this.operacoes = operacoes;
         aux_operacoes = operacoes.toCharArray();
     }
@@ -280,6 +281,39 @@ public class Funcionamento {
         }
         cont_fat = cont;
         fat = ver_fat;
+    }
+    
+    private String duplo_sinal(String string) {
+        String string_f = "";
+        int i = 1;
+        char[] char_array = string.toCharArray();
+        while (i < char_array.length) {
+            if (char_array[i] == '-' && char_array[i - 1] == '+') {
+                char_array[i - 1] = 'S';
+            }
+            if (char_array[i] == '+' && char_array[i - 1] == '-') {
+                char_array[i] = 'S';
+            }
+            if (char_array[i] == '-' && char_array[i - 1] == '-') {
+                char_array[i - 1] = '+';
+                char_array[i] = 'S';
+            }
+            if (char_array[i] == '+' && char_array[i - 1] == '+') {
+                char_array[i] = 'S';
+            }
+            i++;
+        }
+        i = 0;
+        while (i < char_array.length) {
+            if (char_array[i] == 'S') {
+                i++;
+                continue;
+            } else {
+                string_f += char_array[i];
+            }
+            i++;
+        }
+        return string_f;
     }
     
     private String calcula_fat(String ope){
