@@ -56,79 +56,82 @@ public class Operacoes {
     //Métodos IN
     public float main() {
         float total = 0;
-        verifica_parentesis();
-        if (getvalidade()) {
-            if (getparentesis()) {
-                verifica();
-                cont_par();
-                System.out.println("1");
-                if (getvalidade()) {
-                    situacao();
-                    System.out.println("2");
+        try {
+            verifica_parentesis();
+            if (getvalidade()) {
+                if (getparentesis()) {
+                    verifica();
+                    cont_par();
+                    System.out.println("getparentesis() == true");
                     if (getvalidade()) {
-                        System.out.println("3");
-                        System.out.println(getsit());
-                        if (getsit()) {
-                            System.out.println("4");
-                            try {
-                                String operacoes_f = cria_operacoes_s_par();
-                                System.out.println(operacoes_f);
-                                //cria uma string sem parentesis
-                                String[] array_par = cria_array_par();
-                                //cria um array com o conteudo dos parentêsis
-                                float[] array_float_par = cria_array_float_par(array_par);
-                                //Cria um array com o resultado das operacoes entre parentêsis
-                                operacoes_f = substitui_operacoes_s_par(operacoes_f, array_float_par);
-                                System.out.println(operacoes_f);
-                                //Substitui o array final pelos valores do parentêsis   
-                                System.out.println("Aqui IN");
-                                operacoes_f = duplo_sinal(operacoes_f);
-                                System.out.println("Aqui FIM");
-                                System.out.println(operacoes_f);
-                                //Verificação e substituição do duplo sinal IN
-                                Funcionamento F = new Funcionamento(operacoes_f);
-                                float T = F.main();
-                                System.out.println(T);
-                                if (F.getvalidade()) {
-                                    total = T;
-                                } else {
+                        situacao();
+                        System.out.println("getvalidade() == true");
+                        if (getvalidade()) {
+                            System.out.println("getvalidade() == true POS situacao()");
+                            System.out.println("getsit() == " + getsit());
+                            if (getsit()) {
+                                try {
+                                    String operacoes_f = cria_operacoes_s_par();
+                                    System.out.println(operacoes_f);
+                                    //cria uma string sem parentesis
+                                    String[] array_par = cria_array_par();
+                                    //cria um array com o conteudo dos parentêsis
+                                    float[] array_float_par = cria_array_float_par(array_par);
+                                    //Cria um array com o resultado das operacoes entre parentêsis
+                                    operacoes_f = substitui_operacoes_s_par(operacoes_f, array_float_par);
+                                    System.out.println(operacoes_f);
+                                    //Substitui o array final pelos valores do parentêsis   
+                                    System.out.println("Aqui IN");
+                                    operacoes_f = duplo_sinal(operacoes_f);
+                                    System.out.println("Aqui FIM");
+                                    System.out.println(operacoes_f);
+                                    //Verificação e substituição do duplo sinal IN
+                                    Funcionamento F = new Funcionamento(operacoes_f);
+                                    float T = F.main();
+                                    System.out.println(T);
+                                    if (F.getvalidade()) {
+                                        total = T;
+                                    } else {
+                                        setvalidade(false);
+                                    }
+                                } catch (Exception e) {
+                                    total = 0;
+                                    return total;
+                                }
+                            } else {
+                                System.out.println("Na funcao main : " + operacoes);
+                                try {
+                                    total = par_encadeados_sit(operacoes);
+                                } catch (Exception e) {
                                     setvalidade(false);
                                 }
-                            } catch (Exception e) {
-                                total = 0;
+                                if (total == Float.NaN) {
+                                    setvalidade(false);
+                                }
                                 return total;
                             }
                         } else {
-                            System.out.println("Na funcao main : " + operacoes);
-                            try {
-                                total = par_encadeados_sit(operacoes);
-                            } catch (Exception e) {
-                                setvalidade(false);
-                            }
-                            if (total == Float.NaN) {
-                                setvalidade(false);
-                            }
                             return total;
                         }
                     } else {
                         return total;
                     }
                 } else {
+                    //Verificação e substituição do duplo sinal IN
+                    this.operacoes = duplo_sinal(this.operacoes);
+                    Funcionamento F = new Funcionamento(this.operacoes);
+                    total = F.main();
+                    setvalidade(F.getvalidade());
+                    if (total == Float.NaN) {
+                        setvalidade(false);
+                    }
                     return total;
                 }
             } else {
-                //Verificação e substituição do duplo sinal IN
-                this.operacoes = duplo_sinal(this.operacoes);
-                Funcionamento F = new Funcionamento(this.operacoes);
-                total = F.main();
-                setvalidade(F.getvalidade());
-                if (total == Float.NaN) {
-                    setvalidade(false);
-                }
                 return total;
             }
-        } else {
-            return total;
+        } catch (Exception e) {
+            setvalidade(false);
         }
         return total;
     }

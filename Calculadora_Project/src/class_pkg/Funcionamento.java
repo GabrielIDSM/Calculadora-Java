@@ -63,58 +63,63 @@ public class Funcionamento {
     //Métodos IN
     public float main() {
         float resultado = 0;
-        verifica_fat();
-        verifica_raiz();
-        verifica_exp();
-        verifica_raiz2();
-        verifica_porc();
-        verifica_mul_div();
-        verifica_sp1();
-        verifica_sp2();
-        verifica_validade_fat();
-        define_operandos_operadores();
-        //Caso não haja operadores IN
-        if(sem_operadores){
-            try{
-                resultado = Float.parseFloat(operacoes);
-            }catch(Exception e){
-                setvalidade(false);
-            }
-            return resultado;
-        }
-        //FIM
-        //Caso só haja um operador raiz IN
-        if(unica_raiz){
-            try{
-                resultado = met_unica_raiz();
-            }catch(Exception e){
-                setvalidade(false);
-            }
-            if(resultado == Float.NaN){
-                resultado = 0;
-                setvalidade(false);
-            }
-            return resultado;
-        }
-        //FIM
-        if (validade) {
-            aux_validade("INICIO", operadores, operandos);
-            if (verifica()) {
+        try {
+            verifica_fat();
+            verifica_raiz();
+            verifica_exp();
+            verifica_raiz2();
+            verifica_porc();
+            verifica_mul_div();
+            verifica_sp1();
+            verifica_sp2();
+            verifica_validade_fat();
+            define_operandos_operadores();
+            //Caso não haja operadores IN
+            if (sem_operadores) {
                 try {
-                    calcula_rad_exp(operadores, operandos);
-                    aux_validade("RAD E EXP", Array_rad_exp[0], Array_rad_exp[1]);
-                    calcula_mul_div(Array_rad_exp[0], Array_rad_exp[1]);
-                    aux_validade("MUL E DIV", Array_mul_div[0], Array_mul_div[1]);
-                    resultado += calcula_som_sub(Array_mul_div[0], Array_mul_div[1]);
-                    return resultado;
+                    resultado = Float.parseFloat(operacoes);
                 } catch (Exception e) {
                     setvalidade(false);
+                }
+                return resultado;
+            }
+            //FIM
+            //Caso só haja um operador raiz IN
+            if (unica_raiz) {
+                try {
+                    resultado = met_unica_raiz();
+                } catch (Exception e) {
+                    setvalidade(false);
+                }
+                if (resultado == Float.NaN) {
+                    resultado = 0;
+                    setvalidade(false);
+                }
+                return resultado;
+            }
+            //FIM
+            if (validade) {
+                aux_validade("INICIO", operadores, operandos);
+                if (verifica()) {
+                    try {
+                        calcula_rad_exp(operadores, operandos);
+                        aux_validade("RAD E EXP", Array_rad_exp[0], Array_rad_exp[1]);
+                        calcula_mul_div(Array_rad_exp[0], Array_rad_exp[1]);
+                        aux_validade("MUL E DIV", Array_mul_div[0], Array_mul_div[1]);
+                        resultado += calcula_som_sub(Array_mul_div[0], Array_mul_div[1]);
+                        return resultado;
+                    } catch (Exception e) {
+                        setvalidade(false);
+                        return resultado;
+                    }
+                } else {
                     return resultado;
                 }
             } else {
                 return resultado;
             }
-        } else {
+        } catch (Exception e) {
+            setvalidade(false);
             return resultado;
         }
     }
