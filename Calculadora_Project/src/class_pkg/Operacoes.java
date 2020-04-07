@@ -394,7 +394,9 @@ public class Operacoes {
                 || char_operacoes[(char_operacoes.length - 1)] == 'r'
                 || char_operacoes[(char_operacoes.length - 1)] == '.'
                 || char_operacoes[(char_operacoes.length - 1)] == 'R'
-                || char_operacoes[(char_operacoes.length - 1)] == 'p') {
+                || char_operacoes[(char_operacoes.length - 1)] == 'p'
+                || char_operacoes[(char_operacoes.length - 1)] == 'L'
+                || char_operacoes[(char_operacoes.length - 1)] == 'l') {
             setvalidade(false);
             return;
         }
@@ -407,14 +409,15 @@ public class Operacoes {
                     || char_operacoes[cont - 1] == '^'
                     || char_operacoes[cont - 1] == 'R'
                     || char_operacoes[cont - 1] == 'p'
-                    || char_operacoes[cont - 1] == '(')) {
+                    || char_operacoes[cont - 1] == '('
+                    || char_operacoes[cont - 1] == 'L'
+                    || char_operacoes[cont - 1] == 'l')) {
                 setvalidade(false);
                 break;
             } else if (char_operacoes[cont] == ')' && !(char_operacoes[cont + 1] == '+'
                     || char_operacoes[cont + 1] == '-'
                     || char_operacoes[cont + 1] == '*'
                     || char_operacoes[cont + 1] == '/'
-                    || char_operacoes[cont + 1] == 'r'
                     || char_operacoes[cont + 1] == '^'
                     || char_operacoes[cont + 1] == 'R'
                     || char_operacoes[cont + 1] == 'p'
@@ -486,7 +489,9 @@ public class Operacoes {
                             || char_string[f] == 'r'
                             || char_string[f] == '^'
                             || char_string[f] == 'R'
-                            || char_string[f] == 'p') {
+                            || char_string[f] == 'p'
+                            || char_string[f] == 'L'
+                            || char_string[f] == 'l') {
                         break;
                     }
                     if (char_string[f] == ')') {

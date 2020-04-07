@@ -16,7 +16,6 @@ public class Funcionamento {
     private int cont_sp2;
     private int cont_mul;
     private int cont_div;
-    private int cont_fat;
     private String[] operandos;
     private String[] operadores;
     private String[][] Array_rad;
@@ -32,6 +31,8 @@ public class Funcionamento {
     private boolean mul = false;
     private boolean div = false;
     private boolean fat = false;
+    private boolean l = false;
+    private boolean L = false;
     private boolean sem_operadores = false;
     private boolean unica_raiz = false;
     private char[] aux_operacoes;
@@ -66,6 +67,8 @@ public class Funcionamento {
     public float main() {
         float resultado = 0;
         try {
+            verifica_l();
+            verifica_L();
             verifica_fat();
             verifica_raiz();
             verifica_exp();
@@ -75,9 +78,36 @@ public class Funcionamento {
             verifica_sp1();
             verifica_sp2();
             verifica_validade_fat();
+            verifica_validade_L();
+            verifica_validade_l();
+            //Verifica se há log e calcula IN
+            if (validade) if(L){
+                System.out.println("OPERACOES L IN : "+operacoes);
+                operacoes = calcula_L(operacoes);
+                System.out.println("OPERACOES L FIM : "+operacoes);
+                aux_operacoes = operacoes.toCharArray();
+            }
+            //FIM
+            //Verifica se há ln e calcula IN
+            if (validade) if(l){
+                System.out.println("OPERACOES l IN : "+operacoes);
+                operacoes = calcula_l(operacoes);
+                System.out.println("OPERACOES l FIM : "+operacoes);
+                aux_operacoes = operacoes.toCharArray();
+            }
+            //FIM
+            //Verifica se há fatorial e calcula IN
+            if (validade) if(fat){
+                System.out.println("OPERACOES FAT IN : "+operacoes);
+                operacoes = calcula_fat(operacoes);
+                System.out.println("OPERACOES FAT FIM : "+operacoes);
+                aux_operacoes = operacoes.toCharArray();
+                
+            }
+            //FIM
             define_operandos_operadores();
             //Caso não haja operadores IN
-            if (sem_operadores) {
+            if (validade) if (sem_operadores) {
                 try {
                     resultado = Float.parseFloat(operacoes);
                 } catch (Exception e) {
@@ -88,7 +118,7 @@ public class Funcionamento {
             }
             //FIM
             //Caso só haja um operador raiz IN
-            if (unica_raiz) {
+            if (validade) if (unica_raiz) {
                 try {
                     resultado = met_unica_raiz();
                 } catch (Exception e) {
@@ -276,15 +306,34 @@ public class Funcionamento {
 
     private void verifica_fat(){
         boolean ver_fat = false;
-        int cont = 0;
         for (int i = 0; i < aux_operacoes.length; i++) {
             if (aux_operacoes[i] == '!') {
                 ver_fat = true;
-                cont++;
             }
         }
-        cont_fat = cont;
         fat = ver_fat;
+    }
+    
+    private void verifica_l(){
+        boolean ver_l = false;
+        for (int i = 0; i < aux_operacoes.length; i++) {
+            if (aux_operacoes[i] == 'l') {
+                ver_l = true;
+                break;
+            }
+        }
+        l = ver_l;
+    }
+    
+    private void verifica_L(){
+        boolean ver_L = false;
+        for (int i = 0; i < aux_operacoes.length; i++) {
+            if (aux_operacoes[i] == 'L') {
+                ver_L = true;
+                break;
+            }
+        }
+        L = ver_L;
     }
     
     private String duplo_sinal(String string) {
@@ -320,6 +369,105 @@ public class Funcionamento {
         return string_f;
     }
     
+    private String calcula_L(String ope){
+        String opef = "", aux = "";
+        float auxf = 0;
+        char[] ope_char = ope.toCharArray();
+        int i = 0, f = 0;
+        while(i < ope_char.length){
+            if(ope_char[i] == 'L'){
+                f = i;
+                ope_char[f] = 'S';
+                f++;
+                while(ope_char[f] != '+' 
+                        && ope_char[f] != '-'
+                        && ope_char[f] != '*'
+                        && ope_char[f] != '/'
+                        && ope_char[f] != '^'
+                        && ope_char[f] != 'r'
+                        && ope_char[f] != 'R'
+                        && ope_char[f] != 'p'
+                        && ope_char[f] != 'l'
+                        && ope_char[f] != '!'){
+                    aux += ope_char[f];
+                    ope_char[f] = 'S';
+                    f++;
+                    if(f >= ope_char.length) break;
+                }
+                auxf = Float.parseFloat(aux);
+                auxf = (float) Math.log10((float) auxf);
+                aux = Float.toString(auxf);
+                f = 0;
+                while(f < ope_char.length){
+                    if(ope_char[f] == 'S'){
+                        opef += aux;
+                        while(ope_char[f] == 'S'){
+                            f++;
+                            if(f >= ope_char.length) break;
+                        }
+                    }
+                    if(f >= ope_char.length) break;
+                    opef += ope_char[f];
+                    f++;
+                }
+                i = 0;
+                ope = opef;
+                ope_char = ope.toCharArray();
+            }
+            i++;
+        }
+        return opef;
+    }
+       
+    private String calcula_l(String ope){
+        String opef = "", aux = "";
+        float auxf = 0;
+        char[] ope_char = ope.toCharArray();
+        int i = 0, f = 0;
+        while(i < ope_char.length){
+            if(ope_char[i] == 'l'){
+                f = i;
+                ope_char[f] = 'S';
+                f++;
+                while(ope_char[f] != '+' 
+                        && ope_char[f] != '-'
+                        && ope_char[f] != '*'
+                        && ope_char[f] != '/'
+                        && ope_char[f] != '^'
+                        && ope_char[f] != 'r'
+                        && ope_char[f] != 'R'
+                        && ope_char[f] != 'p'
+                        && ope_char[f] != '!'){
+                    aux += ope_char[f];
+                    ope_char[f] = 'S';
+                    f++;
+                    if(f >= ope_char.length) break;
+                }
+                auxf = Float.parseFloat(aux);
+                auxf = (float) Math.log((float) auxf);
+                aux = Float.toString(auxf);
+                f = 0;
+                while(f < ope_char.length){
+                    if(ope_char[f] == 'S'){
+                        opef += aux;
+                        while(ope_char[f] == 'S'){
+                            f++;
+                            if(f >= ope_char.length) break;
+                        }
+                    }
+                    if(f >= ope_char.length) break;
+                    opef += ope_char[f];
+                    f++;
+                }
+                i = 0;
+                ope = opef;
+                ope_char = ope.toCharArray();
+            }
+            i++;
+        }
+        return opef;
+    }
+      
     private String calcula_fat(String ope){
         String sfinal = "", aux = "";
         char[] aux_ope = ope.toCharArray();
@@ -710,16 +858,7 @@ public class Funcionamento {
     }
 
     private void define_operandos_operadores() {
-        try {
-            //Verifica se há fatorial IN
-            if(fat){
-                System.out.println("OPERACOES FAT IN : "+operacoes);
-                operacoes = calcula_fat(operacoes);
-                System.out.println("OPERACOES FAT FIM : "+operacoes);
-                aux_operacoes = operacoes.toCharArray();
-                
-            }
-            //FIM
+        try {            
             //Determinar o número de operadores e operandos IN
             int i = 1; //O primeiro valor não será considerado
             //Número de operadores IN
@@ -1187,6 +1326,78 @@ public class Funcionamento {
                     || aux_operacoes[i] == '^'
                     || aux_operacoes[i] == 'p')){
                 setvalidade(false);
+            }
+            i++;
+        }
+    }
+    
+    public void verifica_validade_L(){
+        int i = 0;
+        if(aux_operacoes[aux_operacoes.length - 1] == 'L') setvalidade(false);
+        while( i < aux_operacoes.length - 1 ){
+            if(aux_operacoes[i] == 'L'){
+                if(aux_operacoes[i+1] == 'L'
+                        || aux_operacoes[i+1] == '-'
+                        || aux_operacoes[i+1] == '+'
+                        || aux_operacoes[i+1] == '*'
+                        || aux_operacoes[i+1] == '/'
+                        || aux_operacoes[i+1] == 'r'
+                        || aux_operacoes[i+1] == 'R'
+                        || aux_operacoes[i+1] == '^'
+                        || aux_operacoes[i+1] == 'p'
+                        || aux_operacoes[i+1] == '!'){
+                    setvalidade(false);
+                    break;                    
+                }
+            }
+            if (aux_operacoes[i + 1] == 'L') {
+                if (aux_operacoes[i] != '+'
+                        && aux_operacoes[i] != '-'
+                        && aux_operacoes[i] != '/'
+                        && aux_operacoes[i] != '*'
+                        && aux_operacoes[i] != 'r'
+                        && aux_operacoes[i] != 'R'
+                        && aux_operacoes[i] != '^'
+                        && aux_operacoes[i] != 'p') {
+                    setvalidade(false);
+                    break;
+                }
+            }
+            i++;
+        }
+    }
+    
+    public void verifica_validade_l(){
+        int i = 0;
+        if(aux_operacoes[aux_operacoes.length - 1] == 'l') setvalidade(false);
+        while( i < aux_operacoes.length - 1 ){
+            if(aux_operacoes[i] == 'l'){
+                if(aux_operacoes[i+1] == 'l'
+                        || aux_operacoes[i+1] == '-'
+                        || aux_operacoes[i+1] == '+'
+                        || aux_operacoes[i+1] == '*'
+                        || aux_operacoes[i+1] == '/'
+                        || aux_operacoes[i+1] == 'r'
+                        || aux_operacoes[i+1] == 'R'
+                        || aux_operacoes[i+1] == '^'
+                        || aux_operacoes[i+1] == 'p'
+                        || aux_operacoes[i+1] == '!'){
+                    setvalidade(false);
+                    break;                    
+                }
+            }
+            if (aux_operacoes[i + 1] == 'l') {
+                if (aux_operacoes[i] != '+'
+                        && aux_operacoes[i] != '-'
+                        && aux_operacoes[i] != '/'
+                        && aux_operacoes[i] != '*'
+                        && aux_operacoes[i] != 'r'
+                        && aux_operacoes[i] != 'R'
+                        && aux_operacoes[i] != '^'
+                        && aux_operacoes[i] != 'p') {
+                    setvalidade(false);
+                    break;
+                }
             }
             i++;
         }
