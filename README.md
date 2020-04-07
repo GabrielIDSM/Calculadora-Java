@@ -6,11 +6,11 @@ Esse projeto é o meu segundo projeto criado na linguagem Java ([Primeiro projet
 Além disso, a calculadora é completamente funcional e contém muitas funções presentes em outras calculadoras.
 ## Funcionalidades
 Entre as funcionalidades dessa calculadora estão:
-* As operações básicas:
+* Operações básicas:
   * Soma e Subtração
   * Multiplicação e Divisão
   * Exponenciação e Radiciação
 * O uso de parentêsis para priorizar operações
 * Operadores de Fatorial e Porcentagem
-* Operadores de Logaritmo natural e Logaritmo neperiano
+* Operadores de Logaritmo e Logaritmo neperiano
 * Operador exclusivo para raízes quadradas
