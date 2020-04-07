@@ -83,6 +83,7 @@ public class Funcionamento {
                 } catch (Exception e) {
                     setvalidade(false);
                 }
+                verifica_valor(resultado);
                 return resultado;
             }
             //FIM
@@ -97,9 +98,11 @@ public class Funcionamento {
                     resultado = 0;
                     setvalidade(false);
                 }
+                verifica_valor(resultado);
                 return resultado;
             }
             //FIM
+            System.out.println("SITUACAO NORMAL");
             if (validade) {
                 aux_validade("INICIO", operadores, operandos);
                 if (verifica()) {
@@ -111,9 +114,10 @@ public class Funcionamento {
                         calcula_mul_div(Array_exp[0], Array_exp[1]);
                         aux_validade("MUL E DIV", Array_mul_div[0], Array_mul_div[1]);
                         resultado += calcula_som_sub(Array_mul_div[0], Array_mul_div[1]);
+                        verifica_valor(resultado);
                         return resultado;
                     } catch (Exception e) {
-                        setvalidade(false);
+                        setvalidade(false);                        
                         return resultado;
                     }
                 } else {
@@ -568,6 +572,7 @@ public class Funcionamento {
                 cont_index++;
             }
         }
+        verifica_operandos(Array_rad[1]);
     }
     
     private void calcula_exp(String[] operadores, String[] operandos){
@@ -632,6 +637,7 @@ public class Funcionamento {
                 cont_index++;
             }
         }
+        verifica_operandos(Array_exp[1]);
     }
 
     private void calcula_mul_div(String[] operadores, String[] operandos) {
@@ -681,6 +687,7 @@ public class Funcionamento {
             }
         }
         aux_validade("SUBSTITUI_MUL_DIV FIM", Array_mul_div[0], Array_mul_div[1]);
+        verifica_operandos(Array_mul_div[1]);
     }
 
     private float calcula_som_sub(String[] operadores, String[] operandos) {
@@ -696,6 +703,7 @@ public class Funcionamento {
         //Soma e subtração IN
         for (int i = 0; i < operandos.length; i++) {
             total += Float.parseFloat(operandos[i]);
+            verifica_valor(total);
         }
         //FIM
         return total;
@@ -931,11 +939,45 @@ public class Funcionamento {
                     }
                     operandos[aux_ind] = aux_atr;
                     aux_validade("INSTANCIA OPERANDOS", operadores, operandos);
+                    verifica_operandos(operandos);
                     //FIM
                     //FIM
                 }
             }
         } catch (Exception e) {
+            setvalidade(false);
+        }
+    }
+    
+    private void verifica_operandos(String[] operandos){
+        System.out.println("INICIO VERIFICA_OPERANDOS");
+        Float[] operandos_float = new Float[cont_operandos];
+        try {
+            for (int i = 0; i < cont_operandos; i++) {
+                operandos_float[i] = Float.parseFloat(operandos[i]);
+                if(operandos_float[i] > Float.MAX_VALUE || operandos_float[i] < -(Float.MAX_VALUE)){
+                    System.out.println("ENTROU NO IF");
+                    System.out.println("operandos_float["+i+"] : "+operandos_float[i]);
+                    System.out.println("Float.MAX_VALUE : "+Float.MAX_VALUE);
+                    System.out.println("Float.MIN_VALUE : "+Float.MIN_VALUE);
+                    throw new Exception();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("ENTROU NA EXCECAO");
+            setvalidade(false);
+        }
+        System.out.println("VALIDADE : "+validade);
+        System.out.println("FIM VERIFICA_OPERANDOS");
+    }
+    
+    private void verifica_valor(float valor){
+        float auxv = valor;
+        try{
+            if(auxv > Float.MAX_VALUE || auxv < -(Float.MAX_VALUE)){
+                    throw new Exception();
+                }
+        }catch(Exception e){
             setvalidade(false);
         }
     }
@@ -980,6 +1022,7 @@ public class Funcionamento {
             resultado = 0;
             setvalidade(false);
         }
+        verifica_valor(resultado);
         return resultado;
     }
     
