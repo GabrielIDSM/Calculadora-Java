@@ -398,7 +398,11 @@ public class Funcionamento {
         float i = 1;
         try{
             aux_op1 = Float.parseFloat(op1);
-            while(i <= aux_op1){
+            if(aux_op1 >= 120){
+                aux_op1 = Float.POSITIVE_INFINITY;
+                resultado = aux_op1;
+            }
+            else while(i <= aux_op1){
                 resultado *= i;
                 i++;
             }

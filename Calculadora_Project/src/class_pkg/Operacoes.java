@@ -469,9 +469,8 @@ public class Operacoes {
 
     private String remove_par_desnecessarios(String string) {
         System.out.println("ENTROU: remove_par_desnecessarios");
-        float resultado = 0, aux_r = 0;
-        int i = 0, f = 0, l = 0, k = 0;
-        String aux = "", str_aux = "";
+        int i = 0, f = 0, k = 0;
+        String str_aux = "";
         char[] char_string = string.toCharArray();
         //Substituicao de parentesis com um único número IN
         while (i < char_string.length) {
@@ -516,7 +515,6 @@ public class Operacoes {
                     }
                     f++;
                 }
-                aux = "";
             }
             i++;
         }
