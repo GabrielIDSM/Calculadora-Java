@@ -1099,6 +1099,7 @@ public class Funcionamento {
                     System.out.println("operandos_float["+i+"] : "+operandos_float[i]);
                     System.out.println("Float.MAX_VALUE : "+Float.MAX_VALUE);
                     System.out.println("Float.MIN_VALUE : "+Float.MIN_VALUE);
+                    setvalidade(false);
                     throw new Exception();
                 }
             }
@@ -1244,7 +1245,7 @@ public class Funcionamento {
             if (aux_operacoes[i] == '.' && aux_operacoes[(i + 1)] == '.') {
                 setvalidade(false);
                 break;
-            } else if ((aux_operacoes[i] == 'r' || aux_operacoes[i] == 'R') && aux_operacoes[(i + 1)] == '-') {
+            } else if ((aux_operacoes[i] == 'r' || aux_operacoes[i] == 'L' || aux_operacoes[i] == 'l' || aux_operacoes[i] == 'R') && aux_operacoes[(i + 1)] == '-') {
                 //System.out.println("V");
                 setvalidade(false);
                 break;

@@ -20,8 +20,10 @@ public class Operacoes {
     //FIM
     //Método construtor IN
     public Operacoes(String operacoes) {
-        this.operacoes = operacoes;
-        char_operacoes = operacoes.toCharArray();
+        //Parentêsis automáticos IN
+        this.operacoes = acrescenta_par(operacoes);
+        this.char_operacoes = this.operacoes.toCharArray();
+        System.out.println("OPERACOES (CONS) : "+this.operacoes);
     }
 
     //FIM
@@ -58,7 +60,9 @@ public class Operacoes {
         float total = 0;
         try {
             verifica_parentesis();
+            System.out.println("getvalidade() == "+getvalidade());
             if (getvalidade()) {
+                System.out.println("getvalidade() == "+getvalidade());
                 if (getparentesis()) {
                     verifica();
                     cont_par();
@@ -134,6 +138,81 @@ public class Operacoes {
             setvalidade(false);
         }
         return total;
+    }
+    
+    public String acrescenta_par(String ope){
+        String f = "";
+        char[] c = ope.toCharArray();
+        int i = 0, j = 0;
+        //Log seguido de ln e ln seguido de log, log e log e ln e ln IN
+        if (caso_Ll_ou_lL(ope)) {
+            while (caso_Ll_ou_lL(ope)) {
+                f = "";
+                System.out.println("F IN : " + ope);
+                while (i < c.length - 1) {
+                    if (c[i] == 'L' && c[i + 1] == 'l'
+                            || c[i] == 'l' && c[i + 1] == 'L'
+                            || c[i] == 'L' && c[i + 1] == 'L'
+                            || c[i] == 'l' && c[i + 1] == 'l') {
+                        f += c[i];
+                        i++;
+                        f += '(';
+                        f += c[i];
+                        i++;
+                        j = i;
+                        while (c[j] != '+' && c[j] != '-'
+                                && c[j] != '*' && c[j] != '/'
+                                && c[j] != 'R' && c[j] != 'r' && c[j] != '^'
+                                && c[j] != 'p' && c[j] != '!') {
+                            f += c[j];
+                            j++;
+                            if (j >= c.length) {
+                                break;
+                            }
+                        }
+                        f += ')';
+                        i = j;
+                        if(j < c.length) f += c[i];
+                    } else {
+                        f += c[i];
+                    }
+                    i++;
+                }
+                if(i < c.length) f += c[i];
+                ope = f;
+                c = ope.toCharArray();
+                i = 0;
+                System.out.println("F FINAL : " + f);
+            }            
+        } else {
+            f = ope;
+        }
+        //FIM
+        System.out.println("F FINAL : " + f);
+        return f;
+    }
+    
+    private boolean caso_Ll_ou_lL(String s){
+        boolean b = false;
+        int i = 0;
+        char[] c = s.toCharArray();
+        while(i < c.length - 1){
+            if(c[i] == 'L' && c[i+1] == 'l'){
+                b = true;
+                break;
+            }else if(c[i] == 'l' && c[i+1] == 'L'){
+                b = true;
+                break;
+            }else if(c[i] == 'l' && c[i+1] == 'l'){
+                b = true;
+                break;
+            }else if(c[i] == 'L' && c[i+1] == 'L'){
+                b = true;
+                break;
+            }
+            i++;
+        }
+        return b;
     }
 
     private void verifica_parentesis() {
@@ -281,6 +360,7 @@ public class Operacoes {
         try {
             Funcionamento F = new Funcionamento(string);
             total = F.main();
+            if(F.getvalidade() == false) setvalidade(false);
         } catch (Exception e) {
             setvalidade(false);
         }
