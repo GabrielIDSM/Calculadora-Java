@@ -121,8 +121,6 @@ public class Operacoes {
                         return total;
                     }
                 } else {
-                    //Verificação e substituição do duplo sinal IN
-                    this.operacoes = duplo_sinal(this.operacoes);
                     Funcionamento F = new Funcionamento(this.operacoes);
                     total = F.main();
                     setvalidade(F.getvalidade());
@@ -400,8 +398,6 @@ public class Operacoes {
                                 aux += char_ope[l];
                                 l++;
                             }
-                            //Verificação e substituição do duplo sinal IN
-                            aux = duplo_sinal(aux);
                             aux_r = calcula_operacao(aux);
                             k = 0;
                             System.out.print("char_ope com A : ");
@@ -426,6 +422,8 @@ public class Operacoes {
                                 }
                             }
                             k = 0;
+                            //Verificação e substituição do duplo sinal IN
+                            str_aux = duplo_sinal(str_aux);
                             ope = str_aux;
                             ope = remove_par_desnecessarios(ope);
                             System.out.print("char_ope antigo : ");

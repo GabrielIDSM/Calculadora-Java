@@ -164,22 +164,13 @@ public class Funcionamento {
 
     private void sinal(String[] operadores, String[] operandos) {
         int i = 0;
+        float auxs = -1, auxf;
         while (i < operadores.length) {
-            String sinal = "-";
-            if (i > 0) {
-                if ("-".equals(operadores[(i - 1)])) {
-                    sinal += operandos[i];
-                    operandos[i] = sinal;
-                    sinal = "-";
-                    operadores[(i - 1)] = "+";
-                }
-            }else{
-                if ("-".equals(operadores[i])){
-                    sinal += operandos[(i+1)];
-                    operandos[(i+1)] = sinal;
-                    sinal = "-";
-                    operadores[i] = "+";
-                }
+            if ("-".equals(operadores[i])) {
+                auxf = Float.parseFloat(operandos[i + 1]);
+                auxf = auxs * auxf;
+                operandos[i + 1] = Float.toString(auxf);
+                operadores[i] = "+";
             }
             i++;
         }
@@ -345,10 +336,6 @@ public class Funcionamento {
                 char_array[i - 1] = 'S';
             }
             if (char_array[i] == '+' && char_array[i - 1] == '-') {
-                char_array[i] = 'S';
-            }
-            if (char_array[i] == '-' && char_array[i - 1] == '-') {
-                char_array[i - 1] = '+';
                 char_array[i] = 'S';
             }
             if (char_array[i] == '+' && char_array[i - 1] == '+') {
@@ -567,6 +554,7 @@ public class Funcionamento {
     
     private void calcula_rad(String[] operadores, String[] operandos) {
         int index_r = 0, index_op = 0;
+        float auxs = -1, auxf;
         //Exponenciação e radiciação IN
         //Radiciação IN
         if (raiz) {
@@ -581,16 +569,14 @@ public class Funcionamento {
                     aux_rad_ng++;
                     if (index_r > 0) {
                         if ("-".equals(operadores[(index_r - 1)])) {
-                            sinal_r += aux_r;
-                            operandos[index_op] = sinal_r;
+                            aux_r = auxs * aux_r;
+                            operandos[index_op] = Float.toString(aux_r);
                             operadores[(index_r - 1)] = "+";
-                            sinal_r = "-";
                         } else {
                             if (sp1) {
                                 if (index_sp1[aux_index] == aux_rad_ng) {
-                                    sinal_r += aux_r;
-                                    operandos[index_op] = sinal_r;
-                                    sinal_r = "-";
+                                    aux_r = auxs * aux_r;
+                                    operandos[index_op] = Float.toString(aux_r);
                                     if (aux_index < index_sp1.length - 1) {
                                         aux_index++;
                                     }
@@ -604,9 +590,8 @@ public class Funcionamento {
                     } else {
                         if (sp1) {
                             if (index_sp1[aux_index] == aux_rad_ng) {
-                                sinal_r += aux_r;
-                                operandos[index_op] = sinal_r;
-                                sinal_r = "-";
+                                aux_r = auxs * aux_r;
+                                operandos[index_op] = Float.toString(aux_r);
                                 if (aux_index < index_sp1.length - 1) {
                                     aux_index++;
                                 }
@@ -881,6 +866,10 @@ public class Funcionamento {
                         i++;
                         continue;
                     }
+                    if(aux_operacoes[i] == '-' && aux_operacoes[i+1] == '-'){
+                        i++;
+                        continue;
+                    }
                     if (!(aux_operacoes[i + 1] == '*'
                             || aux_operacoes[i + 1] == '/'
                             || aux_operacoes[i + 1] == '^'
@@ -955,6 +944,10 @@ public class Funcionamento {
                             }
                             if (aux_operacoes[i] == '+'
                                     || aux_operacoes[i] == '-') {
+                                if(aux_operacoes[i] == '-' && aux_operacoes[i+1] == '-'){
+                                    i++;
+                                    continue;
+                                }
                                 if (aux_operacoes[i - 1] == 'r'
                                         || aux_operacoes[i - 1] == '*'
                                         || aux_operacoes[i - 1] == '/'
@@ -1038,11 +1031,12 @@ public class Funcionamento {
                                 || aux_operacoes[(i - 1)] == 'r'
                                 || aux_operacoes[(i - 1)] == '^'
                                 || aux_operacoes[(i - 1)] == 'R'
-                                || aux_operacoes[(i - 1)] == 'p')) {
+                                || aux_operacoes[(i - 1)] == 'p'
+                                || aux_operacoes[(i - 1)] == '-')) {
                             aux_atr += aux_operacoes[i];
                             i++;
                             continue;
-                        }
+                        }                        
                         //FIM
                         //Permite operadores antes de uma raiz IN
                         if (i < (aux_operacoes.length - 2)) {
