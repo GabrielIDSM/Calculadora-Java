@@ -713,6 +713,7 @@ public class Funcionamento {
         int index_r = 0, index_op = 0;
         String sinal_exp = "-";
         float aux_exp = 0;
+        float auxs;
         if (exp) {
             while (index_r != operadores.length) {
                 if ("r".equals(operadores[index_r])) {
@@ -729,10 +730,14 @@ public class Funcionamento {
                     //Verifica o sinal IN
                     if (index_r > 0) {
                         if ("-".equals(operadores[(index_r - 1)])) {
-                            sinal_exp += operandos[index_r];
-                            operandos[index_r] = sinal_exp;
-                            sinal_exp = "-";
-                            operadores[(index_r - 1)] = "+";
+                            auxs = Float.parseFloat(operandos[index_op]);
+                            if (auxs > 0) {
+                                auxs = auxs * -1;
+                                operandos[index_op] = Float.toString(auxs);
+                                operadores[(index_r - 1)] = "+";
+                            } else {
+                                operandos[index_op] = Float.toString(auxs);
+                            }
                         }
                     }
                     //FIM
