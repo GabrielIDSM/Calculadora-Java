@@ -14,6 +14,7 @@ public class Operacoes {
     private boolean validade = true;
     private boolean parentesis = false;
     private boolean sit = true;
+    private boolean dep_mod = false;
     private int cont_parentesis_AB = 0;
     private int cont_parentesis_FE = 0;
 
@@ -23,7 +24,7 @@ public class Operacoes {
         //Parentêsis automáticos IN
         this.operacoes = acrescenta_par(operacoes);
         this.char_operacoes = this.operacoes.toCharArray();
-        System.out.println("OPERACOES (CONS) : "+this.operacoes);
+        if(getdep_mod()) System.out.println("OPERACOES (CONS) : "+this.operacoes);
     }
 
     //FIM
@@ -40,6 +41,9 @@ public class Operacoes {
         return sit;
     }
 
+    public boolean getdep_mod(){
+        return dep_mod;
+    }
     //FIM
     //Setters IN
     private void setvalidade(boolean validade) {
@@ -53,46 +57,49 @@ public class Operacoes {
     private void setsit(boolean sit) {
         this.sit = sit;
     }
-
+    
+    public void setdep_mod(boolean dep_mod){
+        this.dep_mod = dep_mod;
+    }
     //FIM
     //Métodos IN
     public float main() {
         float total = 0;
         try {
             verifica_parentesis();
-            System.out.println("getvalidade() == "+getvalidade());
+            if(getdep_mod()) System.out.println("getvalidade() == "+getvalidade());
             if (getvalidade()) {
-                System.out.println("getvalidade() == "+getvalidade());
+                if(getdep_mod()) System.out.println("getvalidade() == "+getvalidade());
                 if (getparentesis()) {
                     verifica();
                     cont_par();
-                    System.out.println("getparentesis() == true");
+                    if(getdep_mod()) System.out.println("getparentesis() == true");
                     if (getvalidade()) {
                         situacao();
-                        System.out.println("getvalidade() == true");
+                        if(getdep_mod()) System.out.println("getvalidade() == true");
                         if (getvalidade()) {
-                            System.out.println("getvalidade() == true POS situacao()");
-                            System.out.println("getsit() == " + getsit());
+                            if(getdep_mod()) System.out.println("getvalidade() == true POS situacao()");
+                            if(getdep_mod()) System.out.println("getsit() == " + getsit());
                             if (getsit()) {
                                 try {
                                     String operacoes_f = cria_operacoes_s_par();
-                                    System.out.println(operacoes_f);
+                                    if(getdep_mod()) System.out.println(operacoes_f);
                                     //cria uma string sem parentesis
                                     String[] array_par = cria_array_par();
                                     //cria um array com o conteudo dos parentêsis
                                     float[] array_float_par = cria_array_float_par(array_par);
                                     //Cria um array com o resultado das operacoes entre parentêsis
                                     operacoes_f = substitui_operacoes_s_par(operacoes_f, array_float_par);
-                                    System.out.println(operacoes_f);
+                                    if(getdep_mod()) System.out.println(operacoes_f);
                                     //Substitui o array final pelos valores do parentêsis   
-                                    System.out.println("Aqui IN");
+                                    if(getdep_mod()) System.out.println("Aqui IN");
                                     operacoes_f = duplo_sinal(operacoes_f);
-                                    System.out.println("Aqui FIM");
-                                    System.out.println("OPERACOES_F"+operacoes_f);
+                                    if(getdep_mod()) System.out.println("Aqui FIM");
+                                    if(getdep_mod()) System.out.println("OPERACOES_F"+operacoes_f);
                                     //Verificação e substituição do duplo sinal IN
                                     Funcionamento F = new Funcionamento(operacoes_f);
                                     float T = F.main();
-                                    System.out.println(T);
+                                    if(getdep_mod()) System.out.println(T);
                                     if (F.getvalidade()) {
                                         total = T;
                                     } else {
@@ -103,7 +110,7 @@ public class Operacoes {
                                     return total;
                                 }
                             } else {
-                                System.out.println("Na funcao main : " + operacoes);
+                                if(getdep_mod()) System.out.println("Na funcao main : " + operacoes);
                                 try {
                                     total = par_encadeados_sit(operacoes);
                                 } catch (Exception e) {
@@ -146,7 +153,7 @@ public class Operacoes {
         if (caso_Ll_ou_lL(ope)) {
             while (caso_Ll_ou_lL(ope)) {
                 f = "";
-                System.out.println("F IN : " + ope);
+                if(getdep_mod()) System.out.println("F IN : " + ope);
                 while (i < c.length - 1) {
                     if (c[i] == 'L' && c[i + 1] == 'l'
                             || c[i] == 'l' && c[i + 1] == 'L'
@@ -180,13 +187,13 @@ public class Operacoes {
                 ope = f;
                 c = ope.toCharArray();
                 i = 0;
-                System.out.println("F FINAL : " + f);
+                if(getdep_mod()) System.out.println("F FINAL : " + f);
             }            
         } else {
             f = ope;
         }
         //FIM
-        System.out.println("F FINAL : " + f);
+        if(getdep_mod()) System.out.println("F FINAL : " + f);
         return f;
     }
     
@@ -264,14 +271,14 @@ public class Operacoes {
         int i = 0;
         while (i < char_operacoes.length) {
             if (char_operacoes[i] == '(' || char_operacoes[i] == ')') {
-                System.out.println("char_operacoes[i] = '(' ou ')' i : " + char_operacoes[i]);
+                if(getdep_mod()) System.out.println("char_operacoes[i] = '(' ou ')' i : " + char_operacoes[i]);
                 i++;
                 operacoes_f += "P";
                 while (true) {
                     if (char_operacoes[i] == '(' || char_operacoes[i] == ')') {
                         break;
                     }
-                    System.out.println("char_operacoes[i] != '(' ou ')' i : " + char_operacoes[i]);
+                    if(getdep_mod()) System.out.println("char_operacoes[i] != '(' ou ')' i : " + char_operacoes[i]);
                     i++;
                     if (i >= char_operacoes.length) {
                         break;
@@ -378,18 +385,18 @@ public class Operacoes {
         char_ope = ope.toCharArray();
         //FIM
         while (verifica_par(ope)) {
-            System.out.println("Comecou : while (verifica_par(ope))");
+            if(getdep_mod()) System.out.println("Comecou : while (verifica_par(ope))");
             while (i < char_ope.length) {
                 if (char_ope[i] == '(') {
                     f = i;
                     f++;
-                    System.out.println("ENTROU : char_ope[i] == '('");
+                    if(getdep_mod()) System.out.println("ENTROU : char_ope[i] == '('");
                     while (f < char_ope.length) {
                         if (char_ope[f] == '(') {
                             break;
                         }
                         if (char_ope[f] == ')') {
-                            System.out.println("ENTROU: char_ope[f] == ')'");
+                            if(getdep_mod()) System.out.println("ENTROU: char_ope[f] == ')'");
                             char_ope[i] = 'A';
                             char_ope[f] = 'A';
                             l = i;
@@ -400,8 +407,8 @@ public class Operacoes {
                             }
                             aux_r = calcula_operacao(aux);
                             k = 0;
-                            System.out.print("char_ope com A : ");
-                            print_char_array(char_ope);
+                            if(getdep_mod()) System.out.print("char_ope com A : ");
+                            if(getdep_mod()) print_char_array(char_ope);
                             while (k < char_ope.length) {
                                 if (char_ope[k] == 'A') {
                                     str_aux += Float.toString(aux_r);
@@ -426,11 +433,11 @@ public class Operacoes {
                             str_aux = duplo_sinal(str_aux);
                             ope = str_aux;
                             ope = remove_par_desnecessarios(ope);
-                            System.out.print("char_ope antigo : ");
-                            print_char_array(char_ope);
+                            if(getdep_mod()) System.out.print("char_ope antigo : ");
+                            if(getdep_mod()) print_char_array(char_ope);
                             char_ope = ope.toCharArray();
-                            System.out.print("char_ope novo : ");
-                            print_char_array(char_ope);
+                            if(getdep_mod()) System.out.print("char_ope novo : ");
+                            if(getdep_mod()) print_char_array(char_ope);
                             str_aux = "";
                             break;
                         }
@@ -443,7 +450,7 @@ public class Operacoes {
                 i++;
             }
             i = 0;
-            System.out.println(ope);
+            if(getdep_mod()) System.out.println(ope);
             //Verificação e substituição do duplo sinal IN
             ope = duplo_sinal(ope);
             char_ope = ope.toCharArray();
@@ -557,7 +564,7 @@ public class Operacoes {
     }
 
     private String remove_par_desnecessarios(String string) {
-        System.out.println("ENTROU: remove_par_desnecessarios");
+        if(getdep_mod()) System.out.println("ENTROU: remove_par_desnecessarios");
         int i = 0, f = 0, k = 0;
         String str_aux = "";
         char[] char_string = string.toCharArray();
@@ -584,10 +591,10 @@ public class Operacoes {
                         break;
                     }
                     if (char_string[f] == ')') {
-                        print_char_array(char_string);
+                        if(getdep_mod()) print_char_array(char_string);
                         char_string[i] = 'A';
                         char_string[f] = 'A';
-                        print_char_array(char_string);
+                        if(getdep_mod()) print_char_array(char_string);
                         k = 0;
                         while (k < char_string.length) {
                             if (char_string[k] == 'A') {
@@ -600,7 +607,7 @@ public class Operacoes {
                         string = str_aux;
                         char_string = null;
                         char_string = string.toCharArray();
-                        print_char_array(char_string);
+                        if(getdep_mod()) print_char_array(char_string);
                         str_aux = "";
                         k = 0;
                         System.out.println(string);
@@ -612,7 +619,7 @@ public class Operacoes {
             }
             i++;
         }
-        System.out.println("SAIU: remove_par_desnecessarios");
+        if(getdep_mod()) System.out.println("SAIU: remove_par_desnecessarios");
         return string;
     }
     //FIM

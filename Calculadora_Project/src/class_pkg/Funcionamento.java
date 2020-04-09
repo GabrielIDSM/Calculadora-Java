@@ -22,6 +22,7 @@ public class Funcionamento {
     private String[][] Array_exp;
     private String[][] Array_mul_div;
     private int[] index_sp1;
+    private boolean dep_mod = false;
     private boolean validade = true;
     private boolean raiz = false;
     private boolean exp = false;
@@ -57,12 +58,18 @@ public class Funcionamento {
         return validade;
     }
 
+    public boolean getdep_mod(){
+        return dep_mod;
+    }
     //FIM
     //Setters IN
     private void setvalidade(boolean validade) {
         this.validade = validade;
     }
 
+    private void setdep_mod(boolean dep_mod){
+        this.dep_mod = dep_mod;
+    }
     //FIM
     //Métodos IN
     public float main() {
@@ -84,33 +91,33 @@ public class Funcionamento {
             verifica_TMJ();
             //Verifica se há Comb, Arr ou Perm e calcula IN
             if (validade) if(TMJ){
-                System.out.println("OPERACOES TMJ IN : "+operacoes);
+                if(getdep_mod()) System.out.println("OPERACOES TMJ IN : "+operacoes);
                 operacoes = calcula_TMJ(operacoes);
-                System.out.println("OPERACOES TMJ FIM : "+operacoes);
+                if(getdep_mod()) System.out.println("OPERACOES TMJ FIM : "+operacoes);
                 aux_operacoes = operacoes.toCharArray();
             } 
             //FIM
             //Verifica se há log e calcula IN
             if (validade) if(L){
-                System.out.println("OPERACOES L IN : "+operacoes);
+                if(getdep_mod()) System.out.println("OPERACOES L IN : "+operacoes);
                 operacoes = calcula_L(operacoes);
-                System.out.println("OPERACOES L FIM : "+operacoes);
+                if(getdep_mod()) System.out.println("OPERACOES L FIM : "+operacoes);
                 aux_operacoes = operacoes.toCharArray();
             }
             //FIM
             //Verifica se há ln e calcula IN
             if (validade) if(l){
-                System.out.println("OPERACOES l IN : "+operacoes);
+                if(getdep_mod()) System.out.println("OPERACOES l IN : "+operacoes);
                 operacoes = calcula_l(operacoes);
-                System.out.println("OPERACOES l FIM : "+operacoes);
+                if(getdep_mod()) System.out.println("OPERACOES l FIM : "+operacoes);
                 aux_operacoes = operacoes.toCharArray();
             }
             //FIM
             //Verifica se há fatorial e calcula IN
             if (validade) if(fat){
-                System.out.println("OPERACOES FAT IN : "+operacoes);
+                if(getdep_mod()) System.out.println("OPERACOES FAT IN : "+operacoes);
                 operacoes = calcula_fat(operacoes);
-                System.out.println("OPERACOES FAT FIM : "+operacoes);
+                if(getdep_mod()) System.out.println("OPERACOES FAT FIM : "+operacoes);
                 aux_operacoes = operacoes.toCharArray();
                 
             }
@@ -142,7 +149,7 @@ public class Funcionamento {
                 return resultado;
             }
             //FIM
-            System.out.println("SITUACAO NORMAL");
+            if(getdep_mod()) System.out.println("SITUACAO NORMAL");
             if (validade) {
                 aux_validade("INICIO", operadores, operandos);
                 if (verifica()) {
@@ -1215,7 +1222,7 @@ public class Funcionamento {
                             || aux_operacoes[0] == '^'
                             || aux_operacoes[0] == 'R'
                             || aux_operacoes[0] == 'p') && aux_operacoes[1] != 'r') {
-                        System.out.println("aux_operacoes[" + 0 + "] = " + aux_operacoes[0]);
+                        if(getdep_mod()) System.out.println("aux_operacoes[" + 0 + "] = " + aux_operacoes[0]);
                         aux_atr += aux_operacoes[0];
                     } else if (!(aux_operacoes[0] == '*'
                             || aux_operacoes[0] == '/'
@@ -1224,11 +1231,11 @@ public class Funcionamento {
                             || aux_operacoes[0] == '^'
                             || aux_operacoes[0] == 'R'
                             || aux_operacoes[0] == 'p') && aux_operacoes[1] == 'r') {
-                        System.out.println("aux_operacoes[" + 0 + "] = " + aux_operacoes[0]);
+                        if(getdep_mod()) System.out.println("aux_operacoes[" + 0 + "] = " + aux_operacoes[0]);
                         i++;
                     }
                     while (i < aux_operacoes.length) {
-                        System.out.println("aux_operacoes[" + i + "] = " + aux_operacoes[i]);
+                        if(getdep_mod()) System.out.println("aux_operacoes[" + i + "] = " + aux_operacoes[i]);
                         if (i > 0 && i < aux_operacoes.length) {
                             if ((aux_operacoes[i - 1] == '/'
                                     || aux_operacoes[i - 1] == '*'
@@ -1301,26 +1308,26 @@ public class Funcionamento {
     }
     
     private void verifica_operandos(String[] operandos){
-        System.out.println("INICIO VERIFICA_OPERANDOS");
+        if(getdep_mod()) System.out.println("INICIO VERIFICA_OPERANDOS");
         Float[] operandos_float = new Float[cont_operandos];
         try {
             for (int i = 0; i < cont_operandos; i++) {
                 operandos_float[i] = Float.parseFloat(operandos[i]);
                 if(operandos_float[i] > Float.MAX_VALUE || operandos_float[i] < -(Float.MAX_VALUE)){
-                    System.out.println("ENTROU NO IF");
-                    System.out.println("operandos_float["+i+"] : "+operandos_float[i]);
-                    System.out.println("Float.MAX_VALUE : "+Float.MAX_VALUE);
-                    System.out.println("Float.MIN_VALUE : "+Float.MIN_VALUE);
+                    if(getdep_mod()) System.out.println("ENTROU NO IF");
+                    if(getdep_mod()) System.out.println("operandos_float["+i+"] : "+operandos_float[i]);
+                    if(getdep_mod()) System.out.println("Float.MAX_VALUE : "+Float.MAX_VALUE);
+                    if(getdep_mod()) System.out.println("Float.MIN_VALUE : "+Float.MIN_VALUE);
                     setvalidade(false);
                     throw new Exception();
                 }
             }
         } catch (Exception e) {
-            System.out.println("ENTROU NA EXCECAO");
+            if(getdep_mod()) System.out.println("ENTROU NA EXCECAO");
             setvalidade(false);
         }
-        System.out.println("VALIDADE : "+validade);
-        System.out.println("FIM VERIFICA_OPERANDOS");
+        if(getdep_mod()) System.out.println("VALIDADE : "+validade);
+        if(getdep_mod()) System.out.println("FIM VERIFICA_OPERANDOS");
     }
     
     private void verifica_valor(float valor){
@@ -1617,22 +1624,24 @@ public class Funcionamento {
     }
 
     public void aux_validade(String situacao, String[] operadores, String[] operandos) {
-        System.out.println("------------" + situacao + "------------");
-        int i;
-        for (i = 0; i < operandos.length; i++) {
-            System.out.print("[" + operandos[i] + "]");
+        if (getdep_mod()) {
+            System.out.println("------------" + situacao + "------------");
+            int i;
+            for (i = 0; i < operandos.length; i++) {
+                System.out.print("[" + operandos[i] + "]");
+            }
+            System.out.println();
+            for (i = 0; i < operadores.length; i++) {
+                System.out.print("[" + operadores[i] + "]");
+            }
+            System.out.println();
+            System.out.println("Existem " + cont_operadores + " operadores");
+            System.out.println("Existem " + cont_operandos + " operandos");
+            System.out.println("Existem " + cont_raiz + " raizes");
+            System.out.println("Existem " + cont_sp1 + " caso especial /-r");
+            System.out.println("Vetor index_sp1 " + Arrays.toString(index_sp1));
+            System.out.println("-------------------------------");
         }
-        System.out.println();
-        for (i = 0; i < operadores.length; i++) {
-            System.out.print("[" + operadores[i] + "]");
-        }
-        System.out.println();
-        System.out.println("Existem " + cont_operadores + " operadores");
-        System.out.println("Existem " + cont_operandos + " operandos");
-        System.out.println("Existem " + cont_raiz + " raizes");
-        System.out.println("Existem " + cont_sp1 + " caso especial /-r");
-        System.out.println("Vetor index_sp1 " + Arrays.toString(index_sp1));
-        System.out.println("-------------------------------");
     }
     //FIM
 }

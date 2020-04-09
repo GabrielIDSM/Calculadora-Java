@@ -399,8 +399,8 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="B&#xe1;sico">
-                    <Property name="tabTitle" type="java.lang.String" value="B&#xe1;sico"/>
+                  <JTabbedPaneConstraints tabName="Principal">
+                    <Property name="tabTitle" type="java.lang.String" value="Principal"/>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
@@ -632,8 +632,8 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="M&#xe9;dio">
-                    <Property name="tabTitle" type="java.lang.String" value="M&#xe9;dio"/>
+                  <JTabbedPaneConstraints tabName="   +   ">
+                    <Property name="tabTitle" type="java.lang.String" value="   +   "/>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
@@ -769,8 +769,8 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="Avan&#xe7;ado">
-                    <Property name="tabTitle" type="java.lang.String" value="Avan&#xe7;ado"/>
+                  <JTabbedPaneConstraints tabName="   ++   ">
+                    <Property name="tabTitle" type="java.lang.String" value="   ++   "/>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
