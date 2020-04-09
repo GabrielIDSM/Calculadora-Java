@@ -393,8 +393,8 @@ public class Funcionamento {
         while(i < c.length){
             if(c[i] == 'T' || c[i] == 'M' || c[i] == 'J'){
                 sf = "";
-                System.out.println("c[i] == 'T' || c[i] == 'M' || c[i] == 'J'");
-                System.out.println("OPE IN : "+ope);
+                if(getdep_mod()) System.out.println("c[i] == 'T' || c[i] == 'M' || c[i] == 'J'");
+                if(getdep_mod()) System.out.println("OPE IN : "+ope);
                 if(c[i] == 'T'){
                     c[i] = 'S';
                     i++;
@@ -485,7 +485,7 @@ public class Funcionamento {
                 i = 0;
                 op1 = "";
                 op2 = "";
-                System.out.println("OPE FIM : "+ope);
+                if(getdep_mod()) System.out.println("OPE FIM : "+ope);
             }
             i++;
         }

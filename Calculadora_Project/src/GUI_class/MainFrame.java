@@ -11,6 +11,7 @@ public class MainFrame extends javax.swing.JFrame {
     static String Operacoes = "";
     static boolean PV = false;
     //FIM
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -20,6 +21,7 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        BG = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         A = new javax.swing.JTextArea();
@@ -60,6 +62,10 @@ public class MainFrame extends javax.swing.JFrame {
         Bper = new javax.swing.JButton();
         Bcomb = new javax.swing.JButton();
         Barr = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        MPitem = new javax.swing.JCheckBoxMenuItem();
+        MCitem = new javax.swing.JCheckBoxMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora");
@@ -575,7 +581,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jScrollPane1)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                         .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -586,12 +592,37 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jMenu1.setText("Tema");
+
+        BG.add(MPitem);
+        MPitem.setSelected(true);
+        MPitem.setText("Padrão");
+        MPitem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MPitemActionPerformed(evt);
+            }
+        });
+        jMenu1.add(MPitem);
+
+        BG.add(MCitem);
+        MCitem.setText("Claro");
+        MCitem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MCitemActionPerformed(evt);
+            }
+        });
+        jMenu1.add(MCitem);
+
+        jMenuBar1.add(jMenu1);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1041,6 +1072,76 @@ public class MainFrame extends javax.swing.JFrame {
         A.append("A ");
     }//GEN-LAST:event_BarrActionPerformed
 
+    private void MPitemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MPitemActionPerformed
+        //Painel principal
+        jPanel1.setBackground(java.awt.SystemColor.controlDkShadow);
+        //Area de texto
+        A.setBackground(new java.awt.Color(0, 0, 51));
+        A.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
+        A.setForeground(new java.awt.Color(255, 255, 255));
+        A.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        //Painel de números
+        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
+        //Painel de abas e abas
+        jTabbedPane1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jPanel3.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
+        jPanel4.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
+        jPanel5.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
+        //Botões
+        B0.setBackground(new java.awt.Color(204, 204, 204));
+        B1.setBackground(new java.awt.Color(204, 204, 204));
+        B2.setBackground(new java.awt.Color(204, 204, 204));
+        B3.setBackground(new java.awt.Color(204, 204, 204));
+        B4.setBackground(new java.awt.Color(204, 204, 204));
+        B5.setBackground(new java.awt.Color(204, 204, 204));
+        B6.setBackground(new java.awt.Color(204, 204, 204));
+        B7.setBackground(new java.awt.Color(204, 204, 204));
+        B8.setBackground(new java.awt.Color(204, 204, 204));
+        B9.setBackground(new java.awt.Color(204, 204, 204));
+        Bdot.setBackground(new java.awt.Color(204, 204, 204));
+        BDelete.setBackground(new java.awt.Color(211, 130, 115));
+        
+    }//GEN-LAST:event_MPitemActionPerformed
+
+    private void MCitemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MCitemActionPerformed
+        //Painel principal
+        jPanel1.setBackground(new java.awt.Color(240, 240, 240));
+        //Area de texto
+        A.setBackground(new java.awt.Color(255, 255, 255));
+        A.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
+        A.setForeground(new java.awt.Color(0, 0, 0));
+        A.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.SystemColor.controlDkShadow, 2));
+        //Painel de números
+        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.SystemColor.controlDkShadow, 3));
+        //Painel de abas e abas
+        jTabbedPane1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.SystemColor.controlDkShadow, 3));
+        jPanel4.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.SystemColor.controlDkShadow, 3));
+        jPanel5.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.SystemColor.controlDkShadow, 3));
+        //Botões
+        B0.setBackground(new java.awt.Color(204, 204, 204));
+        B1.setBackground(new java.awt.Color(204, 204, 204));
+        B2.setBackground(new java.awt.Color(204, 204, 204));
+        B3.setBackground(new java.awt.Color(204, 204, 204));
+        B4.setBackground(new java.awt.Color(204, 204, 204));
+        B5.setBackground(new java.awt.Color(204, 204, 204));
+        B6.setBackground(new java.awt.Color(204, 204, 204));
+        B7.setBackground(new java.awt.Color(204, 204, 204));
+        B8.setBackground(new java.awt.Color(204, 204, 204));
+        B9.setBackground(new java.awt.Color(204, 204, 204));
+        Bdot.setBackground(new java.awt.Color(204, 204, 204));
+        BDelete.setBackground(new java.awt.Color(211, 130, 115));
+        
+    }//GEN-LAST:event_MCitemActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1089,6 +1190,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton B8;
     private javax.swing.JButton B9;
     private javax.swing.JButton BDelete;
+    private javax.swing.ButtonGroup BG;
     private javax.swing.JButton Barr;
     private javax.swing.JButton Bclc;
     private javax.swing.JButton Bcomb;
@@ -1110,6 +1212,10 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton Brad;
     private javax.swing.JButton Brad2;
     private javax.swing.JButton Bvir;
+    private javax.swing.JCheckBoxMenuItem MCitem;
+    private javax.swing.JCheckBoxMenuItem MPitem;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
