@@ -88,7 +88,7 @@ public class Operacoes {
                                     System.out.println("Aqui IN");
                                     operacoes_f = duplo_sinal(operacoes_f);
                                     System.out.println("Aqui FIM");
-                                    System.out.println(operacoes_f);
+                                    System.out.println("OPERACOES_F"+operacoes_f);
                                     //Verificação e substituição do duplo sinal IN
                                     Funcionamento F = new Funcionamento(operacoes_f);
                                     float T = F.main();
@@ -474,7 +474,10 @@ public class Operacoes {
                 || char_operacoes[(char_operacoes.length - 1)] == 'R'
                 || char_operacoes[(char_operacoes.length - 1)] == 'p'
                 || char_operacoes[(char_operacoes.length - 1)] == 'L'
-                || char_operacoes[(char_operacoes.length - 1)] == 'l') {
+                || char_operacoes[(char_operacoes.length - 1)] == 'l'
+                || char_operacoes[(char_operacoes.length - 1)] == 'T'
+                || char_operacoes[(char_operacoes.length - 1)] == 'M'
+                || char_operacoes[(char_operacoes.length - 1)] == 'J') {
             setvalidade(false);
             return;
         }
@@ -489,7 +492,11 @@ public class Operacoes {
                     || char_operacoes[cont - 1] == 'p'
                     || char_operacoes[cont - 1] == '('
                     || char_operacoes[cont - 1] == 'L'
-                    || char_operacoes[cont - 1] == 'l')) {
+                    || char_operacoes[cont - 1] == 'l'
+                    || char_operacoes[cont - 1] == 'T'
+                    || char_operacoes[cont - 1] == 'M'
+                    || char_operacoes[cont - 1] == 'J'
+                    || char_operacoes[cont - 1] == ',')) {
                 setvalidade(false);
                 break;
             } else if (char_operacoes[cont] == ')' && !(char_operacoes[cont + 1] == '+'
@@ -500,7 +507,8 @@ public class Operacoes {
                     || char_operacoes[cont + 1] == 'R'
                     || char_operacoes[cont + 1] == 'p'
                     || char_operacoes[cont + 1] == ')'
-                    || char_operacoes[cont + 1] == '!')) {
+                    || char_operacoes[cont + 1] == '!'
+                    || char_operacoes[cont + 1] == ',')) {
                 setvalidade(false);
                 break;
             }
@@ -569,7 +577,10 @@ public class Operacoes {
                             || char_string[f] == 'R'
                             || char_string[f] == 'p'
                             || char_string[f] == 'L'
-                            || char_string[f] == 'l') {
+                            || char_string[f] == 'l'
+                            || char_string[f] == 'T'
+                            || char_string[f] == 'M'
+                            || char_string[f] == 'J') {
                         break;
                     }
                     if (char_string[f] == ')') {

@@ -33,6 +33,7 @@ public class Funcionamento {
     private boolean fat = false;
     private boolean l = false;
     private boolean L = false;
+    private boolean TMJ = false;
     private boolean sem_operadores = false;
     private boolean unica_raiz = false;
     private char[] aux_operacoes;
@@ -80,6 +81,15 @@ public class Funcionamento {
             verifica_validade_fat();
             verifica_validade_L();
             verifica_validade_l();
+            verifica_TMJ();
+            //Verifica se há Comb, Arr ou Perm e calcula IN
+            if (validade) if(TMJ){
+                System.out.println("OPERACOES TMJ IN : "+operacoes);
+                operacoes = calcula_TMJ(operacoes);
+                System.out.println("OPERACOES TMJ FIM : "+operacoes);
+                aux_operacoes = operacoes.toCharArray();
+            } 
+            //FIM
             //Verifica se há log e calcula IN
             if (validade) if(L){
                 System.out.println("OPERACOES L IN : "+operacoes);
@@ -327,6 +337,19 @@ public class Funcionamento {
         L = ver_L;
     }
     
+    private void verifica_TMJ(){
+        boolean ver_TMJ = false;
+        for (int i = 0; i < aux_operacoes.length; i++) {
+            if (aux_operacoes[i] == 'T' 
+                    || aux_operacoes[i] == 'M' 
+                    || aux_operacoes[i] == 'J') {
+                ver_TMJ = true;
+                break;
+            }
+        }
+        TMJ = ver_TMJ;
+    }
+    
     private String duplo_sinal(String string) {
         String string_f = "";
         int i = 1;
@@ -354,6 +377,196 @@ public class Funcionamento {
             i++;
         }
         return string_f;
+    }
+    
+    private String calcula_TMJ(String ope){
+        String sf = "", op1 = "", op2 = "", aux = "";
+        char[] c = ope.toCharArray();
+        int i = 0, f = 0;
+        while(i < c.length){
+            if(c[i] == 'T' || c[i] == 'M' || c[i] == 'J'){
+                sf = "";
+                System.out.println("c[i] == 'T' || c[i] == 'M' || c[i] == 'J'");
+                System.out.println("OPE IN : "+ope);
+                if(c[i] == 'T'){
+                    c[i] = 'S';
+                    i++;
+                    f = i;
+                    while(c[f] != '+'
+                            && c[f] != '-'
+                            && c[f] != '*'
+                            && c[f] != '/'
+                            && c[f] != '^'
+                            && c[f] != 'r'
+                            && c[f] != 'R'
+                            && c[f] != 'p'
+                            && c[f] != '!'){
+                        op1 += c[f];
+                        c[f] = 'S';
+                        f++;
+                        if(f >= c.length) break;
+                    }
+                    aux = calculo_T(op1);
+                }else if(c[i] == 'M'){
+                    c[i] = 'S';
+                    i++;
+                    f = i;
+                    while(c[f] != ','){
+                        op1 += c[f];
+                        c[f] = 'S';
+                        f++;
+                    }
+                    c[f] = 'S';
+                    f++;
+                    while(c[f] != '+'
+                            && c[f] != '-'
+                            && c[f] != '*'
+                            && c[f] != '/'
+                            && c[f] != '^'
+                            && c[f] != 'r'
+                            && c[f] != 'R'
+                            && c[f] != 'p'
+                            && c[f] != '!'){
+                        op2 += c[f];
+                        c[f] = 'S';
+                        f++;
+                        if(f >= c.length) break;
+                    }
+                    aux = calculo_M(op1, op2);
+                }else{
+                    c[i] = 'S';
+                    i++;
+                    f = i;
+                    while(c[f] != ','){
+                        op1 += c[f];
+                        c[f] = 'S';
+                        f++;
+                    }
+                    c[f] = 'S';
+                    f++;
+                    while(c[f] != '+'
+                            && c[f] != '-'
+                            && c[f] != '*'
+                            && c[f] != '/'
+                            && c[f] != '^'
+                            && c[f] != 'r'
+                            && c[f] != 'R'
+                            && c[f] != 'p'
+                            && c[f] != '!'){
+                        op2 += c[f];
+                        c[f] = 'S';
+                        f++;
+                        if(f >= c.length) break;
+                    }
+                    aux = calculo_J(op1, op2);
+                }
+                f = 0;
+                while(f < c.length){
+                    if(c[f] == 'S'){
+                        sf += aux;
+                        while(c[f] == 'S'){
+                            f++;
+                            if(f >= c.length) break;
+                        }
+                    }
+                    if(f >= c.length) break;
+                    sf += c[f];
+                    f++;
+                }
+                ope = sf;
+                c = ope.toCharArray();
+                i = 0;
+                op1 = "";
+                op2 = "";
+                System.out.println("OPE FIM : "+ope);
+            }
+            i++;
+        }
+        return ope;
+    }
+    
+    private String calculo_T(String op){
+        String resultado = "";
+        try{
+            resultado = Float.toString(calculofat(op));
+        }catch(Exception e){
+            setvalidade(false);
+            resultado = "0";
+        }
+        return resultado;
+    }
+    
+    private String calculo_M(String op1, String op2){
+        String resultado = "";
+        float aux = 1, r = 0;
+        try{
+            float fop1 = Float.parseFloat(op1);
+            if(fop1 <= 0) throw new Exception();
+            float fop2 = Float.parseFloat(op2);
+            if(fop2 <= 0 || fop2 > fop1) throw new Exception();
+            float fdif = fop1 - fop2;
+            if(fdif < 0) throw new Exception();
+            //Verificar se o numero tem casa decimal IN
+            float rfop1 = (float) Math.floor((float) fop1);
+            float rfop2 = (float) Math.floor((float) fop2);
+            if(rfop1 != fop1 || rfop2 != fop2) throw new Exception();
+            //FIM
+            //Calculo da combinação IN
+            if(fop1 == fop2){
+                resultado = "1.0";
+            }
+            else if(fop2 > fdif){
+                //Simplifica o maior denominador com o numerador IN
+                while(fop1 > fop2){
+                    aux *= fop1;
+                    fop1--;
+                }
+                //fop1 == fop2
+                r = aux / calculofat(Float.toString(fdif));
+                resultado = Float.toString(r);
+                //FIM
+            }else if(fdif >= fop2){
+                //Simplifica o maior denominador com o numerador IN
+                while(fop1 > fdif){
+                    aux *= fop1;
+                    fop1--;
+                }
+                //fop1 == fdif
+                r = aux / (calculofat(Float.toString(fop2)));
+                resultado = Float.toString(r);
+                //FIM
+            }
+            //FIM
+        }catch(Exception e){
+            setvalidade(false);
+            resultado = "0";
+        }
+        return resultado;
+    }
+    
+    private String calculo_J(String op1, String op2){
+        float aux = 1;
+        String resultado = "";
+        try{
+            float fop1 = Float.parseFloat(op1);
+            if(fop1 <= 0) throw new Exception();
+            float fop2 = Float.parseFloat(op2);
+            if(fop2 <= 0 || fop2 > fop1) throw new Exception();
+            float fdif = fop1 - fop2;
+            if(fdif == 0){
+                resultado = Float.toString(calculofat(Float.toString(fop1)));
+            }else {
+                while(fop1 > fdif){
+                    aux *= fop1;
+                    fop1--;
+                }
+                resultado = Float.toString(aux);
+            }
+        }catch(Exception e){
+            setvalidade(false);
+            resultado = "0";
+        }
+        return resultado;
     }
     
     private String calcula_L(String ope){
@@ -537,7 +750,7 @@ public class Funcionamento {
         float i = 1;
         try{
             aux_op1 = Float.parseFloat(op1);
-            if(aux_op1 >= 120){
+            if(aux_op1 >= 35){
                 aux_op1 = Float.POSITIVE_INFINITY;
                 resultado = aux_op1;
             }

@@ -54,6 +54,12 @@ public class MainFrame extends javax.swing.JFrame {
         Bfat1 = new javax.swing.JButton();
         Blogn = new javax.swing.JButton();
         Bln = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        Bigual3 = new javax.swing.JButton();
+        Bvir = new javax.swing.JButton();
+        Bper = new javax.swing.JButton();
+        Bcomb = new javax.swing.JButton();
+        Barr = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora");
@@ -474,10 +480,92 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Bfat1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bln, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Avançado", jPanel4);
+        jTabbedPane1.addTab("Médio", jPanel4);
+
+        jPanel5.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
+
+        Bigual3.setBackground(new java.awt.Color(204, 255, 204));
+        Bigual3.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
+        Bigual3.setText("=");
+        Bigual3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bigual3Fim(evt);
+            }
+        });
+
+        Bvir.setBackground(new java.awt.Color(204, 204, 255));
+        Bvir.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Bvir.setText(",");
+        Bvir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BvirActionPerformed(evt);
+            }
+        });
+
+        Bper.setBackground(new java.awt.Color(255, 255, 204));
+        Bper.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Bper.setText("P n");
+        Bper.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BperActionPerformed(evt);
+            }
+        });
+
+        Bcomb.setBackground(new java.awt.Color(255, 255, 204));
+        Bcomb.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Bcomb.setText("C n, p");
+        Bcomb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BcombActionPerformed(evt);
+            }
+        });
+
+        Barr.setBackground(new java.awt.Color(255, 255, 204));
+        Barr.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Barr.setText("A n, p");
+        Barr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BarrActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Bigual3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(Bvir, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(Bper, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
+                    .addComponent(Bcomb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Barr, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Bigual3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Bvir, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Bper, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addComponent(Bcomb, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(Barr, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("Avançado", jPanel5);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -749,6 +837,22 @@ public class MainFrame extends javax.swing.JFrame {
                     aux += "²√";
                     A.append(aux);
                     aux = "";
+                }else if(Op_char[i] == ','){
+                    aux += ", ";
+                    A.append(aux);
+                    aux = "";
+                }else if(Op_char[i] == 'T'){
+                    aux += "P ";
+                    A.append(aux);
+                    aux = "";
+                }else if(Op_char[i] == 'M'){
+                    aux += "C ";
+                    A.append(aux);
+                    aux = "";
+                }else if(Op_char[i] == 'J'){
+                    aux += "A ";
+                    A.append(aux);
+                    aux = "";
                 }else if(Op_char[i] == '!'){
                     aux += "!";
                     A.append(aux);
@@ -864,6 +968,79 @@ public class MainFrame extends javax.swing.JFrame {
         A.append("ln");
     }//GEN-LAST:event_BlnActionPerformed
 
+    private void Bigual3Fim(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bigual3Fim
+        if(null == A.getText()) {
+            PV = true;
+            A.setText("");
+            Operacoes O = new Operacoes(Operacoes);
+            float resultado = O.main();
+            boolean verifica = O.getvalidade();
+            if (verifica) {
+                String R = Float.toString(resultado);
+                A.append(R);
+            } else {
+                A.append("Erro");
+            }
+            Operacoes = "";
+        } else switch (A.getText()) {
+            case "Erro":
+                A.setText("");
+                break;
+            case "":
+                A.setText("");
+                break;
+            default:
+                PV = true;
+                A.setText("");
+                Operacoes O = new Operacoes(Operacoes);
+                float resultado = O.main();
+                boolean verifica = O.getvalidade();
+                if (verifica) {
+                    String R = Float.toString(resultado);
+                    A.append(R);
+                } else {
+                    A.append("Erro");
+                }   Operacoes = "";
+                break;
+        }
+    }//GEN-LAST:event_Bigual3Fim
+
+    private void BvirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BvirActionPerformed
+        if(PV){
+            A.setText("");
+            PV = false;
+        }
+        Operacoes += ",";
+        A.append(", ");
+    }//GEN-LAST:event_BvirActionPerformed
+
+    private void BperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BperActionPerformed
+        if(PV){
+            A.setText("");
+            PV = false;
+        }
+        Operacoes += "T";
+        A.append("P ");
+    }//GEN-LAST:event_BperActionPerformed
+
+    private void BcombActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcombActionPerformed
+        if(PV){
+            A.setText("");
+            PV = false;
+        }
+        Operacoes += "M";
+        A.append("C ");
+    }//GEN-LAST:event_BcombActionPerformed
+
+    private void BarrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BarrActionPerformed
+        if(PV){
+            A.setText("");
+            PV = false;
+        }
+        Operacoes += "J";
+        A.append("A ");
+    }//GEN-LAST:event_BarrActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -912,26 +1089,32 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton B8;
     private javax.swing.JButton B9;
     private javax.swing.JButton BDelete;
+    private javax.swing.JButton Barr;
     private javax.swing.JButton Bclc;
+    private javax.swing.JButton Bcomb;
     private javax.swing.JButton Bdiv;
     private javax.swing.JButton Bdot;
     private javax.swing.JButton Bexp;
     private javax.swing.JButton Bfat1;
     private javax.swing.JButton Bigual;
     private javax.swing.JButton Bigual1;
+    private javax.swing.JButton Bigual3;
     private javax.swing.JButton Bln;
     private javax.swing.JButton Blogn;
     private javax.swing.JButton Bmais;
     private javax.swing.JButton Bmenos;
     private javax.swing.JButton Bmul;
     private javax.swing.JButton BopC;
+    private javax.swing.JButton Bper;
     private javax.swing.JButton Bpor1;
     private javax.swing.JButton Brad;
     private javax.swing.JButton Brad2;
+    private javax.swing.JButton Bvir;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
