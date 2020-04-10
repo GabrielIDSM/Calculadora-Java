@@ -440,7 +440,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         Blogn.setBackground(new java.awt.Color(255, 255, 204));
         Blogn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        Blogn.setText("log(n)");
+        Blogn.setText("log n");
         Blogn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BlognActionPerformed(evt);
@@ -449,7 +449,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         Bln.setBackground(new java.awt.Color(255, 255, 204));
         Bln.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        Bln.setText("ln");
+        Bln.setText("ln n");
         Bln.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BlnActionPerformed(evt);
