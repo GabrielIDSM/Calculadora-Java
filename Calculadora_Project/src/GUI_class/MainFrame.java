@@ -1196,7 +1196,7 @@ public class MainFrame extends javax.swing.JFrame {
         Bvir.setBackground(new java.awt.Color(135, 206, 255));
         Bper.setBackground(new java.awt.Color(255, 255, 0));
         Bcomb.setBackground(new java.awt.Color(255, 255, 0));
-        Barr.setBackground(new java.awt.Color(255, 255, 0));
+        Barr.setBackground(new java.awt.Color(255, 255, 0));        
     }//GEN-LAST:event_MCitemActionPerformed
 
     /**
