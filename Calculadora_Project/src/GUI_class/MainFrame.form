@@ -454,7 +454,7 @@
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="Bmais" min="-2" pref="65" max="-2" attributes="0"/>
-                                      <Component id="BopC" alignment="0" min="-2" pref="65" max="-2" attributes="0"/>
+                                      <Component id="Bopc" alignment="0" min="-2" pref="65" max="-2" attributes="0"/>
                                       <Component id="Bmenos" alignment="0" min="-2" pref="65" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
@@ -505,7 +505,7 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="Bclc" alignment="3" min="-2" pref="76" max="-2" attributes="0"/>
-                              <Component id="BopC" alignment="3" min="-2" pref="76" max="-2" attributes="0"/>
+                              <Component id="Bopc" alignment="3" min="-2" pref="76" max="-2" attributes="0"/>
                               <Component id="Brad2" alignment="3" min="-2" pref="76" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -598,7 +598,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BexpActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="BopC">
+                <Component class="javax.swing.JButton" name="Bopc">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="cc" red="cc" type="rgb"/>
@@ -609,7 +609,7 @@
                     <Property name="text" type="java.lang.String" value="("/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BopCActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BopcActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="Bclc">
@@ -820,7 +820,7 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="Bigual3" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Bigual2" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="Bvir" min="-2" pref="65" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
@@ -837,7 +837,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="Bigual3" min="-2" pref="73" max="-2" attributes="0"/>
+                          <Component id="Bigual2" min="-2" pref="73" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="Bvir" alignment="3" min="-2" pref="76" max="-2" attributes="0"/>
@@ -853,7 +853,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="Bigual3">
+                <Component class="javax.swing.JButton" name="Bigual2">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="cc" green="ff" red="cc" type="rgb"/>
@@ -864,7 +864,7 @@
                     <Property name="text" type="java.lang.String" value="="/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Bigual3Fim"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Bigual2Fim"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="Bvir">

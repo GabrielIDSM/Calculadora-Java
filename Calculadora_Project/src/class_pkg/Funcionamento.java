@@ -559,6 +559,11 @@ public class Funcionamento {
             if(fop1 <= 0) throw new Exception();
             float fop2 = Float.parseFloat(op2);
             if(fop2 <= 0 || fop2 > fop1) throw new Exception();
+            //Verificar se o numero tem casa decimal IN
+            float rfop1 = (float) Math.floor((float) fop1);
+            float rfop2 = (float) Math.floor((float) fop2);
+            if(rfop1 != fop1 || rfop2 != fop2) throw new Exception();
+            //FIM
             float fdif = fop1 - fop2;
             if(fdif == 0){
                 resultado = Float.toString(calculofat(Float.toString(fop1)));
@@ -715,18 +720,24 @@ public class Funcionamento {
                 auxf = 0;
                 resto = 0;
                 //FIM
-                System.out.println("AUX OPE IN");
-                for(int l = 0; l < aux_ope.length; l++) System.out.print(aux_ope[l]);
-                System.out.println();
-                System.out.println("AUX: "+aux);
-                System.out.println("AUX OPE FIM");
-                System.out.println("CALCULO IN");
-                System.out.println("AUX: "+aux);
+                if (getdep_mod()) {
+                    System.out.println("AUX OPE IN");
+                    for (int l = 0; l < aux_ope.length; l++) {
+                        System.out.print(aux_ope[l]);
+                    }
+                    System.out.println();
+                    System.out.println("AUX: " + aux);
+                    System.out.println("AUX OPE FIM");
+                    System.out.println("CALCULO IN");
+                    System.out.println("AUX: " + aux);
+                }
                 auxf = calculofat(aux);
                 aux = Float.toString(auxf);
-                System.out.println("AUX POS: "+aux);
-                System.out.println("CALCULO FIM");
-                System.out.println("SUBSTITUICAO IN");
+                if (getdep_mod()) {
+                    System.out.println("AUX POS: " + aux);
+                    System.out.println("CALCULO FIM");
+                    System.out.println("SUBSTITUICAO IN");
+                }
                 j = 0;
                 while(j < aux_ope.length){
                     if(aux_ope[j] == 'S'){
@@ -740,12 +751,12 @@ public class Funcionamento {
                     sfinal += aux_ope[j];
                     j++;
                 }
-                System.out.println("SFINAL : "+sfinal);
-                System.out.println("SUBSTITUICAO FIM");
+                if (getdep_mod()) System.out.println("SFINAL : "+sfinal);
+                if (getdep_mod()) System.out.println("SUBSTITUICAO FIM");
                 ope = sfinal;
                 aux_ope = ope.toCharArray();
                 i = 0;
-                System.out.println("STRING F : "+ope);
+                if (getdep_mod()) System.out.println("STRING F : "+ope);
             }
             i++;
         }

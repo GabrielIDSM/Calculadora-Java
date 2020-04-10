@@ -1,6 +1,7 @@
 //Projeto salvo no git
 package GUI_class;
 import class_pkg.*;
+import java.util.Set;
 
 public class MainFrame extends javax.swing.JFrame {
     public MainFrame() {
@@ -46,7 +47,7 @@ public class MainFrame extends javax.swing.JFrame {
         Bmenos = new javax.swing.JButton();
         Bdiv = new javax.swing.JButton();
         Bexp = new javax.swing.JButton();
-        BopC = new javax.swing.JButton();
+        Bopc = new javax.swing.JButton();
         Bclc = new javax.swing.JButton();
         Brad = new javax.swing.JButton();
         Brad2 = new javax.swing.JButton();
@@ -57,7 +58,7 @@ public class MainFrame extends javax.swing.JFrame {
         Blogn = new javax.swing.JButton();
         Bln = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
-        Bigual3 = new javax.swing.JButton();
+        Bigual2 = new javax.swing.JButton();
         Bvir = new javax.swing.JButton();
         Bper = new javax.swing.JButton();
         Bcomb = new javax.swing.JButton();
@@ -315,12 +316,12 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        BopC.setBackground(new java.awt.Color(204, 204, 255));
-        BopC.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        BopC.setText("(");
-        BopC.addActionListener(new java.awt.event.ActionListener() {
+        Bopc.setBackground(new java.awt.Color(204, 204, 255));
+        Bopc.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Bopc.setText("(");
+        Bopc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BopCActionPerformed(evt);
+                BopcActionPerformed(evt);
             }
         });
 
@@ -362,7 +363,7 @@ public class MainFrame extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Bmais, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BopC, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Bopc, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Bmenos, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(20, 20, 20)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -400,7 +401,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Bclc, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BopC, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Bopc, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Brad2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -494,12 +495,12 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(153, 153, 153));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
 
-        Bigual3.setBackground(new java.awt.Color(204, 255, 204));
-        Bigual3.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
-        Bigual3.setText("=");
-        Bigual3.addActionListener(new java.awt.event.ActionListener() {
+        Bigual2.setBackground(new java.awt.Color(204, 255, 204));
+        Bigual2.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
+        Bigual2.setText("=");
+        Bigual2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Bigual3Fim(evt);
+                Bigual2Fim(evt);
             }
         });
 
@@ -546,7 +547,7 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Bigual3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Bigual2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(Bvir, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(20, 20, 20)
@@ -559,7 +560,7 @@ public class MainFrame extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Bigual3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Bigual2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Bvir, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -819,14 +820,14 @@ public class MainFrame extends javax.swing.JFrame {
         A.append(" ^ ");
     }//GEN-LAST:event_BexpActionPerformed
 
-    private void BopCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BopCActionPerformed
+    private void BopcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BopcActionPerformed
         if(PV){
             A.setText("");
             PV = false;
         }
         Operacoes += "(";
         A.append("(");
-    }//GEN-LAST:event_BopCActionPerformed
+    }//GEN-LAST:event_BopcActionPerformed
 
     private void BclcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BclcActionPerformed
         if(PV){
@@ -999,7 +1000,7 @@ public class MainFrame extends javax.swing.JFrame {
         A.append("ln");
     }//GEN-LAST:event_BlnActionPerformed
 
-    private void Bigual3Fim(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bigual3Fim
+    private void Bigual2Fim(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bigual2Fim
         if(null == A.getText()) {
             PV = true;
             A.setText("");
@@ -1034,7 +1035,7 @@ public class MainFrame extends javax.swing.JFrame {
                 }   Operacoes = "";
                 break;
         }
-    }//GEN-LAST:event_Bigual3Fim
+    }//GEN-LAST:event_Bigual2Fim
 
     private void BvirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BvirActionPerformed
         if(PV){
@@ -1104,7 +1105,33 @@ public class MainFrame extends javax.swing.JFrame {
         B9.setBackground(new java.awt.Color(204, 204, 204));
         Bdot.setBackground(new java.awt.Color(204, 204, 204));
         BDelete.setBackground(new java.awt.Color(211, 130, 115));
+        BDelete.setForeground(new java.awt.Color(0, 0, 0));
         
+        Bigual.setBackground(new java.awt.Color(204, 255, 204));
+        Bigual.setForeground(new java.awt.Color(0, 0, 0));
+        Bmais.setBackground(new java.awt.Color(255, 255, 204));
+        Bmenos.setBackground(new java.awt.Color(255, 255, 204));
+        Bmul.setBackground(new java.awt.Color(255, 255, 204));
+        Bdiv.setBackground(new java.awt.Color(255, 255, 204));
+        Brad.setBackground(new java.awt.Color(255, 255, 204));
+        Brad2.setBackground(new java.awt.Color(255, 255, 204));
+        Bexp.setBackground(new java.awt.Color(255, 255, 204));
+        Bopc.setBackground(new java.awt.Color(204, 204, 255));
+        Bclc.setBackground(new java.awt.Color(204, 204, 255));
+        
+        Bigual1.setBackground(new java.awt.Color(204, 255, 204));
+        Bigual1.setForeground(new java.awt.Color(0, 0, 0));
+        Bpor1.setBackground(new java.awt.Color(255, 255, 204));
+        Bfat1.setBackground(new java.awt.Color(255, 255, 204));
+        Blogn.setBackground(new java.awt.Color(255, 255, 204));
+        Bln.setBackground(new java.awt.Color(255, 255, 204));
+        
+        Bigual2.setBackground(new java.awt.Color(204, 255, 204));
+        Bigual2.setForeground(new java.awt.Color(0, 0, 0));
+        Bvir.setBackground(new java.awt.Color(204, 204, 255));
+        Bper.setBackground(new java.awt.Color(255, 255, 204));
+        Bcomb.setBackground(new java.awt.Color(255, 255, 204));
+        Barr.setBackground(new java.awt.Color(255, 255, 204));
     }//GEN-LAST:event_MPitemActionPerformed
 
     private void MCitemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MCitemActionPerformed
@@ -1127,19 +1154,49 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(204, 204, 204));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.SystemColor.controlDkShadow, 3));
         //Botões
-        B0.setBackground(new java.awt.Color(204, 204, 204));
-        B1.setBackground(new java.awt.Color(204, 204, 204));
-        B2.setBackground(new java.awt.Color(204, 204, 204));
-        B3.setBackground(new java.awt.Color(204, 204, 204));
-        B4.setBackground(new java.awt.Color(204, 204, 204));
-        B5.setBackground(new java.awt.Color(204, 204, 204));
-        B6.setBackground(new java.awt.Color(204, 204, 204));
-        B7.setBackground(new java.awt.Color(204, 204, 204));
-        B8.setBackground(new java.awt.Color(204, 204, 204));
-        B9.setBackground(new java.awt.Color(204, 204, 204));
-        Bdot.setBackground(new java.awt.Color(204, 204, 204));
-        BDelete.setBackground(new java.awt.Color(211, 130, 115));
+        B0.setBackground(new java.awt.Color(220, 220, 220));
+        B1.setBackground(new java.awt.Color(220, 220, 220));
+        B2.setBackground(new java.awt.Color(220, 220, 220));
+        B3.setBackground(new java.awt.Color(220, 220, 220));
+        B4.setBackground(new java.awt.Color(220, 220, 220));
+        B5.setBackground(new java.awt.Color(220, 220, 220));
+        B6.setBackground(new java.awt.Color(220, 220, 220));
+        B7.setBackground(new java.awt.Color(220, 220, 220));
+        B8.setBackground(new java.awt.Color(220, 220, 220));
+        B9.setBackground(new java.awt.Color(220, 220, 220));
+        Bdot.setBackground(new java.awt.Color(220, 220, 220));
+        BDelete.setBackground(new java.awt.Color(255, 64, 64));
+        BDelete.setForeground(new java.awt.Color(255, 255, 255));
         
+        
+        Bigual.setBackground(new java.awt.Color(0, 255, 0));
+        Bigual.setForeground(new java.awt.Color(0, 100, 0));
+        
+        Bmais.setBackground(new java.awt.Color(255, 255, 0));
+        Bmenos.setBackground(new java.awt.Color(255, 255, 0));
+        Bmul.setBackground(new java.awt.Color(255, 255, 0));
+        Bdiv.setBackground(new java.awt.Color(255, 255, 0));
+        Brad.setBackground(new java.awt.Color(255, 255, 0));
+        Brad2.setBackground(new java.awt.Color(255, 255, 0));
+        Bexp.setBackground(new java.awt.Color(255, 255, 0));
+        Bopc.setBackground(new java.awt.Color(135, 206, 255));
+        Bclc.setBackground(new java.awt.Color(135, 206, 255));
+        
+        Bigual1.setBackground(new java.awt.Color(0, 255, 0));
+        Bigual1.setForeground(new java.awt.Color(0, 100, 0));
+        
+        Bpor1.setBackground(new java.awt.Color(255, 255, 0));
+        Bfat1.setBackground(new java.awt.Color(255, 255, 0));
+        Blogn.setBackground(new java.awt.Color(255, 255, 0));
+        Bln.setBackground(new java.awt.Color(255, 255, 0));
+        
+        Bigual2.setBackground(new java.awt.Color(0, 255, 0));
+        Bigual2.setForeground(new java.awt.Color(0, 100, 0));
+        
+        Bvir.setBackground(new java.awt.Color(135, 206, 255));
+        Bper.setBackground(new java.awt.Color(255, 255, 0));
+        Bcomb.setBackground(new java.awt.Color(255, 255, 0));
+        Barr.setBackground(new java.awt.Color(255, 255, 0));
     }//GEN-LAST:event_MCitemActionPerformed
 
     /**
@@ -1200,13 +1257,13 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton Bfat1;
     private javax.swing.JButton Bigual;
     private javax.swing.JButton Bigual1;
-    private javax.swing.JButton Bigual3;
+    private javax.swing.JButton Bigual2;
     private javax.swing.JButton Bln;
     private javax.swing.JButton Blogn;
     private javax.swing.JButton Bmais;
     private javax.swing.JButton Bmenos;
     private javax.swing.JButton Bmul;
-    private javax.swing.JButton BopC;
+    private javax.swing.JButton Bopc;
     private javax.swing.JButton Bper;
     private javax.swing.JButton Bpor1;
     private javax.swing.JButton Brad;
