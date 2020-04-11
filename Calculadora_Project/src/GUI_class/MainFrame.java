@@ -57,6 +57,13 @@ public class MainFrame extends javax.swing.JFrame {
         Bper = new javax.swing.JButton();
         Bcomb = new javax.swing.JButton();
         Barr = new javax.swing.JButton();
+        BL = new javax.swing.JButton();
+        Bsenx = new javax.swing.JButton();
+        Bcosx = new javax.swing.JButton();
+        Btgx = new javax.swing.JButton();
+        Bsecx = new javax.swing.JButton();
+        Bcsecx = new javax.swing.JButton();
+        Bctgx = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         MPitem = new javax.swing.JCheckBoxMenuItem();
@@ -83,8 +90,8 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(153, 153, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
 
-        B1.setBackground(new java.awt.Color(204, 204, 204));
-        B1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        B1.setBackground(new java.awt.Color(162, 181, 205));
+        B1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         B1.setText("1");
         B1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,8 +99,8 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        B4.setBackground(new java.awt.Color(204, 204, 204));
-        B4.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        B4.setBackground(new java.awt.Color(162, 181, 205));
+        B4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         B4.setText("4");
         B4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,8 +108,8 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        B7.setBackground(new java.awt.Color(204, 204, 204));
-        B7.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        B7.setBackground(new java.awt.Color(162, 181, 205));
+        B7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         B7.setText("7");
         B7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,8 +117,8 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        B2.setBackground(new java.awt.Color(204, 204, 204));
-        B2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        B2.setBackground(new java.awt.Color(162, 181, 205));
+        B2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         B2.setText("2");
         B2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,8 +126,8 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        B5.setBackground(new java.awt.Color(204, 204, 204));
-        B5.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        B5.setBackground(new java.awt.Color(162, 181, 205));
+        B5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         B5.setText("5");
         B5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,8 +135,8 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        B8.setBackground(new java.awt.Color(204, 204, 204));
-        B8.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        B8.setBackground(new java.awt.Color(162, 181, 205));
+        B8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         B8.setText("8");
         B8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,8 +144,8 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        B6.setBackground(new java.awt.Color(204, 204, 204));
-        B6.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        B6.setBackground(new java.awt.Color(162, 181, 205));
+        B6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         B6.setText("6");
         B6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,8 +153,8 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        B9.setBackground(new java.awt.Color(204, 204, 204));
-        B9.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        B9.setBackground(new java.awt.Color(162, 181, 205));
+        B9.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         B9.setText("9");
         B9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,8 +162,8 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        B3.setBackground(new java.awt.Color(204, 204, 204));
-        B3.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        B3.setBackground(new java.awt.Color(162, 181, 205));
+        B3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         B3.setText("3");
         B3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,8 +171,8 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        B0.setBackground(new java.awt.Color(204, 204, 204));
-        B0.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        B0.setBackground(new java.awt.Color(162, 181, 205));
+        B0.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         B0.setText("0");
         B0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -173,8 +180,8 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Bdot.setBackground(new java.awt.Color(204, 204, 204));
-        Bdot.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        Bdot.setBackground(new java.awt.Color(162, 181, 205));
+        Bdot.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Bdot.setText(".");
         Bdot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,8 +189,9 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        BDelete.setBackground(new java.awt.Color(211, 130, 115));
-        BDelete.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        BDelete.setBackground(new java.awt.Color(255, 165, 79));
+        BDelete.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        BDelete.setForeground(new java.awt.Color(110, 80, 20));
         BDelete.setText("D");
         BDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -191,8 +199,9 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Bigual.setBackground(new java.awt.Color(204, 255, 204));
-        Bigual.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
+        Bigual.setBackground(new java.awt.Color(90, 180, 90));
+        Bigual.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        Bigual.setForeground(new java.awt.Color(0, 70, 0));
         Bigual.setText("=");
         Bigual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,7 +209,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Bmais.setBackground(new java.awt.Color(255, 255, 204));
+        Bmais.setBackground(new java.awt.Color(204, 204, 204));
         Bmais.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Bmais.setText("+");
         Bmais.addActionListener(new java.awt.event.ActionListener() {
@@ -209,7 +218,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Bmenos.setBackground(new java.awt.Color(255, 255, 204));
+        Bmenos.setBackground(new java.awt.Color(204, 204, 204));
         Bmenos.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Bmenos.setText("-");
         Bmenos.addActionListener(new java.awt.event.ActionListener() {
@@ -218,7 +227,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Bmul.setBackground(new java.awt.Color(255, 255, 204));
+        Bmul.setBackground(new java.awt.Color(204, 204, 204));
         Bmul.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Bmul.setText("x");
         Bmul.addActionListener(new java.awt.event.ActionListener() {
@@ -227,7 +236,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Bdiv.setBackground(new java.awt.Color(255, 255, 204));
+        Bdiv.setBackground(new java.awt.Color(204, 204, 204));
         Bdiv.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Bdiv.setText("/");
         Bdiv.addActionListener(new java.awt.event.ActionListener() {
@@ -236,7 +245,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Bexp.setBackground(new java.awt.Color(255, 255, 204));
+        Bexp.setBackground(new java.awt.Color(204, 204, 204));
         Bexp.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Bexp.setText("^");
         Bexp.addActionListener(new java.awt.event.ActionListener() {
@@ -245,7 +254,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Bopc.setBackground(new java.awt.Color(204, 204, 255));
+        Bopc.setBackground(new java.awt.Color(204, 204, 204));
         Bopc.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Bopc.setText("(");
         Bopc.addActionListener(new java.awt.event.ActionListener() {
@@ -254,7 +263,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Bclc.setBackground(new java.awt.Color(204, 204, 255));
+        Bclc.setBackground(new java.awt.Color(204, 204, 204));
         Bclc.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Bclc.setText(")");
         Bclc.addActionListener(new java.awt.event.ActionListener() {
@@ -263,7 +272,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Brad.setBackground(new java.awt.Color(255, 255, 204));
+        Brad.setBackground(new java.awt.Color(204, 204, 204));
         Brad.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Brad.setText("²√");
         Brad.addActionListener(new java.awt.event.ActionListener() {
@@ -272,7 +281,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Brad2.setBackground(new java.awt.Color(255, 255, 204));
+        Brad2.setBackground(new java.awt.Color(204, 204, 204));
         Brad2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Brad2.setText("n√");
         Brad2.addActionListener(new java.awt.event.ActionListener() {
@@ -281,7 +290,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Bfat1.setBackground(new java.awt.Color(255, 255, 204));
+        Bfat1.setBackground(new java.awt.Color(204, 204, 204));
         Bfat1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Bfat1.setText("!");
         Bfat1.addActionListener(new java.awt.event.ActionListener() {
@@ -290,7 +299,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Bpor1.setBackground(new java.awt.Color(255, 255, 204));
+        Bpor1.setBackground(new java.awt.Color(204, 204, 204));
         Bpor1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Bpor1.setText("%");
         Bpor1.addActionListener(new java.awt.event.ActionListener() {
@@ -299,7 +308,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Blogn.setBackground(new java.awt.Color(255, 255, 204));
+        Blogn.setBackground(new java.awt.Color(204, 204, 204));
         Blogn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Blogn.setText("log");
         Blogn.addActionListener(new java.awt.event.ActionListener() {
@@ -308,7 +317,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Bln.setBackground(new java.awt.Color(255, 255, 204));
+        Bln.setBackground(new java.awt.Color(204, 204, 204));
         Bln.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Bln.setText("ln");
         Bln.addActionListener(new java.awt.event.ActionListener() {
@@ -317,7 +326,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Bvir.setBackground(new java.awt.Color(204, 204, 255));
+        Bvir.setBackground(new java.awt.Color(204, 204, 204));
         Bvir.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Bvir.setText(",");
         Bvir.addActionListener(new java.awt.event.ActionListener() {
@@ -326,7 +335,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Bper.setBackground(new java.awt.Color(255, 255, 204));
+        Bper.setBackground(new java.awt.Color(204, 204, 204));
         Bper.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Bper.setText("Pn");
         Bper.addActionListener(new java.awt.event.ActionListener() {
@@ -335,7 +344,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Bcomb.setBackground(new java.awt.Color(255, 255, 204));
+        Bcomb.setBackground(new java.awt.Color(204, 204, 204));
         Bcomb.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Bcomb.setText("C n, p");
         Bcomb.addActionListener(new java.awt.event.ActionListener() {
@@ -344,12 +353,76 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        Barr.setBackground(new java.awt.Color(255, 255, 204));
+        Barr.setBackground(new java.awt.Color(204, 204, 204));
         Barr.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Barr.setText("A n, p");
         Barr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BarrActionPerformed(evt);
+            }
+        });
+
+        BL.setBackground(new java.awt.Color(255, 140, 140));
+        BL.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        BL.setForeground(new java.awt.Color(90, 0, 0));
+        BL.setText("L");
+        BL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BLActionPerformed(evt);
+            }
+        });
+
+        Bsenx.setBackground(new java.awt.Color(204, 204, 204));
+        Bsenx.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Bsenx.setText("sen x°");
+        Bsenx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BsenxActionPerformed(evt);
+            }
+        });
+
+        Bcosx.setBackground(new java.awt.Color(204, 204, 204));
+        Bcosx.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Bcosx.setText("cos x°");
+        Bcosx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BcosxActionPerformed(evt);
+            }
+        });
+
+        Btgx.setBackground(new java.awt.Color(204, 204, 204));
+        Btgx.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Btgx.setText("tg x°");
+        Btgx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtgxActionPerformed(evt);
+            }
+        });
+
+        Bsecx.setBackground(new java.awt.Color(204, 204, 204));
+        Bsecx.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Bsecx.setText("sec x°");
+        Bsecx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BsecxActionPerformed(evt);
+            }
+        });
+
+        Bcsecx.setBackground(new java.awt.Color(204, 204, 204));
+        Bcsecx.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Bcsecx.setText("cossec x°");
+        Bcsecx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BcsecxActionPerformed(evt);
+            }
+        });
+
+        Bctgx.setBackground(new java.awt.Color(204, 204, 204));
+        Bctgx.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Bctgx.setText("cotg x°");
+        Bctgx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BctgxActionPerformed(evt);
             }
         });
 
@@ -359,137 +432,156 @@ public class MainFrame extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(Barr, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
-                            .addComponent(Bcomb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(Bsenx, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Bpor1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Bfat1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Bcosx, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Btgx, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Bigual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(Bsecx, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Bcsecx, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Bctgx, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Bclc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(Bper, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Barr, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Bvir, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Bpor1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(Blogn, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Bln, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(B4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Bln, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(Bcomb, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Bfat1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(Bper, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Bvir, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(B5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(B6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(B1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(B2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(B3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(B7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(B8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(B9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(BDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(B0, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Bdot, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Bopc, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Bclc, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Brad2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Bmenos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Bdiv, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Brad, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Bmais, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Bmul, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Bexp, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Bigual, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(B4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(B5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(B6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Bmais, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Bmul, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(B1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(B2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(B3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(BDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(BL, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Bexp, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(B7, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(B8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(B0, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(B9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Bmenos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Bdiv, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Brad2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(Bdot, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Brad, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Bopc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Bsenx, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Bcosx, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Btgx, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Bigual, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(B1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Blogn, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Bln, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Bln, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(B1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(B2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(B3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(BL, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(BDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(Bmais, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(Bmul, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(Bexp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(6, 6, 6))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(B4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(B5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(B6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(B7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(B8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(B9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(Barr, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Bpor1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addGap(86, 86, 86)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(Bcomb, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(Bfat1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Bopc, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Bclc, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Brad2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(BDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(B0, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Bdot, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Bper, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Bvir, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Bigual, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(92, 92, 92)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Brad, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Bmenos, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Bdiv, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(Barr, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Bpor1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Bcomb, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Bfat1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Bper, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Bvir, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGap(172, 172, 172)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(B0, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Bdot, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Bopc, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Brad, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(B4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(B5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(B6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Bmais, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Bmul, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Bexp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(B7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(B8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(B9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Bmenos, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Bdiv, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Brad2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Bsecx, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Bcsecx, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Bctgx, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Bclc, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -925,39 +1017,49 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(153, 153, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
         //Botões
-        B0.setBackground(new java.awt.Color(204, 204, 204));
-        B1.setBackground(new java.awt.Color(204, 204, 204));
-        B2.setBackground(new java.awt.Color(204, 204, 204));
-        B3.setBackground(new java.awt.Color(204, 204, 204));
-        B4.setBackground(new java.awt.Color(204, 204, 204));
-        B5.setBackground(new java.awt.Color(204, 204, 204));
-        B6.setBackground(new java.awt.Color(204, 204, 204));
-        B7.setBackground(new java.awt.Color(204, 204, 204));
-        B8.setBackground(new java.awt.Color(204, 204, 204));
-        B9.setBackground(new java.awt.Color(204, 204, 204));
-        Bdot.setBackground(new java.awt.Color(204, 204, 204));
-        BDelete.setBackground(new java.awt.Color(211, 130, 115));
-        BDelete.setForeground(new java.awt.Color(0, 0, 0));
+        B0.setBackground(new java.awt.Color(162, 181, 205));
+        B1.setBackground(new java.awt.Color(162, 181, 205));
+        B2.setBackground(new java.awt.Color(162, 181, 205));
+        B3.setBackground(new java.awt.Color(162, 181, 205));
+        B4.setBackground(new java.awt.Color(162, 181, 205));
+        B5.setBackground(new java.awt.Color(162, 181, 205));
+        B6.setBackground(new java.awt.Color(162, 181, 205));
+        B7.setBackground(new java.awt.Color(162, 181, 205));
+        B8.setBackground(new java.awt.Color(162, 181, 205));
+        B9.setBackground(new java.awt.Color(162, 181, 205));
+        Bdot.setBackground(new java.awt.Color(162, 181, 205));
+        BDelete.setBackground(new java.awt.Color(255, 165, 79));
+        BDelete.setForeground(new java.awt.Color(110, 80, 20));
         
-        Bigual.setBackground(new java.awt.Color(204, 255, 204));
-        Bigual.setForeground(new java.awt.Color(0, 0, 0));
-        Bmais.setBackground(new java.awt.Color(255, 255, 204));
-        Bmenos.setBackground(new java.awt.Color(255, 255, 204));
-        Bmul.setBackground(new java.awt.Color(255, 255, 204));
-        Bdiv.setBackground(new java.awt.Color(255, 255, 204));
-        Brad.setBackground(new java.awt.Color(255, 255, 204));
-        Brad2.setBackground(new java.awt.Color(255, 255, 204));
-        Bexp.setBackground(new java.awt.Color(255, 255, 204));
-        Bopc.setBackground(new java.awt.Color(204, 204, 255));
-        Bclc.setBackground(new java.awt.Color(204, 204, 255));
-        Bpor1.setBackground(new java.awt.Color(255, 255, 204));
-        Bfat1.setBackground(new java.awt.Color(255, 255, 204));
-        Blogn.setBackground(new java.awt.Color(255, 255, 204));
-        Bln.setBackground(new java.awt.Color(255, 255, 204));
-        Bvir.setBackground(new java.awt.Color(204, 204, 255));
-        Bper.setBackground(new java.awt.Color(255, 255, 204));
-        Bcomb.setBackground(new java.awt.Color(255, 255, 204));
-        Barr.setBackground(new java.awt.Color(255, 255, 204));
+        Bigual.setBackground(new java.awt.Color(90, 180, 90));
+        Bigual.setForeground(new java.awt.Color(0, 70, 0));
+        
+        BL.setBackground(new java.awt.Color(255, 140, 140));
+        BL.setForeground(new java.awt.Color(90, 0, 0));
+        
+        Bmais.setBackground(new java.awt.Color(204, 204, 204));
+        Bmenos.setBackground(new java.awt.Color(204, 204, 204));
+        Bmul.setBackground(new java.awt.Color(204, 204, 204));
+        Bdiv.setBackground(new java.awt.Color(204, 204, 204));
+        Brad.setBackground(new java.awt.Color(204, 204, 204));
+        Brad2.setBackground(new java.awt.Color(204, 204, 204));
+        Bexp.setBackground(new java.awt.Color(204, 204, 204));
+        Bopc.setBackground(new java.awt.Color(204, 204, 204));
+        Bclc.setBackground(new java.awt.Color(204, 204, 204));
+        Bpor1.setBackground(new java.awt.Color(204, 204, 204));
+        Bfat1.setBackground(new java.awt.Color(204, 204, 204));
+        Blogn.setBackground(new java.awt.Color(204, 204, 204));
+        Bln.setBackground(new java.awt.Color(204, 204, 204));
+        Bvir.setBackground(new java.awt.Color(204, 204, 204));
+        Bper.setBackground(new java.awt.Color(204, 204, 204));
+        Bcomb.setBackground(new java.awt.Color(204, 204, 204));
+        Barr.setBackground(new java.awt.Color(204, 204, 204));
+        Bsenx.setBackground(new java.awt.Color(204, 204, 204)); 
+        Bcosx.setBackground(new java.awt.Color(204, 204, 204)); 
+        Btgx.setBackground(new java.awt.Color(204, 204, 204)); 
+        Bsecx.setBackground(new java.awt.Color(204, 204, 204)); 
+        Bcsecx.setBackground(new java.awt.Color(204, 204, 204)); 
+        Bctgx.setBackground(new java.awt.Color(204, 204, 204)); 
     }//GEN-LAST:event_MPitemActionPerformed
 
     private void MCitemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MCitemActionPerformed
@@ -983,12 +1085,15 @@ public class MainFrame extends javax.swing.JFrame {
         B8.setBackground(new java.awt.Color(220, 220, 220));
         B9.setBackground(new java.awt.Color(220, 220, 220));
         Bdot.setBackground(new java.awt.Color(220, 220, 220));
-        BDelete.setBackground(new java.awt.Color(255, 64, 64));
+        BDelete.setBackground(new java.awt.Color(255, 165, 0));
         BDelete.setForeground(new java.awt.Color(255, 255, 255));
         
         
-        Bigual.setBackground(new java.awt.Color(0, 255, 0));
-        Bigual.setForeground(new java.awt.Color(0, 100, 0));
+        Bigual.setBackground(new java.awt.Color(15, 255, 15));
+        Bigual.setForeground(new java.awt.Color(255, 255, 255));
+        
+        BL.setBackground(new java.awt.Color(255, 15, 15));
+        BL.setForeground(new java.awt.Color(255, 255, 255));
         
         Bmais.setBackground(new java.awt.Color(255, 255, 0));
         Bmenos.setBackground(new java.awt.Color(255, 255, 0));
@@ -997,17 +1102,52 @@ public class MainFrame extends javax.swing.JFrame {
         Brad.setBackground(new java.awt.Color(255, 255, 0));
         Brad2.setBackground(new java.awt.Color(255, 255, 0));
         Bexp.setBackground(new java.awt.Color(255, 255, 0));
-        Bopc.setBackground(new java.awt.Color(135, 206, 255));
-        Bclc.setBackground(new java.awt.Color(135, 206, 255));
+        Bopc.setBackground(new java.awt.Color(255, 255, 0));
+        Bclc.setBackground(new java.awt.Color(255, 255, 0));
         Bpor1.setBackground(new java.awt.Color(255, 255, 0));
         Bfat1.setBackground(new java.awt.Color(255, 255, 0));
         Blogn.setBackground(new java.awt.Color(255, 255, 0));
         Bln.setBackground(new java.awt.Color(255, 255, 0));
-        Bvir.setBackground(new java.awt.Color(135, 206, 255));
+        Bvir.setBackground(new java.awt.Color(255, 255, 0));
         Bper.setBackground(new java.awt.Color(255, 255, 0));
         Bcomb.setBackground(new java.awt.Color(255, 255, 0));
-        Barr.setBackground(new java.awt.Color(255, 255, 0));        
+        Barr.setBackground(new java.awt.Color(255, 255, 0)); 
+        Bsenx.setBackground(new java.awt.Color(255, 255, 0)); 
+        Bcosx.setBackground(new java.awt.Color(255, 255, 0)); 
+        Btgx.setBackground(new java.awt.Color(255, 255, 0)); 
+        Bsecx.setBackground(new java.awt.Color(255, 255, 0)); 
+        Bcsecx.setBackground(new java.awt.Color(255, 255, 0)); 
+        Bctgx.setBackground(new java.awt.Color(255, 255, 0)); 
     }//GEN-LAST:event_MCitemActionPerformed
+
+    private void BLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BLActionPerformed
+        A.setText("");
+        Operacoes = "";        
+    }//GEN-LAST:event_BLActionPerformed
+
+    private void BsenxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BsenxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BsenxActionPerformed
+
+    private void BcosxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcosxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BcosxActionPerformed
+
+    private void BtgxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtgxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtgxActionPerformed
+
+    private void BsecxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BsecxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BsecxActionPerformed
+
+    private void BcsecxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcsecxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BcsecxActionPerformed
+
+    private void BctgxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BctgxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BctgxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1058,9 +1198,13 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton B9;
     private javax.swing.JButton BDelete;
     private javax.swing.ButtonGroup BG;
+    private javax.swing.JButton BL;
     private javax.swing.JButton Barr;
     private javax.swing.JButton Bclc;
     private javax.swing.JButton Bcomb;
+    private javax.swing.JButton Bcosx;
+    private javax.swing.JButton Bcsecx;
+    private javax.swing.JButton Bctgx;
     private javax.swing.JButton Bdiv;
     private javax.swing.JButton Bdot;
     private javax.swing.JButton Bexp;
@@ -1076,6 +1220,9 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton Bpor1;
     private javax.swing.JButton Brad;
     private javax.swing.JButton Brad2;
+    private javax.swing.JButton Bsecx;
+    private javax.swing.JButton Bsenx;
+    private javax.swing.JButton Btgx;
     private javax.swing.JButton Bvir;
     private javax.swing.JCheckBoxMenuItem MCitem;
     private javax.swing.JCheckBoxMenuItem MPitem;
