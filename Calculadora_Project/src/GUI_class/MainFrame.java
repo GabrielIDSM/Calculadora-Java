@@ -1,7 +1,8 @@
 //Projeto salvo no git
 package GUI_class;
 import class_pkg.*;
-import java.util.Set;
+import java.util.*;
+import java.text.*;
 
 public class MainFrame extends javax.swing.JFrame {
     public MainFrame() {
@@ -75,14 +76,19 @@ public class MainFrame extends javax.swing.JFrame {
 
         jPanel1.setBackground(java.awt.SystemColor.controlDkShadow);
 
+        jScrollPane1.setBorder(null);
+        jScrollPane1.setForeground(java.awt.SystemColor.controlDkShadow);
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
         A.setEditable(false);
-        A.setBackground(new java.awt.Color(0, 0, 51));
+        A.setBackground(java.awt.SystemColor.controlDkShadow);
         A.setColumns(20);
-        A.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
+        A.setFont(new java.awt.Font("Arial", 0, 31)); // NOI18N
         A.setForeground(new java.awt.Color(255, 255, 255));
         A.setLineWrap(true);
         A.setRows(2);
-        A.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        A.setBorder(null);
         A.setCaretColor(new java.awt.Color(255, 255, 255));
         A.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(A);
@@ -548,14 +554,15 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(84, 84, 84)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(B0, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Bdot, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Bvir, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Bopc, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Bclc, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Brad, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(Brad, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(B0, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Bdot, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Bvir, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -766,6 +773,11 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_BdivActionPerformed
 
     private void Fim(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Fim
+        if (MPitem.isSelected()) {
+            Bvir.setBackground(new java.awt.Color(204, 204, 204));
+        } else if (MCitem.isSelected()) {
+            Bvir.setBackground(new java.awt.Color(255, 255, 0));
+        }
         if(null == A.getText()) {
             PV = true;
             A.setText("");
@@ -854,6 +866,17 @@ public class MainFrame extends javax.swing.JFrame {
             char[] Op_char = Operacoes.toCharArray();
             int i = 0;
             A.setText("");
+            if (Op_char.length > 1) {
+                if (Op_char[Op_char.length - 1] == 'T'
+                        || Op_char[Op_char.length - 1] == 'M'
+                        || Op_char[Op_char.length - 1] == 'J') {
+                    if (MPitem.isSelected()) {
+                        Bvir.setBackground(new java.awt.Color(204, 204, 204));
+                    } else if (MCitem.isSelected()) {
+                        Bvir.setBackground(new java.awt.Color(255, 255, 0));
+                    }
+                }
+            }
             while (i < Op_char.length - 1) {
                 if(Op_char[i] == '+'
                         || Op_char[i] == '-'
@@ -992,6 +1015,11 @@ public class MainFrame extends javax.swing.JFrame {
             A.setText("");
             PV = false;
         }
+        if (MPitem.isSelected()) {
+            Bvir.setBackground(new java.awt.Color(204, 204, 204));
+        } else if (MCitem.isSelected()) {
+            Bvir.setBackground(new java.awt.Color(255, 255, 0));
+        }
         Operacoes += ",";
         A.append(", ");
     }//GEN-LAST:event_BvirActionPerformed
@@ -1010,6 +1038,11 @@ public class MainFrame extends javax.swing.JFrame {
             A.setText("");
             PV = false;
         }
+        if (MPitem.isSelected()) {
+            Bvir.setBackground(new java.awt.Color(238, 70, 70));
+        } else if (MCitem.isSelected()) {
+            Bvir.setBackground(new java.awt.Color(255, 20, 20));
+        }
         Operacoes += "M";
         A.append("C ");
     }//GEN-LAST:event_BcombActionPerformed
@@ -1019,6 +1052,11 @@ public class MainFrame extends javax.swing.JFrame {
             A.setText("");
             PV = false;
         }
+        if (MPitem.isSelected()) {
+            Bvir.setBackground(new java.awt.Color(238, 70, 70));
+        } else if (MCitem.isSelected()) {
+            Bvir.setBackground(new java.awt.Color(255, 20, 20));
+        }
         Operacoes += "J";
         A.append("A ");
     }//GEN-LAST:event_BarrActionPerformed
@@ -1027,10 +1065,9 @@ public class MainFrame extends javax.swing.JFrame {
         //Painel principal
         jPanel1.setBackground(java.awt.SystemColor.controlDkShadow);
         //Area de texto
-        A.setBackground(new java.awt.Color(0, 0, 51));
-        A.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
+        A.setBackground(java.awt.SystemColor.controlDkShadow);
+        A.setFont(new java.awt.Font("Arial", 0, 31)); // NOI18N
         A.setForeground(new java.awt.Color(255, 255, 255));
-        A.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
         //Painel de números
         jPanel2.setBackground(new java.awt.Color(153, 153, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
@@ -1084,10 +1121,9 @@ public class MainFrame extends javax.swing.JFrame {
         //Painel principal
         jPanel1.setBackground(new java.awt.Color(240, 240, 240));
         //Area de texto
-        A.setBackground(new java.awt.Color(255, 255, 255));
-        A.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
+        A.setBackground(new java.awt.Color(240, 240, 240));
+        A.setFont(new java.awt.Font("Arial", 0, 31)); // NOI18N
         A.setForeground(new java.awt.Color(0, 0, 0));
-        A.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.SystemColor.controlDkShadow, 2));
         //Painel de números
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.SystemColor.controlDkShadow, 3));
@@ -1140,7 +1176,12 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void BLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BLActionPerformed
         A.setText("");
-        Operacoes = "";        
+        Operacoes = "";   
+        if (MPitem.isSelected()) {
+            Bvir.setBackground(new java.awt.Color(204, 204, 204));
+        } else if (MCitem.isSelected()) {
+            Bvir.setBackground(new java.awt.Color(255, 255, 0));
+        }
     }//GEN-LAST:event_BLActionPerformed
 
     private void BsenxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BsenxActionPerformed
@@ -1232,6 +1273,14 @@ public class MainFrame extends javax.swing.JFrame {
         });
     }
 
+    public static javax.swing.JTextArea verificarows(javax.swing.JTextArea A, String Ope){
+        int c = 0;
+        if (c > 3){
+            A.setFont(new java.awt.Font("Arial", 0, (93/c)));
+            A.setText("Ope");
+        }
+        return A;
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea A;
     private javax.swing.JButton B0;
