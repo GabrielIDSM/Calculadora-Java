@@ -11,7 +11,6 @@ public class MainFrame extends javax.swing.JFrame {
     }
     //Atributos IN
     static String Operacoes = "";
-    static boolean PV = false;
     //FIM
     
     /**
@@ -65,6 +64,9 @@ public class MainFrame extends javax.swing.JFrame {
         Bsecx = new javax.swing.JButton();
         Bcsecx = new javax.swing.JButton();
         Bctgx = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Ab = new javax.swing.JTextArea();
+        H = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         MPitem = new javax.swing.JCheckBoxMenuItem();
@@ -88,6 +90,7 @@ public class MainFrame extends javax.swing.JFrame {
         A.setForeground(new java.awt.Color(255, 255, 255));
         A.setLineWrap(true);
         A.setRows(2);
+        A.setWrapStyleWord(true);
         A.setBorder(null);
         A.setCaretColor(new java.awt.Color(255, 255, 255));
         A.setDisabledTextColor(new java.awt.Color(255, 255, 255));
@@ -586,25 +589,54 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jScrollPane2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        Ab.setEditable(false);
+        Ab.setBackground(new java.awt.Color(153, 153, 153));
+        Ab.setColumns(20);
+        Ab.setFont(new java.awt.Font("Arial", 0, 28)); // NOI18N
+        Ab.setForeground(new java.awt.Color(255, 255, 255));
+        Ab.setLineWrap(true);
+        Ab.setRows(5);
+        Ab.setWrapStyleWord(true);
+        jScrollPane2.setViewportView(Ab);
+
+        H.setBackground(java.awt.SystemColor.controlDkShadow);
+        H.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        H.setForeground(new java.awt.Color(204, 204, 204));
+        H.setText("Histórico");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(H))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(H)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 552, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
 
         jMenu1.setText("Tema");
@@ -647,126 +679,112 @@ public class MainFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B1ActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "1";
         A.append("1");
     }//GEN-LAST:event_B1ActionPerformed
 
     private void B2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B2ActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "2";
         A.append("2");
     }//GEN-LAST:event_B2ActionPerformed
 
     private void B3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B3ActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "3";
         A.append("3");
     }//GEN-LAST:event_B3ActionPerformed
 
     private void B4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B4ActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "4";
         A.append("4");
     }//GEN-LAST:event_B4ActionPerformed
 
     private void B5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B5ActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "5";
         A.append("5");
     }//GEN-LAST:event_B5ActionPerformed
 
     private void B6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B6ActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "6";
         A.append("6");
     }//GEN-LAST:event_B6ActionPerformed
 
     private void B7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B7ActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "7";
         A.append("7");
     }//GEN-LAST:event_B7ActionPerformed
 
     private void B8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B8ActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "8";
         A.append("8");
     }//GEN-LAST:event_B8ActionPerformed
 
     private void B9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B9ActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "9";
         A.append("9");
     }//GEN-LAST:event_B9ActionPerformed
 
     private void B0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0ActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "0";
         A.append("0");
     }//GEN-LAST:event_B0ActionPerformed
 
     private void BmaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BmaisActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "+";
         A.append(" + ");
     }//GEN-LAST:event_BmaisActionPerformed
 
     private void BmenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BmenosActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "-";
         A.append(" - ");
     }//GEN-LAST:event_BmenosActionPerformed
 
     private void BmulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BmulActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "*";
         A.append(" * ");
     }//GEN-LAST:event_BmulActionPerformed
 
     private void BdivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BdivActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "/";
         A.append(" / ");
@@ -778,19 +796,22 @@ public class MainFrame extends javax.swing.JFrame {
         } else if (MCitem.isSelected()) {
             Bvir.setBackground(new java.awt.Color(255, 255, 0));
         }
+        System.out.println("OPERACOES : "+Operacoes);
+        System.out.println("A.GETTEXT() : "+A.getText());
         if(null == A.getText()) {
-            PV = true;
-            A.setText("");
             Operacoes O = new Operacoes(Operacoes);
             float resultado = O.main();
             boolean verifica = O.getvalidade();
             if (verifica) {
                 String R = Float.toString(resultado);
+                Operacoes = R;
+                A.setText("");
                 A.append(R);
             } else {
+                A.setText("");
                 A.append("Erro");
+                Operacoes = "";
             }
-            Operacoes = "";
         } else switch (A.getText()) {
             case "Erro":
                 A.setText("");
@@ -798,68 +819,72 @@ public class MainFrame extends javax.swing.JFrame {
             case "":
                 A.setText("");
                 break;
-            default:
-                PV = true;
-                A.setText("");
+            default:         
+                Ab.append(A.getText()+"\n=\n");
                 Operacoes O = new Operacoes(Operacoes);
                 float resultado = O.main();
                 boolean verifica = O.getvalidade();
                 if (verifica) {
                     String R = Float.toString(resultado);
-                    A.append(R);
+                    Operacoes = R;
+                    A.setText(R);
+                    Ab.append(R+"\n\n");
                 } else {
+                    A.setText("");
                     A.append("Erro");
-                }   Operacoes = "";
+                    Ab.append("Erro"+"\n\n");
+                    Operacoes = "";
+                }   
                 break;
         }
+        System.out.println("OPERACOES FIM : "+Operacoes);
+        System.out.println("A.GETTEXT() FIM : "+A.getText());
     }//GEN-LAST:event_Fim
 
     private void BdotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BdotActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += ".";
         A.append(".");
     }//GEN-LAST:event_BdotActionPerformed
 
     private void BexpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BexpActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "^";
         A.append(" ^ ");
     }//GEN-LAST:event_BexpActionPerformed
 
     private void BopcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BopcActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "(";
         A.append("(");
     }//GEN-LAST:event_BopcActionPerformed
 
     private void BclcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BclcActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += ")";
         A.append(")");
     }//GEN-LAST:event_BclcActionPerformed
 
     private void BradActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BradActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "r";
         A.append("²√");
     }//GEN-LAST:event_BradActionPerformed
 
     private void BDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BDeleteActionPerformed
+        if("".equals(Operacoes)){
+            A.setText("");
+        }
         if (Operacoes != null || !"".equals(Operacoes)) {
             String aux = "";
             String Opf = "";
@@ -966,54 +991,48 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_BDeleteActionPerformed
 
     private void Brad2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Brad2ActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "R";
         A.append("√");
     }//GEN-LAST:event_Brad2ActionPerformed
 
     private void Bpor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bpor1ActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "p";
         A.append("% de ");
     }//GEN-LAST:event_Bpor1ActionPerformed
 
     private void Bfat1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bfat1ActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "!";
         A.append("!");
     }//GEN-LAST:event_Bfat1ActionPerformed
 
     private void BlognActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BlognActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "L";
         A.append("log ");
     }//GEN-LAST:event_BlognActionPerformed
 
     private void BlnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BlnActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "l";
         A.append("ln ");
     }//GEN-LAST:event_BlnActionPerformed
 
     private void BvirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BvirActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         if (MPitem.isSelected()) {
             Bvir.setBackground(new java.awt.Color(204, 204, 204));
@@ -1025,18 +1044,16 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_BvirActionPerformed
 
     private void BperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BperActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "T";
         A.append("P ");
     }//GEN-LAST:event_BperActionPerformed
 
     private void BcombActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcombActionPerformed
-        if(PV){
+       if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         if (MPitem.isSelected()) {
             Bvir.setBackground(new java.awt.Color(238, 70, 70));
@@ -1048,9 +1065,8 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_BcombActionPerformed
 
     private void BarrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BarrActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         if (MPitem.isSelected()) {
             Bvir.setBackground(new java.awt.Color(238, 70, 70));
@@ -1068,6 +1084,12 @@ public class MainFrame extends javax.swing.JFrame {
         A.setBackground(java.awt.SystemColor.controlDkShadow);
         A.setFont(new java.awt.Font("Arial", 0, 31)); // NOI18N
         A.setForeground(new java.awt.Color(255, 255, 255));
+        //Histórico 
+        jScrollPane2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
+        Ab.setBackground(new java.awt.Color(153, 153, 153));
+        Ab.setForeground(new java.awt.Color(255, 255, 255));
+        H.setBackground(java.awt.SystemColor.controlDkShadow);
+        H.setForeground(new java.awt.Color(204, 204, 204));
         //Painel de números
         jPanel2.setBackground(new java.awt.Color(153, 153, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
@@ -1124,6 +1146,12 @@ public class MainFrame extends javax.swing.JFrame {
         A.setBackground(new java.awt.Color(240, 240, 240));
         A.setFont(new java.awt.Font("Arial", 0, 31)); // NOI18N
         A.setForeground(new java.awt.Color(0, 0, 0));
+        //Histórico 
+        jScrollPane2.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.SystemColor.controlDkShadow, 3));
+        Ab.setBackground(new java.awt.Color(204, 204, 204));
+        Ab.setForeground(java.awt.SystemColor.controlDkShadow);
+        H.setBackground(java.awt.SystemColor.controlDkShadow);
+        H.setForeground(java.awt.SystemColor.controlDkShadow);
         //Painel de números
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.SystemColor.controlDkShadow, 3));
@@ -1185,54 +1213,48 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_BLActionPerformed
 
     private void BsenxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BsenxActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "Q";
         A.append("sen ");
     }//GEN-LAST:event_BsenxActionPerformed
 
     private void BcosxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcosxActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "W";
         A.append("cos ");
     }//GEN-LAST:event_BcosxActionPerformed
 
     private void BtgxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtgxActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "K";
         A.append("tg ");
     }//GEN-LAST:event_BtgxActionPerformed
 
     private void BsecxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BsecxActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "H";
         A.append("sec ");
     }//GEN-LAST:event_BsecxActionPerformed
 
     private void BcsecxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcsecxActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "h";
         A.append("cossec ");
     }//GEN-LAST:event_BcsecxActionPerformed
 
     private void BctgxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BctgxActionPerformed
-        if(PV){
+        if("".equals(Operacoes)){
             A.setText("");
-            PV = false;
         }
         Operacoes += "k";
         A.append("cotg ");
@@ -1273,16 +1295,26 @@ public class MainFrame extends javax.swing.JFrame {
         });
     }
 
-    public static javax.swing.JTextArea verificarows(javax.swing.JTextArea A, String Ope){
-        int c = 0;
-        if (c > 3){
-            A.setFont(new java.awt.Font("Arial", 0, (93/c)));
-            A.setText("Ope");
+    public static javax.swing.JTextArea define_A(javax.swing.JTextArea Ab, String R){
+        String aux = "";
+        int i = 0;
+        char[] c = R.toCharArray();
+        while(i < c.length){
+            if(c[i] != ' '){
+                aux += c[i];
+            }else{
+                Ab.append(aux);
+                aux = "";
+            }
+            i++;
         }
-        return A;
+        Ab.append(" =");
+        Ab.append("\n");
+        return Ab;
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea A;
+    private javax.swing.JTextArea Ab;
     private javax.swing.JButton B0;
     private javax.swing.JButton B1;
     private javax.swing.JButton B2;
@@ -1321,6 +1353,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton Bsenx;
     private javax.swing.JButton Btgx;
     private javax.swing.JButton Bvir;
+    private javax.swing.JLabel H;
     private javax.swing.JCheckBoxMenuItem MCitem;
     private javax.swing.JCheckBoxMenuItem MPitem;
     private javax.swing.JMenu jMenu1;
@@ -1328,5 +1361,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }

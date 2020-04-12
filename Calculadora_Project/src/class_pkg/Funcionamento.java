@@ -986,10 +986,12 @@ public class Funcionamento {
                 i = 0;
                 ope = opef;
                 ope_char = ope.toCharArray();
+                aux = "";
+                opef = "";
             }
             i++;
         }
-        return opef;
+        return ope;
     }
        
     private String calcula_l(String ope){
@@ -999,6 +1001,7 @@ public class Funcionamento {
         int i = 0, f = 0;
         while(i < ope_char.length){
             if(ope_char[i] == 'l'){
+                if(getdep_mod()) System.out.println("OPE : "+ope);
                 f = i;
                 ope_char[f] = 'S';
                 f++;
@@ -1035,10 +1038,13 @@ public class Funcionamento {
                 i = 0;
                 ope = opef;
                 ope_char = ope.toCharArray();
+                if(getdep_mod()) System.out.println("OPE FIM: "+ope);
+                aux = "";
+                opef = "";
             }
             i++;
         }
-        return opef;
+        return ope;
     }
       
     private String calcula_fat(String ope){
