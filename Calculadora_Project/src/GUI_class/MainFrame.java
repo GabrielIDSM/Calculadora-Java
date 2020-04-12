@@ -1170,14 +1170,14 @@ public class MainFrame extends javax.swing.JFrame {
         //Area de texto
         A.setBackground(new java.awt.Color(240, 240, 240));
         A.setFont(new java.awt.Font("Arial", 0, 31)); // NOI18N
-        A.setForeground(new java.awt.Color(0, 0, 0));
+        A.setForeground(java.awt.SystemColor.controlDkShadow);
         //Histórico 
         //jScrollPane2.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.SystemColor.controlDkShadow, 3));
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
-        Ab.setBackground(new java.awt.Color(204, 204, 204));
-        Ab.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel3.setBackground(java.awt.SystemColor.controlDkShadow);
+        Ab.setBackground(new java.awt.Color(214, 214, 214));
+        Ab.setForeground(java.awt.SystemColor.controlDkShadow);
         H.setBackground(java.awt.SystemColor.controlDkShadow);
-        H.setForeground(java.awt.SystemColor.controlDkShadow);
+        H.setForeground(new java.awt.Color(214, 214, 214));
         //Painel de números
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.SystemColor.controlDkShadow, 3));
