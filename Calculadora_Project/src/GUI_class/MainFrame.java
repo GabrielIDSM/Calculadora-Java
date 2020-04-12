@@ -64,6 +64,7 @@ public class MainFrame extends javax.swing.JFrame {
         Bsecx = new javax.swing.JButton();
         Bcsecx = new javax.swing.JButton();
         Bctgx = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         Ab = new javax.swing.JTextArea();
         H = new javax.swing.JLabel();
@@ -589,14 +590,16 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jScrollPane2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        jScrollPane2.setBorder(null);
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         Ab.setEditable(false);
         Ab.setBackground(new java.awt.Color(153, 153, 153));
         Ab.setColumns(20);
-        Ab.setFont(new java.awt.Font("Arial", 0, 28)); // NOI18N
+        Ab.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         Ab.setForeground(new java.awt.Color(255, 255, 255));
         Ab.setLineWrap(true);
         Ab.setRows(5);
@@ -604,38 +607,58 @@ public class MainFrame extends javax.swing.JFrame {
         jScrollPane2.setViewportView(Ab);
 
         H.setBackground(java.awt.SystemColor.controlDkShadow);
-        H.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        H.setForeground(new java.awt.Color(204, 204, 204));
+        H.setFont(new java.awt.Font("Dialog", 1, 26)); // NOI18N
+        H.setForeground(new java.awt.Color(153, 153, 153));
         H.setText("Histórico");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(H, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 182, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(H, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(H))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1)
+                        .addContainerGap())
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 6, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(H)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 552, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -791,13 +814,14 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_BdivActionPerformed
 
     private void Fim(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Fim
+        boolean dep_mod = false;
         if (MPitem.isSelected()) {
             Bvir.setBackground(new java.awt.Color(204, 204, 204));
         } else if (MCitem.isSelected()) {
             Bvir.setBackground(new java.awt.Color(255, 255, 0));
         }
-        System.out.println("OPERACOES : "+Operacoes);
-        System.out.println("A.GETTEXT() : "+A.getText());
+        if(dep_mod) System.out.println("OPERACOES : "+Operacoes);
+        if(dep_mod) System.out.println("A.GETTEXT() : "+A.getText());
         if(null == A.getText()) {
             Operacoes O = new Operacoes(Operacoes);
             float resultado = O.main();
@@ -820,7 +844,7 @@ public class MainFrame extends javax.swing.JFrame {
                 A.setText("");
                 break;
             default:         
-                Ab.append(A.getText()+"\n=\n");
+                Ab.append(A.getText()+"\n= ");
                 Operacoes O = new Operacoes(Operacoes);
                 float resultado = O.main();
                 boolean verifica = O.getvalidade();
@@ -837,8 +861,8 @@ public class MainFrame extends javax.swing.JFrame {
                 }   
                 break;
         }
-        System.out.println("OPERACOES FIM : "+Operacoes);
-        System.out.println("A.GETTEXT() FIM : "+A.getText());
+        if(dep_mod) System.out.println("OPERACOES FIM : "+Operacoes);
+        if(dep_mod) System.out.println("A.GETTEXT() FIM : "+A.getText());
     }//GEN-LAST:event_Fim
 
     private void BdotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BdotActionPerformed
@@ -1085,11 +1109,12 @@ public class MainFrame extends javax.swing.JFrame {
         A.setFont(new java.awt.Font("Arial", 0, 31)); // NOI18N
         A.setForeground(new java.awt.Color(255, 255, 255));
         //Histórico 
-        jScrollPane2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
+        //jScrollPane2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         Ab.setBackground(new java.awt.Color(153, 153, 153));
         Ab.setForeground(new java.awt.Color(255, 255, 255));
-        H.setBackground(java.awt.SystemColor.controlDkShadow);
-        H.setForeground(new java.awt.Color(204, 204, 204));
+        H.setBackground(new java.awt.Color(153, 153, 153));
+        H.setForeground(new java.awt.Color(153, 153, 153));
         //Painel de números
         jPanel2.setBackground(new java.awt.Color(153, 153, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
@@ -1147,9 +1172,10 @@ public class MainFrame extends javax.swing.JFrame {
         A.setFont(new java.awt.Font("Arial", 0, 31)); // NOI18N
         A.setForeground(new java.awt.Color(0, 0, 0));
         //Histórico 
-        jScrollPane2.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.SystemColor.controlDkShadow, 3));
+        //jScrollPane2.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.SystemColor.controlDkShadow, 3));
+        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
         Ab.setBackground(new java.awt.Color(204, 204, 204));
-        Ab.setForeground(java.awt.SystemColor.controlDkShadow);
+        Ab.setForeground(new java.awt.Color(0, 0, 0));
         H.setBackground(java.awt.SystemColor.controlDkShadow);
         H.setForeground(java.awt.SystemColor.controlDkShadow);
         //Painel de números
@@ -1360,6 +1386,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables

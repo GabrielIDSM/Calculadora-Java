@@ -22,7 +22,7 @@ public class Funcionamento {
     private String[][] Array_exp;
     private String[][] Array_mul_div;
     private int[] index_sp1;
-    private boolean dep_mod = true;
+    private boolean dep_mod = false;
     private boolean validade = true;
     private boolean raiz = false;
     private boolean exp = false;
@@ -631,7 +631,7 @@ public class Funcionamento {
                             c[f] = 'S';
                             f++;
                         }
-                        while(c[f] != '+' && c[f] != '+'
+                        while(c[f] != '+' && c[f] != '-' && c[f] != 'p'
                                 && c[f] != '*' && c[f] != '/'
                                 && c[f] != '^' && c[f] != 'R' && c[f] != 'r'
                                 && c[f] != 'L' && c[f] != 'l'
@@ -657,7 +657,7 @@ public class Funcionamento {
                             c[f] = 'S';
                             f++;
                         }
-                        while(c[f] != '+' && c[f] != '+'
+                        while(c[f] != '+' && c[f] != '-' && c[f] != 'p'
                                 && c[f] != '*' && c[f] != '/'
                                 && c[f] != '^' && c[f] != 'R' && c[f] != 'r'
                                 && c[f] != 'L' && c[f] != 'l'
@@ -683,7 +683,7 @@ public class Funcionamento {
                             c[f] = 'S';
                             f++;
                         }
-                        while(c[f] != '+' && c[f] != '+'
+                        while(c[f] != '+' && c[f] != '-' && c[f] != 'p'
                                 && c[f] != '*' && c[f] != '/'
                                 && c[f] != '^' && c[f] != 'R' && c[f] != 'r'
                                 && c[f] != 'L' && c[f] != 'l'
@@ -709,7 +709,7 @@ public class Funcionamento {
                             c[f] = 'S';
                             f++;
                         }
-                        while(c[f] != '+' && c[f] != '+'
+                        while(c[f] != '+' && c[f] != '-' && c[f] != 'p'
                                 && c[f] != '*' && c[f] != '/'
                                 && c[f] != '^' && c[f] != 'R' && c[f] != 'r'
                                 && c[f] != 'L' && c[f] != 'l'
@@ -735,7 +735,7 @@ public class Funcionamento {
                             c[f] = 'S';
                             f++;
                         }
-                        while(c[f] != '+' && c[f] != '+'
+                        while(c[f] != '+' && c[f] != '-' && c[f] != 'p'
                                 && c[f] != '*' && c[f] != '/'
                                 && c[f] != '^' && c[f] != 'R' && c[f] != 'r'
                                 && c[f] != 'L' && c[f] != 'l'
@@ -761,7 +761,7 @@ public class Funcionamento {
                             c[f] = 'S';
                             f++;
                         }
-                        while(c[f] != '+' && c[f] != '+'
+                        while(c[f] != '+' && c[f] != '-' && c[f] != 'p'
                                 && c[f] != '*' && c[f] != '/'
                                 && c[f] != '^' && c[f] != 'R' && c[f] != 'r'
                                 && c[f] != 'L' && c[f] != 'l'
