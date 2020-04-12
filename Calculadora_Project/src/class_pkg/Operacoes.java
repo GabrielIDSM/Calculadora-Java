@@ -14,7 +14,7 @@ public class Operacoes {
     private boolean validade = true;
     private boolean parentesis = false;
     private boolean sit = true;
-    private boolean dep_mod = false;
+    private boolean dep_mod = true;
     private int cont_parentesis_AB = 0;
     private int cont_parentesis_FE = 0;
 
@@ -484,7 +484,13 @@ public class Operacoes {
                 || char_operacoes[(char_operacoes.length - 1)] == 'l'
                 || char_operacoes[(char_operacoes.length - 1)] == 'T'
                 || char_operacoes[(char_operacoes.length - 1)] == 'M'
-                || char_operacoes[(char_operacoes.length - 1)] == 'J') {
+                || char_operacoes[(char_operacoes.length - 1)] == 'J'
+                || char_operacoes[(char_operacoes.length - 1)] == 'Q'
+                || char_operacoes[(char_operacoes.length - 1)] == 'W'
+                || char_operacoes[(char_operacoes.length - 1)] == 'K'
+                || char_operacoes[(char_operacoes.length - 1)] == 'H'
+                || char_operacoes[(char_operacoes.length - 1)] == 'k'
+                || char_operacoes[(char_operacoes.length - 1)] == 'h') {
             setvalidade(false);
             return;
         }
@@ -503,7 +509,13 @@ public class Operacoes {
                     || char_operacoes[cont - 1] == 'T'
                     || char_operacoes[cont - 1] == 'M'
                     || char_operacoes[cont - 1] == 'J'
-                    || char_operacoes[cont - 1] == ',')) {
+                    || char_operacoes[cont - 1] == ','
+                    || char_operacoes[cont - 1] == 'Q'
+                    || char_operacoes[cont - 1] == 'W'
+                    || char_operacoes[cont - 1] == 'K'
+                    || char_operacoes[cont - 1] == 'H'
+                    || char_operacoes[cont - 1] == 'k'
+                    || char_operacoes[cont - 1] == 'h')) {
                 setvalidade(false);
                 break;
             } else if (char_operacoes[cont] == ')' && !(char_operacoes[cont + 1] == '+'
@@ -587,7 +599,13 @@ public class Operacoes {
                             || char_string[f] == 'l'
                             || char_string[f] == 'T'
                             || char_string[f] == 'M'
-                            || char_string[f] == 'J') {
+                            || char_string[f] == 'J'
+                            || char_string[f] == 'Q'
+                            || char_string[f] == 'W'
+                            || char_string[f] == 'K'
+                            || char_string[f] == 'H'
+                            || char_string[f] == 'k'
+                            || char_string[f] == 'h') {
                         break;
                     }
                     if (char_string[f] == ')') {

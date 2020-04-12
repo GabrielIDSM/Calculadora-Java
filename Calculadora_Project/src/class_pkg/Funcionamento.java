@@ -22,7 +22,7 @@ public class Funcionamento {
     private String[][] Array_exp;
     private String[][] Array_mul_div;
     private int[] index_sp1;
-    private boolean dep_mod = false;
+    private boolean dep_mod = true;
     private boolean validade = true;
     private boolean raiz = false;
     private boolean exp = false;
@@ -35,6 +35,7 @@ public class Funcionamento {
     private boolean l = false;
     private boolean L = false;
     private boolean TMJ = false;
+    private boolean trig = false;
     private boolean sem_operadores = false;
     private boolean unica_raiz = false;
     private char[] aux_operacoes;
@@ -89,6 +90,15 @@ public class Funcionamento {
             verifica_validade_L();
             verifica_validade_l();
             verifica_TMJ();
+            verifica_trig();
+            //Verifica se há funcões trigonométricas IN
+            if (validade) if(trig){
+                if(getdep_mod()) System.out.println("OPERACOES TRIG IN : "+operacoes);
+                operacoes = calcula_trig(operacoes);
+                if(getdep_mod()) System.out.println("OPERACOES TRIG FIM : "+operacoes);
+                aux_operacoes = operacoes.toCharArray();
+            } 
+            //FIM
             //Verifica se há Comb, Arr ou Perm e calcula IN
             if (validade) if(TMJ){
                 if(getdep_mod()) System.out.println("OPERACOES TMJ IN : "+operacoes);
@@ -357,6 +367,22 @@ public class Funcionamento {
         TMJ = ver_TMJ;
     }
     
+    private void verifica_trig(){
+        boolean ver_t = false;
+        for (int i = 0; i < aux_operacoes.length; i++) {
+            if (aux_operacoes[i] == 'Q' 
+                    || aux_operacoes[i] == 'W' 
+                    || aux_operacoes[i] == 'K'
+                    || aux_operacoes[i] == 'H' 
+                    || aux_operacoes[i] == 'k'
+                    || aux_operacoes[i] == 'h') {
+                ver_t = true;
+                break;
+            }
+        }
+        trig = ver_t;
+    }
+    
     private String duplo_sinal(String string) {
         String string_f = "";
         int i = 1;
@@ -579,6 +605,341 @@ public class Funcionamento {
             resultado = "0";
         }
         return resultado;
+    }
+    
+    private String calcula_trig(String ope){
+        String sf = "", op = "", aux = "";
+        char[] c = ope.toCharArray();
+        int i = 0, f = 0;
+        try {
+            while (i < c.length) {
+                if (c[i] == 'Q'
+                        || c[i] == 'W'
+                        || c[i] == 'K'
+                        || c[i] == 'H'
+                        || c[i] == 'k'
+                        || c[i] == 'h') {
+                    if(getdep_mod()) System.out.println("CASO TRIG IN : "+ope);
+                    sf = "";
+                    op = "";
+                    if(c[i] == 'Q'){
+                        c[i] = 'S';
+                        i++;
+                        f = i;
+                        if(f < c.length) if(c[f] == '+' || c[f] == '-'){
+                            op += c[f];
+                            c[f] = 'S';
+                            f++;
+                        }
+                        while(c[f] != '+' && c[f] != '+'
+                                && c[f] != '*' && c[f] != '/'
+                                && c[f] != '^' && c[f] != 'R' && c[f] != 'r'
+                                && c[f] != 'L' && c[f] != 'l'
+                                && c[f] != 'T' && c[f] != 'M' && c[f] != 'J'
+                                && c[f] != 'f' && c[f] != ','
+                                && c[f] != 'Q' && c[f] != 'W'
+                                && c[f] != 'K' && c[f] != 'H'
+                                && c[f] != 'k' && c[f] != 'h'
+                                && f < c.length){
+                            aux += c[f];
+                            c[f] = 'S';
+                            f++;
+                            if(f >= c.length) break;
+                        }
+                        f =  0;
+                        aux = calculo_trig(aux, 'Q');
+                    }else if(c[i] == 'W'){
+                        c[i] = 'S';
+                        i++;
+                        f = i;
+                        if(f < c.length) if(c[f] == '+' || c[f] == '-'){
+                            op += c[f];
+                            c[f] = 'S';
+                            f++;
+                        }
+                        while(c[f] != '+' && c[f] != '+'
+                                && c[f] != '*' && c[f] != '/'
+                                && c[f] != '^' && c[f] != 'R' && c[f] != 'r'
+                                && c[f] != 'L' && c[f] != 'l'
+                                && c[f] != 'T' && c[f] != 'M' && c[f] != 'J'
+                                && c[f] != 'f' && c[f] != ','
+                                && c[f] != 'Q' && c[f] != 'W'
+                                && c[f] != 'K' && c[f] != 'H'
+                                && c[f] != 'k' && c[f] != 'h'
+                                && f < c.length){
+                            aux += c[f];
+                            c[f] = 'S';
+                            f++;
+                            if(f >= c.length) break;
+                        }
+                        f =  0;
+                        aux = calculo_trig(aux, 'W');
+                    }else if(c[i] == 'K'){
+                        c[i] = 'S';
+                        i++;
+                        f = i;
+                        if(f < c.length) if(c[f] == '+' || c[f] == '-'){
+                            op += c[f];
+                            c[f] = 'S';
+                            f++;
+                        }
+                        while(c[f] != '+' && c[f] != '+'
+                                && c[f] != '*' && c[f] != '/'
+                                && c[f] != '^' && c[f] != 'R' && c[f] != 'r'
+                                && c[f] != 'L' && c[f] != 'l'
+                                && c[f] != 'T' && c[f] != 'M' && c[f] != 'J'
+                                && c[f] != 'f' && c[f] != ','
+                                && c[f] != 'Q' && c[f] != 'W'
+                                && c[f] != 'K' && c[f] != 'H'
+                                && c[f] != 'k' && c[f] != 'h'
+                                && f < c.length){
+                            aux += c[f];
+                            c[f] = 'S';
+                            f++;
+                            if(f >= c.length) break;
+                        }
+                        f =  0;
+                        aux = calculo_trig(aux, 'K');
+                    }else if(c[i] == 'H'){
+                        c[i] = 'S';
+                        i++;
+                        f = i;
+                        if(f < c.length) if(c[f] == '+' || c[f] == '-'){
+                            op += c[f];
+                            c[f] = 'S';
+                            f++;
+                        }
+                        while(c[f] != '+' && c[f] != '+'
+                                && c[f] != '*' && c[f] != '/'
+                                && c[f] != '^' && c[f] != 'R' && c[f] != 'r'
+                                && c[f] != 'L' && c[f] != 'l'
+                                && c[f] != 'T' && c[f] != 'M' && c[f] != 'J'
+                                && c[f] != 'f' && c[f] != ','
+                                && c[f] != 'Q' && c[f] != 'W'
+                                && c[f] != 'K' && c[f] != 'H'
+                                && c[f] != 'k' && c[f] != 'h'
+                                && f < c.length){
+                            aux += c[f];
+                            c[f] = 'S';
+                            f++;
+                            if(f >= c.length) break;
+                        }
+                        f =  0;
+                        aux = calculo_trig(aux, 'H');
+                    }else if(c[i] == 'k'){
+                        c[i] = 'S';
+                        i++;
+                        f = i;
+                        if(f < c.length) if(c[f] == '+' || c[f] == '-'){
+                            op += c[f];
+                            c[f] = 'S';
+                            f++;
+                        }
+                        while(c[f] != '+' && c[f] != '+'
+                                && c[f] != '*' && c[f] != '/'
+                                && c[f] != '^' && c[f] != 'R' && c[f] != 'r'
+                                && c[f] != 'L' && c[f] != 'l'
+                                && c[f] != 'T' && c[f] != 'M' && c[f] != 'J'
+                                && c[f] != 'f' && c[f] != ','
+                                && c[f] != 'Q' && c[f] != 'W'
+                                && c[f] != 'K' && c[f] != 'H'
+                                && c[f] != 'k' && c[f] != 'h'
+                                && f < c.length){
+                            aux += c[f];
+                            c[f] = 'S';
+                            f++;
+                            if(f >= c.length) break;
+                        }
+                        f =  0;
+                        aux = calculo_trig(aux, 'k');
+                    }else if(c[i] == 'h'){
+                        c[i] = 'S';
+                        i++;
+                        f = i;
+                        if(f < c.length) if(c[f] == '+' || c[f] == '-'){
+                            op += c[f];
+                            c[f] = 'S';
+                            f++;
+                        }
+                        while(c[f] != '+' && c[f] != '+'
+                                && c[f] != '*' && c[f] != '/'
+                                && c[f] != '^' && c[f] != 'R' && c[f] != 'r'
+                                && c[f] != 'L' && c[f] != 'l'
+                                && c[f] != 'T' && c[f] != 'M' && c[f] != 'J'
+                                && c[f] != 'f' && c[f] != ','
+                                && c[f] != 'Q' && c[f] != 'W'
+                                && c[f] != 'K' && c[f] != 'H'
+                                && c[f] != 'k' && c[f] != 'h'
+                                && f < c.length){
+                            aux += c[f];
+                            c[f] = 'S';
+                            f++;
+                            if(f >= c.length) break;
+                        }
+                        f =  0;
+                        aux = calculo_trig(aux, 'h');
+                    }
+                    while (f < c.length) {
+                        if (c[f] == 'S') {
+                            sf += aux;
+                            while (c[f] == 'S') {
+                                f++;
+                                if (f >= c.length) {
+                                    break;
+                                }
+                            }
+                        }
+                        if (f >= c.length) {
+                            break;
+                        }
+                        sf += c[f];
+                        f++;
+                    }
+                    f = 0;
+                    i = 0;
+                    ope = sf;
+                    c = ope.toCharArray();
+                    if(getdep_mod()) System.out.println("CASO TRIG IN : "+ope);
+                }
+                i++;
+            }
+        } catch (Exception e) {
+            ope = "";
+        }
+        return ope;
+    }
+    
+    private String calculo_trig(String ope, char c){
+        System.out.println("CALCULO TRIG IN");
+        String r = "0";
+        float op, aux;
+        try{
+            op = Float.parseFloat(ope);
+            op = op % (float) 360.0;
+            switch (c){
+                case 'Q':
+                    if (op == 0 || op == 180 || op == 360) {
+                        r = Float.toString((float) 0.0);
+                    } else if (op == 90) {
+                        r = Float.toString((float) 1.0);
+                    } else if (op == 180) {
+                        r = Float.toString((float) -1.0);
+                    } else {
+                        if (getdep_mod()) {
+                            System.out.println("ANGULO EM GRAUS : " + op);
+                        }
+                        op = (float) Math.toRadians((double) op);
+                        if (getdep_mod()) {
+                            System.out.println("ANGULO EM RAD : " + op);
+                        }
+                        aux = (float) Math.sin((double) op);
+                        r = Float.toString(aux);
+                    }
+                    break;
+                case 'W':
+                    if (op == 0 || op == 360) {
+                        r = Float.toString((float) 1.0);
+                    } else if (op == 90 || op == 270) {
+                        r = Float.toString((float) 0.0);
+                    } else if (op == 180) {
+                        r = Float.toString((float) -1.0);
+                    } else {
+                        if (getdep_mod()) {
+                            System.out.println("ANGULO EM GRAUS : " + op);
+                        }
+                        op = (float) Math.toRadians((double) op);
+                        if (getdep_mod()) {
+                            System.out.println("ANGULO EM RAD : " + op);
+                        }
+                        aux = (float) Math.cos((double) op);
+                        r = Float.toString(aux);
+                    }
+                    break;
+                case 'K':
+                    if (op == 0 || op == 180 || op == 360) {
+                        r = Float.toString((float) 0.0);
+                    } else if (op == 90 || op == 270) {
+                        throw new Exception();
+                    } else {
+                        if (getdep_mod()) {
+                            System.out.println("ANGULO EM GRAUS : " + op);
+                        }
+                        op = (float) Math.toRadians((double) op);
+                        if (getdep_mod()) {
+                            System.out.println("ANGULO EM RAD : " + op);
+                        }
+                        aux = (float) Math.tan((double) op);
+                        r = Float.toString(aux);
+                    }
+                    break;
+                case 'H':
+                    if (op == 0 || op == 360) {
+                        r = Float.toString((float) 1.0);
+                    } else if (op == 90 || op == 270) {
+                        throw new Exception();
+                    } else if (op == 180) {
+                        r = Float.toString((float) -1.0);
+                    } else {
+                        if (getdep_mod()) {
+                            System.out.println("ANGULO EM GRAUS : " + op);
+                        }
+                        op = (float) Math.toRadians((double) op);
+                        if (getdep_mod()) {
+                            System.out.println("ANGULO EM RAD : " + op);
+                        }
+                        if (op == 0) {
+                            throw new Exception();
+                        }
+                        aux = (float) ((float) 1.0 / Math.cos((double) op));
+                        r = Float.toString(aux);
+                        break;
+                    }
+                case 'k':
+                    if (op == 0 || op == 180 || op == 360 || op == 90 || op == 270) {
+                        throw new Exception();
+                    } else {
+                        if (getdep_mod()) {
+                            System.out.println("ANGULO EM GRAUS : " + op);
+                        }
+                        op = (float) Math.toRadians((double) op);
+                        if (getdep_mod()) {
+                            System.out.println("ANGULO EM RAD : " + op);
+                        }
+                        if (op == 0) {
+                            throw new Exception();
+                        }
+                        aux = (float) ((float) 1.0 / Math.tan((double) op));
+                        r = Float.toString(aux);
+                    }
+                    break;
+                case 'h':
+                    if (op == 0 || op == 180 || op == 360) {
+                        throw new Exception();
+                    } else if (op == 90) {
+                        r = Float.toString((float) 1.0);
+                    } else if (op == 180) {
+                        r = Float.toString((float) -1.0);
+                    } else {
+                        if (getdep_mod()) {
+                            System.out.println("ANGULO EM GRAUS : " + op);
+                        }
+                        op = (float) Math.toRadians((double) op);
+                        if (getdep_mod()) {
+                            System.out.println("ANGULO EM RAD : " + op);
+                        }
+                        if (op == 0) {
+                            throw new Exception();
+                        }
+                        aux = (float) ((float) 1.0 / Math.sin((double) op));
+                        r = Float.toString(aux);
+                    }
+                    break;
+            }                                         
+        }catch(Exception e){
+            setvalidade(false);
+        }
+        System.out.println("CALCULO TRIG FIM");
+        return r;
     }
     
     private String calcula_L(String ope){
@@ -1098,7 +1459,8 @@ public class Funcionamento {
                             || aux_operacoes[i - 1] == '/'
                             || aux_operacoes[i - 1] == '^'
                             || aux_operacoes[i - 1] == 'R'
-                            || aux_operacoes[i - 1] == 'p'){
+                            || aux_operacoes[i - 1] == 'p'
+                            || aux_operacoes[i - 1] == 'E'){
                         i++;
                         continue;
                     }
@@ -1189,7 +1551,8 @@ public class Funcionamento {
                                         || aux_operacoes[i - 1] == '/'
                                         || aux_operacoes[i - 1] == '^'
                                         || aux_operacoes[i - 1] == 'R'
-                                        || aux_operacoes[i - 1] == 'p') {
+                                        || aux_operacoes[i - 1] == 'p'
+                                        || aux_operacoes[i - 1] == 'E') {
                                     i++;
                                     continue;
                                 }
@@ -1268,6 +1631,7 @@ public class Funcionamento {
                                 || aux_operacoes[(i - 1)] == '^'
                                 || aux_operacoes[(i - 1)] == 'R'
                                 || aux_operacoes[(i - 1)] == 'p'
+                                || aux_operacoes[(i - 1)] == 'E'
                                 || aux_operacoes[(i - 1)] == '-')) {
                             aux_atr += aux_operacoes[i];
                             i++;
@@ -1464,9 +1828,7 @@ public class Funcionamento {
                 || aux_operacoes[(aux_operacoes.length - 1)] == '/'
                 || aux_operacoes[(aux_operacoes.length - 1)] == '.'
                 || aux_operacoes[(aux_operacoes.length - 1)] == '^'
-                || aux_operacoes[(aux_operacoes.length - 1)] == 'r'
-                || aux_operacoes[(aux_operacoes.length - 1)] == 'R'
-                || aux_operacoes[(aux_operacoes.length - 1)] == 'p') {
+                || aux_operacoes[(aux_operacoes.length - 1)] == 'r') {
             //System.out.println("U");
             setvalidade(false);
             return validade;
@@ -1475,7 +1837,10 @@ public class Funcionamento {
             if (aux_operacoes[i] == '.' && aux_operacoes[(i + 1)] == '.') {
                 setvalidade(false);
                 break;
-            } else if ((aux_operacoes[i] == 'r' || aux_operacoes[i] == 'L' || aux_operacoes[i] == 'l' || aux_operacoes[i] == 'R') && aux_operacoes[(i + 1)] == '-') {
+            } else if ((aux_operacoes[i] == 'r' 
+                    || aux_operacoes[i] == 'L' 
+                    || aux_operacoes[i] == 'l' 
+                    || aux_operacoes[i] == 'R') && aux_operacoes[(i + 1)] == '-') {
                 //System.out.println("V");
                 setvalidade(false);
                 break;
