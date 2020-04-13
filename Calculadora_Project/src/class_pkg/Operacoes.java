@@ -14,7 +14,7 @@ public class Operacoes {
     private boolean validade = true;
     private boolean parentesis = false;
     private boolean sit = true;
-    private boolean dep_mod = false;
+    private boolean dep_mod = true;
     private int cont_parentesis_AB = 0;
     private int cont_parentesis_FE = 0;
 
@@ -151,50 +151,52 @@ public class Operacoes {
         int i = 0, j = 0;
         //Log seguido de ln e ln seguido de log, log e log e ln e ln IN
         if (caso_Ll_ou_lL(ope)) {
-            while (caso_Ll_ou_lL(ope)) {
-                f = "";
-                if(getdep_mod()) System.out.println("F IN : " + ope);
-                while (i < c.length - 1) {
-                    if (c[i] == 'L' && c[i + 1] == 'l'
-                            || c[i] == 'l' && c[i + 1] == 'L'
-                            || c[i] == 'L' && c[i + 1] == 'L'
-                            || c[i] == 'l' && c[i + 1] == 'l') {
-                        f += c[i];
-                        i++;
-                        f += '(';
-                        f += c[i];
-                        i++;
-                        j = i;
-                        while (c[j] != '+' && c[j] != '-'
-                                && c[j] != '*' && c[j] != '/'
-                                && c[j] != 'R' && c[j] != 'r' && c[j] != '^'
-                                && c[j] != 'p' && c[j] != '!') {
-                            f += c[j];
-                            j++;
-                            if (j >= c.length) {
-                                break;
-                            }
-                        }
-                        f += ')';
-                        i = j;
-                        if(j < c.length) f += c[i];
-                    } else {
-                        f += c[i];
+            while (i < c.length - 1) {
+                if (c[i] == 'L' && c[i + 1] == 'l'
+                        || c[i] == 'l' && c[i + 1] == 'L'
+                        || c[i] == 'L' && c[i + 1] == 'L'
+                        || c[i] == 'l' && c[i + 1] == 'l') {
+                    if (getdep_mod()) {
+                        System.out.println("F IN : " + ope);
                     }
+                    f += c[i];
+                    i++;
+                    f += '(';
+                    f += c[i];
+                    i++;
+                    j = i;
+                    while (c[j] != '+' && c[j] != '-'
+                            && c[j] != '*' && c[j] != '/'
+                            && c[j] != 'R' && c[j] != 'r' && c[j] != '^'
+                            && c[j] != 'p' && c[j] != '!'
+                            && c[j] != '(' && c[j] != ')') {
+                        f += c[j];
+                        j++;
+                        if (j >= c.length) {
+                            break;
+                        }
+                    }
+                    f += ')';                  
+                    while(j < c.length){
+                        f += c[j];
+                        j++;
+                    }
+                    ope = f;
+                    c = ope.toCharArray();
+                    i = 0;
+                    j = 0;
+                    f = "";
+                    if (getdep_mod()) {
+                        System.out.println("F FIN : " + ope);
+                    }
+                } else {
+                    f += c[i];
                     i++;
                 }
-                if(i < c.length) f += c[i];
-                ope = f;
-                c = ope.toCharArray();
-                i = 0;
-                if(getdep_mod()) System.out.println("F FINAL : " + f);
-            }            
-        } else {
-            f = ope;
+            } 
         }
         //FIM
-        if(getdep_mod()) System.out.println("F FINAL : " + f);
-        return f;
+        return ope;
     }
     
     private boolean caso_Ll_ou_lL(String s){

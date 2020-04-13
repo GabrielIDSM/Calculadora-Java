@@ -11,6 +11,7 @@ public class MainFrame extends javax.swing.JFrame {
     }
     //Atributos IN
     static String Operacoes = "";
+    static int cont = 0;
     //FIM
     
     /**
@@ -819,7 +820,8 @@ public class MainFrame extends javax.swing.JFrame {
             Bvir.setBackground(new java.awt.Color(204, 204, 204));
         } else if (MCitem.isSelected()) {
             Bvir.setBackground(new java.awt.Color(255, 255, 0));
-        }
+        }  
+        if(cont != 0 && cont % 4 == 0) Ab.setText("");
         if(dep_mod) System.out.println("OPERACOES : "+Operacoes);
         if(dep_mod) System.out.println("A.GETTEXT() : "+A.getText());
         if(null == A.getText()) {
@@ -845,6 +847,7 @@ public class MainFrame extends javax.swing.JFrame {
                 break;
             default:         
                 Ab.append(A.getText()+"\n= ");
+                cont++;
                 Operacoes O = new Operacoes(Operacoes);
                 float resultado = O.main();
                 boolean verifica = O.getvalidade();

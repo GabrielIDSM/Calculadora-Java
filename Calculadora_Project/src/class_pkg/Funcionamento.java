@@ -22,7 +22,7 @@ public class Funcionamento {
     private String[][] Array_exp;
     private String[][] Array_mul_div;
     private int[] index_sp1;
-    private boolean dep_mod = false;
+    private boolean dep_mod = true;
     private boolean validade = true;
     private boolean raiz = false;
     private boolean exp = false;
@@ -95,6 +95,7 @@ public class Funcionamento {
             if (validade) if(trig){
                 if(getdep_mod()) System.out.println("OPERACOES TRIG IN : "+operacoes);
                 operacoes = calcula_trig(operacoes);
+                operacoes = duplo_sinal(operacoes);
                 if(getdep_mod()) System.out.println("OPERACOES TRIG FIM : "+operacoes);
                 aux_operacoes = operacoes.toCharArray();
             } 
@@ -103,6 +104,7 @@ public class Funcionamento {
             if (validade) if(TMJ){
                 if(getdep_mod()) System.out.println("OPERACOES TMJ IN : "+operacoes);
                 operacoes = calcula_TMJ(operacoes);
+                operacoes = duplo_sinal(operacoes);
                 if(getdep_mod()) System.out.println("OPERACOES TMJ FIM : "+operacoes);
                 aux_operacoes = operacoes.toCharArray();
             } 
@@ -111,6 +113,7 @@ public class Funcionamento {
             if (validade) if(L){
                 if(getdep_mod()) System.out.println("OPERACOES L IN : "+operacoes);
                 operacoes = calcula_L(operacoes);
+                operacoes = duplo_sinal(operacoes);
                 if(getdep_mod()) System.out.println("OPERACOES L FIM : "+operacoes);
                 aux_operacoes = operacoes.toCharArray();
             }
@@ -119,6 +122,7 @@ public class Funcionamento {
             if (validade) if(l){
                 if(getdep_mod()) System.out.println("OPERACOES l IN : "+operacoes);
                 operacoes = calcula_l(operacoes);
+                operacoes = duplo_sinal(operacoes);
                 if(getdep_mod()) System.out.println("OPERACOES l FIM : "+operacoes);
                 aux_operacoes = operacoes.toCharArray();
             }
@@ -127,6 +131,7 @@ public class Funcionamento {
             if (validade) if(fat){
                 if(getdep_mod()) System.out.println("OPERACOES FAT IN : "+operacoes);
                 operacoes = calcula_fat(operacoes);
+                operacoes = duplo_sinal(operacoes);
                 if(getdep_mod()) System.out.println("OPERACOES FAT FIM : "+operacoes);
                 aux_operacoes = operacoes.toCharArray();
                 
@@ -810,7 +815,7 @@ public class Funcionamento {
     }
     
     private String calculo_trig(String ope, char c){
-        System.out.println("CALCULO TRIG IN");
+        if(getdep_mod()) System.out.println("CALCULO TRIG IN");
         String r = "0";
         float op, aux;
         try{
@@ -938,7 +943,7 @@ public class Funcionamento {
         }catch(Exception e){
             setvalidade(false);
         }
-        System.out.println("CALCULO TRIG FIM");
+        if(getdep_mod()) System.out.println("CALCULO TRIG FIM");
         return r;
     }
     
