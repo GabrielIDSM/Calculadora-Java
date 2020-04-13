@@ -1033,28 +1033,20 @@ public class MainFrame extends javax.swing.JFrame {
         A.append("% de ");
     }//GEN-LAST:event_Bpor1ActionPerformed
 
-    private void Bfat1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bfat1ActionPerformed
-        if("".equals(Operacoes)){
-            A.setText("");
-        }
-        Operacoes += "!";
-        A.append("!");
-    }//GEN-LAST:event_Bfat1ActionPerformed
-
     private void BlognActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BlognActionPerformed
         if("".equals(Operacoes)){
             A.setText("");
         }
-        Operacoes += "L";
-        A.append("log ");
+        Operacoes += "L(";
+        A.append("log (");
     }//GEN-LAST:event_BlognActionPerformed
 
     private void BlnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BlnActionPerformed
         if("".equals(Operacoes)){
             A.setText("");
         }
-        Operacoes += "l";
-        A.append("ln ");
+        Operacoes += "l(";
+        A.append("ln (");
     }//GEN-LAST:event_BlnActionPerformed
 
     private void BvirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BvirActionPerformed
@@ -1245,49 +1237,57 @@ public class MainFrame extends javax.swing.JFrame {
         if("".equals(Operacoes)){
             A.setText("");
         }
-        Operacoes += "Q";
-        A.append("sen ");
+        Operacoes += "Q(";
+        A.append("sen (");
     }//GEN-LAST:event_BsenxActionPerformed
 
     private void BcosxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcosxActionPerformed
         if("".equals(Operacoes)){
             A.setText("");
         }
-        Operacoes += "W";
-        A.append("cos ");
+        Operacoes += "W(";
+        A.append("cos (");
     }//GEN-LAST:event_BcosxActionPerformed
 
     private void BtgxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtgxActionPerformed
         if("".equals(Operacoes)){
             A.setText("");
         }
-        Operacoes += "K";
-        A.append("tg ");
+        Operacoes += "K(";
+        A.append("tg (");
     }//GEN-LAST:event_BtgxActionPerformed
 
     private void BsecxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BsecxActionPerformed
         if("".equals(Operacoes)){
             A.setText("");
         }
-        Operacoes += "H";
-        A.append("sec ");
+        Operacoes += "H(";
+        A.append("sec (");
     }//GEN-LAST:event_BsecxActionPerformed
 
     private void BcsecxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcsecxActionPerformed
         if("".equals(Operacoes)){
             A.setText("");
         }
-        Operacoes += "h";
-        A.append("cossec ");
+        Operacoes += "h(";
+        A.append("cossec (");
     }//GEN-LAST:event_BcsecxActionPerformed
 
     private void BctgxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BctgxActionPerformed
         if("".equals(Operacoes)){
             A.setText("");
         }
-        Operacoes += "k";
-        A.append("cotg ");
+        Operacoes += "k(";
+        A.append("cotg (");
     }//GEN-LAST:event_BctgxActionPerformed
+
+    private void Bfat1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bfat1ActionPerformed
+        if("".equals(Operacoes)){
+            A.setText("");
+        }
+        Operacoes += "!";
+        A.append("!");
+    }//GEN-LAST:event_Bfat1ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -22,7 +22,7 @@ public class Operacoes {
     //Método construtor IN
     public Operacoes(String operacoes) {
         //Parentêsis automáticos IN
-        this.operacoes = acrescenta_par(operacoes);
+        this.operacoes = operacoes;
         this.char_operacoes = this.operacoes.toCharArray();
         if(getdep_mod()) System.out.println("OPERACOES (CONS) : "+this.operacoes);
     }
@@ -143,83 +143,6 @@ public class Operacoes {
             setvalidade(false);
         }
         return total;
-    }
-    
-    public String acrescenta_par(String ope){
-        String f = "";
-        char[] c = ope.toCharArray();
-        int i = 0, j = 0;
-        //Log seguido de ln e ln seguido de log, log e log e ln e ln IN
-        if (caso_Ll_ou_lL(ope)) {
-            while (i < c.length - 1) {
-                if (c[i] == 'L' && c[i + 1] == 'l'
-                        || c[i] == 'l' && c[i + 1] == 'L'
-                        || c[i] == 'L' && c[i + 1] == 'L'
-                        || c[i] == 'l' && c[i + 1] == 'l') {
-                    if (getdep_mod()) {
-                        System.out.println("F IN : " + ope);
-                    }
-                    f += c[i];
-                    i++;
-                    f += '(';
-                    f += c[i];
-                    i++;
-                    j = i;
-                    while (c[j] != '+' && c[j] != '-'
-                            && c[j] != '*' && c[j] != '/'
-                            && c[j] != 'R' && c[j] != 'r' && c[j] != '^'
-                            && c[j] != 'p' && c[j] != '!'
-                            && c[j] != '(' && c[j] != ')') {
-                        f += c[j];
-                        j++;
-                        if (j >= c.length) {
-                            break;
-                        }
-                    }
-                    f += ')';                  
-                    while(j < c.length){
-                        f += c[j];
-                        j++;
-                    }
-                    ope = f;
-                    c = ope.toCharArray();
-                    i = 0;
-                    j = 0;
-                    f = "";
-                    if (getdep_mod()) {
-                        System.out.println("F FIN : " + ope);
-                    }
-                } else {
-                    f += c[i];
-                    i++;
-                }
-            } 
-        }
-        //FIM
-        return ope;
-    }
-    
-    private boolean caso_Ll_ou_lL(String s){
-        boolean b = false;
-        int i = 0;
-        char[] c = s.toCharArray();
-        while(i < c.length - 1){
-            if(c[i] == 'L' && c[i+1] == 'l'){
-                b = true;
-                break;
-            }else if(c[i] == 'l' && c[i+1] == 'L'){
-                b = true;
-                break;
-            }else if(c[i] == 'l' && c[i+1] == 'l'){
-                b = true;
-                break;
-            }else if(c[i] == 'L' && c[i+1] == 'L'){
-                b = true;
-                break;
-            }
-            i++;
-        }
-        return b;
     }
 
     private void verifica_parentesis() {
