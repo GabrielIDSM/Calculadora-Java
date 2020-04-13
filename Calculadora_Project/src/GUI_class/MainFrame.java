@@ -1029,8 +1029,8 @@ public class MainFrame extends javax.swing.JFrame {
         if("".equals(Operacoes)){
             A.setText("");
         }
-        Operacoes += "p";
-        A.append("% de ");
+        Operacoes += "p(";
+        A.append("% de (");
     }//GEN-LAST:event_Bpor1ActionPerformed
 
     private void BlognActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BlognActionPerformed
