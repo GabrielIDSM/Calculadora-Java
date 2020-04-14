@@ -14,7 +14,7 @@ public class Operacoes {
     private boolean validade = true;
     private boolean parentesis = false;
     private boolean sit = true;
-    private boolean dep_mod = true;
+    private boolean dep_mod = false;
     private int cont_parentesis_AB = 0;
     private int cont_parentesis_FE = 0;
 

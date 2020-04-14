@@ -12,6 +12,7 @@ public class MainFrame extends javax.swing.JFrame {
     //Atributos IN
     static String Operacoes = "";
     static int cont = 0;
+    static String m = "Erro";
     //FIM
     
     /**
@@ -24,6 +25,7 @@ public class MainFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         BG = new javax.swing.ButtonGroup();
+        BGI = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         A = new javax.swing.JTextArea();
@@ -69,13 +71,21 @@ public class MainFrame extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         Ab = new javax.swing.JTextArea();
         H = new javax.swing.JLabel();
+        BL1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        Tema = new javax.swing.JMenu();
         MPitem = new javax.swing.JCheckBoxMenuItem();
         MCitem = new javax.swing.JCheckBoxMenuItem();
+        Idioma = new javax.swing.JMenu();
+        Pt = new javax.swing.JCheckBoxMenuItem();
+        Eng = new javax.swing.JCheckBoxMenuItem();
+        Func = new javax.swing.JMenu();
+        Trig = new javax.swing.JCheckBoxMenuItem();
+        AC = new javax.swing.JCheckBoxMenuItem();
+        Log = new javax.swing.JCheckBoxMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Calculadora");
+        setTitle("Calculadora GBI");
         setResizable(false);
 
         jPanel1.setBackground(java.awt.SystemColor.controlDkShadow);
@@ -612,6 +622,16 @@ public class MainFrame extends javax.swing.JFrame {
         H.setForeground(new java.awt.Color(153, 153, 153));
         H.setText("Histórico");
 
+        BL1.setBackground(new java.awt.Color(255, 100, 100));
+        BL1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        BL1.setForeground(new java.awt.Color(90, 0, 0));
+        BL1.setText("L");
+        BL1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BL1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -622,16 +642,21 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(H, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 182, Short.MAX_VALUE)))
+                        .addGap(133, 133, 133)
+                        .addComponent(BL1, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(H, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(H, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(BL1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(1, 1, 1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 416, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -663,7 +688,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jMenu1.setText("Tema");
+        Tema.setText("Tema");
 
         BG.add(MPitem);
         MPitem.setSelected(true);
@@ -673,7 +698,7 @@ public class MainFrame extends javax.swing.JFrame {
                 MPitemActionPerformed(evt);
             }
         });
-        jMenu1.add(MPitem);
+        Tema.add(MPitem);
 
         BG.add(MCitem);
         MCitem.setText("Claro");
@@ -682,9 +707,63 @@ public class MainFrame extends javax.swing.JFrame {
                 MCitemActionPerformed(evt);
             }
         });
-        jMenu1.add(MCitem);
+        Tema.add(MCitem);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(Tema);
+
+        Idioma.setText("Idioma");
+
+        BGI.add(Pt);
+        Pt.setSelected(true);
+        Pt.setText("Português");
+        Pt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PtActionPerformed(evt);
+            }
+        });
+        Idioma.add(Pt);
+
+        BGI.add(Eng);
+        Eng.setText("Inglês");
+        Eng.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EngActionPerformed(evt);
+            }
+        });
+        Idioma.add(Eng);
+
+        jMenuBar1.add(Idioma);
+
+        Func.setText("Funcionalidades");
+
+        Trig.setSelected(true);
+        Trig.setText("Trigonometria");
+        Trig.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TrigActionPerformed(evt);
+            }
+        });
+        Func.add(Trig);
+
+        AC.setSelected(true);
+        AC.setText("Análise combinatória");
+        AC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ACActionPerformed(evt);
+            }
+        });
+        Func.add(AC);
+
+        Log.setSelected(true);
+        Log.setText("Logaritmo");
+        Log.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogActionPerformed(evt);
+            }
+        });
+        Func.add(Log);
+
+        jMenuBar1.add(Func);
 
         setJMenuBar(jMenuBar1);
 
@@ -835,10 +914,13 @@ public class MainFrame extends javax.swing.JFrame {
                 A.append(R);
             } else {
                 A.setText("");
-                A.append("Erro");
+                A.append(m);
                 Operacoes = "";
             }
         } else switch (A.getText()) {
+            case "Error":
+                A.setText("");
+                break;
             case "Erro":
                 A.setText("");
                 break;
@@ -858,8 +940,8 @@ public class MainFrame extends javax.swing.JFrame {
                     Ab.append(R+"\n\n");
                 } else {
                     A.setText("");
-                    A.append("Erro");
-                    Ab.append("Erro"+"\n\n");
+                    A.append(m);
+                    Ab.append(m+"\n\n");
                     Operacoes = "";
                 }   
                 break;
@@ -1134,6 +1216,9 @@ public class MainFrame extends javax.swing.JFrame {
         BL.setBackground(new java.awt.Color(255, 100, 100));
         BL.setForeground(new java.awt.Color(90, 0, 0));
         
+        BL1.setBackground(new java.awt.Color(255, 100, 100));
+        BL1.setForeground(new java.awt.Color(90, 0, 0));
+        
         Bmais.setBackground(new java.awt.Color(204, 204, 204));
         Bmenos.setBackground(new java.awt.Color(204, 204, 204));
         Bmul.setBackground(new java.awt.Color(204, 204, 204));
@@ -1197,6 +1282,9 @@ public class MainFrame extends javax.swing.JFrame {
         
         BL.setBackground(new java.awt.Color(255, 15, 15));
         BL.setForeground(new java.awt.Color(255, 255, 255));
+        
+        BL1.setBackground(new java.awt.Color(255, 15, 15));
+        BL1.setForeground(new java.awt.Color(255, 255, 255));
         
         Bmais.setBackground(new java.awt.Color(255, 255, 0));
         Bmenos.setBackground(new java.awt.Color(255, 255, 0));
@@ -1289,6 +1377,117 @@ public class MainFrame extends javax.swing.JFrame {
         A.append("!");
     }//GEN-LAST:event_Bfat1ActionPerformed
 
+    private void PtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PtActionPerformed
+        Bpor1.setText("% de");
+        Bsenx.setText("sen x°");
+        Btgx.setText("tg x°");
+        Bcsecx.setText("cossec x°");
+        Bctgx.setText("cotg x°");
+        BL.setText("L");
+        BL1.setText("L");
+        
+        H.setText("Histórico");
+        setTitle("Calculadora GBI");
+        
+        Tema.setText("Tema");
+        MPitem.setText("Padrâo");
+        MCitem.setText("Claro");
+        
+        Idioma.setText("Idioma");
+        Pt.setText("Português");
+        Eng.setText("Inglês");
+        
+        Func.setText("Funcionalidades");
+        Trig.setText("Trigonometria");
+        AC.setText("Análise combinatória");
+        Log.setText("Logaritmo");
+        
+        m = "Erro";
+        A.setText("");
+        Ab.setText("");
+        Operacoes = "";
+    }//GEN-LAST:event_PtActionPerformed
+
+    private void EngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EngActionPerformed
+        Bpor1.setText("% of");
+        Bsenx.setText("sin x°");
+        Btgx.setText("tan x°");
+        Bcsecx.setText("cosec x°");
+        Bctgx.setText("cotan x°");
+        BL.setText("C");
+        BL1.setText("C");
+        
+        H.setText("History");
+        setTitle("Calculator GBI");
+        
+        Tema.setText("Theme");
+        MPitem.setText("Default");
+        MCitem.setText("Light");
+        
+        Idioma.setText("Language");
+        Pt.setText("Portuguese");
+        Eng.setText("English");
+        
+        Func.setText("Functionalities");
+        Trig.setText("Trigonometry");
+        AC.setText("Combinatorial analysis");
+        Log.setText("Logarithm");
+        
+        m = "Error";
+        A.setText("");
+        Ab.setText("");
+        Operacoes = "";
+    }//GEN-LAST:event_EngActionPerformed
+
+    private void TrigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrigActionPerformed
+        if(Trig.isSelected()){
+            Bsenx.setEnabled(true);
+            Bcosx.setEnabled(true);
+            Btgx.setEnabled(true);
+            Bsecx.setEnabled(true);
+            Bcsecx.setEnabled(true);
+            Bctgx.setEnabled(true);
+        }else{
+            Bsenx.setEnabled(false);
+            Bcosx.setEnabled(false);
+            Btgx.setEnabled(false);
+            Bsecx.setEnabled(false);
+            Bcsecx.setEnabled(false);
+            Bctgx.setEnabled(false);
+        }
+    }//GEN-LAST:event_TrigActionPerformed
+
+    private void ACActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ACActionPerformed
+        if(AC.isSelected()){
+            Barr.setEnabled(true);
+            Bcomb.setEnabled(true);
+            Bper.setEnabled(true);
+            Bvir.setEnabled(true);
+            Bfat1.setEnabled(true);
+        }else{
+            Barr.setEnabled(false);
+            Bcomb.setEnabled(false);
+            Bper.setEnabled(false);
+            Bvir.setEnabled(false);
+            Bfat1.setEnabled(false);
+        }
+    }//GEN-LAST:event_ACActionPerformed
+
+    private void LogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogActionPerformed
+        if(Trig.isSelected()){
+            Bln.setEnabled(true);
+            Blogn.setEnabled(true);
+        }else{
+            Bln.setEnabled(false);
+            Blogn.setEnabled(false);
+        }
+    }//GEN-LAST:event_LogActionPerformed
+
+    private void BL1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BL1ActionPerformed
+        Ab.setText("");
+        cont = 0;
+    }//GEN-LAST:event_BL1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1343,6 +1542,7 @@ public class MainFrame extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea A;
+    private javax.swing.JCheckBoxMenuItem AC;
     private javax.swing.JTextArea Ab;
     private javax.swing.JButton B0;
     private javax.swing.JButton B1;
@@ -1356,7 +1556,9 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton B9;
     private javax.swing.JButton BDelete;
     private javax.swing.ButtonGroup BG;
+    private javax.swing.ButtonGroup BGI;
     private javax.swing.JButton BL;
+    private javax.swing.JButton BL1;
     private javax.swing.JButton Barr;
     private javax.swing.JButton Bclc;
     private javax.swing.JButton Bcomb;
@@ -1382,10 +1584,16 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton Bsenx;
     private javax.swing.JButton Btgx;
     private javax.swing.JButton Bvir;
+    private javax.swing.JCheckBoxMenuItem Eng;
+    private javax.swing.JMenu Func;
     private javax.swing.JLabel H;
+    private javax.swing.JMenu Idioma;
+    private javax.swing.JCheckBoxMenuItem Log;
     private javax.swing.JCheckBoxMenuItem MCitem;
     private javax.swing.JCheckBoxMenuItem MPitem;
-    private javax.swing.JMenu jMenu1;
+    private javax.swing.JCheckBoxMenuItem Pt;
+    private javax.swing.JMenu Tema;
+    private javax.swing.JCheckBoxMenuItem Trig;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

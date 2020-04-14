@@ -22,7 +22,7 @@ public class Funcionamento {
     private String[][] Array_exp;
     private String[][] Array_mul_div;
     private int[] index_sp1;
-    private boolean dep_mod = true;
+    private boolean dep_mod = false;
     private boolean validade = true;
     private boolean raiz = false;
     private boolean exp = false;
