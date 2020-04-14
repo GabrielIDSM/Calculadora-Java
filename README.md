@@ -26,8 +26,9 @@ A calculadora tem suporte para diversos tipos de operaçâo e é capaz de manter
 A interface possui duas opções de tema: Padrão e Claro. Além disso, é possível escolher o idioma usado: Inglês ou Português.
 A Interface suporta a ocultação de operaçôes, para simplificar o uso.
 
+![Ex3](https://github.com/GabrielIDSM/Calculadora-Java/blob/master/M%C3%ADdia/EX3.png)
 ![Ex1](https://github.com/GabrielIDSM/Calculadora-Java/blob/master/M%C3%ADdia/EX1.png)
-![Ex1](https://github.com/GabrielIDSM/Calculadora-Java/blob/master/M%C3%ADdia/EX2.png)
+![Ex2](https://github.com/GabrielIDSM/Calculadora-Java/blob/master/M%C3%ADdia/EX2.png)
 
 ## Colaboradores e contato
 O Projeto é individual, feito por Gabriel Inácio ([Github](https://github.com/GabrielIDSM)/[LinkedIn](https://www.linkedin.com/in/gabriel-inacio-uff/)).
