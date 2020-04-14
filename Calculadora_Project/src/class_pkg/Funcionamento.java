@@ -804,7 +804,9 @@ public class Funcionamento {
                     i = 0;
                     ope = sf;
                     c = ope.toCharArray();
-                    if(getdep_mod()) System.out.println("CASO TRIG IN : "+ope);
+                    sf = "";
+                    aux = "";
+                    if(getdep_mod()) System.out.println("CASO TRIG FIM : "+ope);
                 }
                 i++;
             }
