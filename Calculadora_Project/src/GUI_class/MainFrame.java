@@ -85,7 +85,7 @@ public class MainFrame extends javax.swing.JFrame {
         Log = new javax.swing.JCheckBoxMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Calculadora GBI");
+        setTitle("Calculadora");
         setResizable(false);
 
         jPanel1.setBackground(java.awt.SystemColor.controlDkShadow);
@@ -656,7 +656,7 @@ public class MainFrame extends javax.swing.JFrame {
                         .addComponent(BL1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(1, 1, 1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 416, Short.MAX_VALUE)
+                .addComponent(jScrollPane2)
                 .addContainerGap())
         );
 
@@ -1055,11 +1055,13 @@ public class MainFrame extends javax.swing.JFrame {
                     A.append(aux);
                     aux = "";
                 }else if(Op_char[i] == 'p'){
-                    aux += "% de ";
+                    if(Pt.isSelected()) aux += "% de ";
+                    else aux += "% of ";
                     A.append(aux);
                     aux = "";
                 }else if(Op_char[i] == 'Q'){
-                    aux += "sen ";
+                    if(Pt.isSelected()) aux += "sen ";
+                    else aux += "sin ";
                     A.append(aux);
                     aux = "";
                 }else if(Op_char[i] == 'W'){
@@ -1067,7 +1069,8 @@ public class MainFrame extends javax.swing.JFrame {
                     A.append(aux);
                     aux = "";
                 }else if(Op_char[i] == 'K'){
-                    aux += "tg ";
+                    if(Pt.isSelected()) aux += "tg ";
+                    else aux += "tan ";
                     A.append(aux);
                     aux = "";
                 }else if(Op_char[i] == 'H'){
@@ -1075,11 +1078,13 @@ public class MainFrame extends javax.swing.JFrame {
                     A.append(aux);
                     aux = "";
                 }else if(Op_char[i] == 'h'){
-                    aux += "cossec ";
+                    if(Pt.isSelected()) aux += "cossec ";
+                    else aux += "cosec ";
                     A.append(aux);
                     aux = "";
                 }else if(Op_char[i] == 'k'){
-                    aux += "cotg ";
+                    if(Pt.isSelected()) aux += "cotg ";
+                    else aux += "cotan ";
                     A.append(aux);
                     aux = "";
                 }else if(Op_char[i] == 'R'){
@@ -1112,7 +1117,8 @@ public class MainFrame extends javax.swing.JFrame {
             A.setText("");
         }
         Operacoes += "p(";
-        A.append("% de (");
+        if(Pt.isSelected()) A.append("% de (");
+        else A.append("% of (");
     }//GEN-LAST:event_Bpor1ActionPerformed
 
     private void BlognActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BlognActionPerformed
@@ -1326,7 +1332,8 @@ public class MainFrame extends javax.swing.JFrame {
             A.setText("");
         }
         Operacoes += "Q(";
-        A.append("sen (");
+        if(Pt.isSelected()) A.append("sen (");
+        else A.append("sin (");
     }//GEN-LAST:event_BsenxActionPerformed
 
     private void BcosxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcosxActionPerformed
@@ -1342,7 +1349,8 @@ public class MainFrame extends javax.swing.JFrame {
             A.setText("");
         }
         Operacoes += "K(";
-        A.append("tg (");
+        if(Pt.isSelected()) A.append("tg (");
+        else A.append("tan (");
     }//GEN-LAST:event_BtgxActionPerformed
 
     private void BsecxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BsecxActionPerformed
@@ -1358,7 +1366,8 @@ public class MainFrame extends javax.swing.JFrame {
             A.setText("");
         }
         Operacoes += "h(";
-        A.append("cossec (");
+        if(Pt.isSelected()) A.append("cossec (");
+        else A.append("cosec (");
     }//GEN-LAST:event_BcsecxActionPerformed
 
     private void BctgxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BctgxActionPerformed
@@ -1366,7 +1375,8 @@ public class MainFrame extends javax.swing.JFrame {
             A.setText("");
         }
         Operacoes += "k(";
-        A.append("cotg (");
+        if(Pt.isSelected()) A.append("cotg (");
+        else A.append("cotan (");
     }//GEN-LAST:event_BctgxActionPerformed
 
     private void Bfat1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bfat1ActionPerformed
@@ -1387,7 +1397,7 @@ public class MainFrame extends javax.swing.JFrame {
         BL1.setText("L");
         
         H.setText("Histórico");
-        setTitle("Calculadora GBI");
+        setTitle("Calculadora");
         
         Tema.setText("Tema");
         MPitem.setText("Padrâo");
@@ -1418,7 +1428,7 @@ public class MainFrame extends javax.swing.JFrame {
         BL1.setText("C");
         
         H.setText("History");
-        setTitle("Calculator GBI");
+        setTitle("Calculator");
         
         Tema.setText("Theme");
         MPitem.setText("Default");
