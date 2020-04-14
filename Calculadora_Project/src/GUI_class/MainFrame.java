@@ -304,7 +304,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         Brad2.setBackground(new java.awt.Color(204, 204, 204));
         Brad2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        Brad2.setText("n√");
+        Brad2.setText("ª√");
         Brad2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Brad2ActionPerformed(evt);
