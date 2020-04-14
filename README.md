@@ -31,6 +31,6 @@ A Interface suporta a ocultação de operaçôes, para simplificar o uso.
 ![Ex2](https://github.com/GabrielIDSM/Calculadora-Java/blob/master/M%C3%ADdia/EX2.png)
 
 ## Colaboradores e contato
-O Projeto é individual, feito por Gabriel Inácio ([Github](https://github.com/GabrielIDSM)/[LinkedIn](https://www.linkedin.com/in/gabriel-inacio-uff/)).
+O Projeto é pessoal, feito por Gabriel Inácio ([Github](https://github.com/GabrielIDSM)/[LinkedIn](https://www.linkedin.com/in/gabriel-inacio-uff/)).
 
 E-mail: gabrielinacio@id.uff.br
