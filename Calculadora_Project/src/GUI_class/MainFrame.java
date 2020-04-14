@@ -1484,7 +1484,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_ACActionPerformed
 
     private void LogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogActionPerformed
-        if(Trig.isSelected()){
+        if(Log.isSelected()){
             Bln.setEnabled(true);
             Blogn.setEnabled(true);
         }else{
