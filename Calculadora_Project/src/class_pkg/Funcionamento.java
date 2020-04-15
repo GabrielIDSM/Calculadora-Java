@@ -1129,12 +1129,15 @@ public class Funcionamento {
                 if (getdep_mod()) System.out.println("SUBSTITUICAO FIM");
                 ope = sfinal;
                 aux_ope = ope.toCharArray();
+                sfinal = "";
+                aux = "";
+                auxf = 0;
                 i = 0;
                 if (getdep_mod()) System.out.println("STRING F : "+ope);
             }
             i++;
         }
-        return sfinal;
+        return ope;
     }
     
     private float calculofat(String op1){
