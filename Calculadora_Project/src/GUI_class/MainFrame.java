@@ -1,8 +1,7 @@
 //Projeto salvo no git
 package GUI_class;
 import class_pkg.*;
-import java.util.*;
-import java.text.*;
+import java.math.BigDecimal;
 
 public class MainFrame extends javax.swing.JFrame {
     public MainFrame() {
@@ -906,9 +905,10 @@ public class MainFrame extends javax.swing.JFrame {
         if(null == A.getText()) {
             Operacoes O = new Operacoes(Operacoes);
             float resultado = O.main();
+            BigDecimal Rbd = new BigDecimal(resultado);
             boolean verifica = O.getvalidade();
             if (verifica) {
-                String R = Float.toString(resultado);
+                String R = Rbd.toPlainString();
                 Operacoes = R;
                 A.setText("");
                 A.append(R);
@@ -932,9 +932,10 @@ public class MainFrame extends javax.swing.JFrame {
                 cont++;
                 Operacoes O = new Operacoes(Operacoes);
                 float resultado = O.main();
+                BigDecimal Rbd = new BigDecimal(resultado);
                 boolean verifica = O.getvalidade();
                 if (verifica) {
-                    String R = Float.toString(resultado);
+                    String R = Rbd.toPlainString();
                     Operacoes = R;
                     A.setText(R);
                     Ab.append(R+"\n\n");
