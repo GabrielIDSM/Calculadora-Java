@@ -905,10 +905,9 @@ public class MainFrame extends javax.swing.JFrame {
         if(null == A.getText()) {
             Operacoes O = new Operacoes(Operacoes);
             float resultado = O.main();
-            BigDecimal Rbd = new BigDecimal(resultado);
             boolean verifica = O.getvalidade();
             if (verifica) {
-                String R = Rbd.toPlainString();
+                String R = retornaResultado(resultado);
                 Operacoes = R;
                 A.setText("");
                 A.append(R);
@@ -932,10 +931,9 @@ public class MainFrame extends javax.swing.JFrame {
                 cont++;
                 Operacoes O = new Operacoes(Operacoes);
                 float resultado = O.main();
-                BigDecimal Rbd = new BigDecimal(resultado);
                 boolean verifica = O.getvalidade();
                 if (verifica) {
-                    String R = Rbd.toPlainString();
+                    String R = retornaResultado(resultado);
                     Operacoes = R;
                     A.setText(R);
                     Ab.append(R+"\n\n");
@@ -1550,6 +1548,26 @@ public class MainFrame extends javax.swing.JFrame {
         Ab.append(" =");
         Ab.append("\n");
         return Ab;
+    }
+    
+    public String retornaResultado(float resultado){
+        String resultadoS = "";
+        //Verifica se o resultado possue o Notação cientifica
+        char[] resultadoChar = Float.toString(resultado).toCharArray();
+        boolean verifica = false;
+        for(int i = 0; i < resultadoChar.length; i++){
+            if(resultadoChar[i] == 'E'){
+                verifica = true;
+                break;
+            }
+        }
+        if(verifica){
+            BigDecimal Rbd = new BigDecimal(Float.toString(resultado));
+            resultadoS = Rbd.toPlainString();
+        }else{
+            resultadoS = Float.toString(resultado);
+        }
+        return resultadoS;
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea A;
