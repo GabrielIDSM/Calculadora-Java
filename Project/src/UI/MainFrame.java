@@ -1,4 +1,3 @@
-//Projeto salvo no git
 package UI;
 import LT.Operacoes;
 import java.math.BigDecimal;
@@ -8,11 +7,10 @@ public class MainFrame extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
     }
-    //Atributos IN
-    static String Operacoes = "";
+
+    static String expression = "";
     static int cont = 0;
     static String m = "Erro";
-    //FIM
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -771,114 +769,74 @@ public class MainFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B1ActionPerformed
-        if("".equals(Operacoes)){
-            A.setText("");
-        }
-        Operacoes += "1";
-        A.append("1");
+        addToExpression("1");
     }//GEN-LAST:event_B1ActionPerformed
 
     private void B2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B2ActionPerformed
-        if("".equals(Operacoes)){
-            A.setText("");
-        }
-        Operacoes += "2";
-        A.append("2");
+        addToExpression("2");
     }//GEN-LAST:event_B2ActionPerformed
 
     private void B3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B3ActionPerformed
-        if("".equals(Operacoes)){
-            A.setText("");
-        }
-        Operacoes += "3";
-        A.append("3");
+        addToExpression("3");
     }//GEN-LAST:event_B3ActionPerformed
 
     private void B4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B4ActionPerformed
-        if("".equals(Operacoes)){
-            A.setText("");
-        }
-        Operacoes += "4";
-        A.append("4");
+        addToExpression("4");
     }//GEN-LAST:event_B4ActionPerformed
 
     private void B5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B5ActionPerformed
-        if("".equals(Operacoes)){
-            A.setText("");
-        }
-        Operacoes += "5";
-        A.append("5");
+        addToExpression("5");
     }//GEN-LAST:event_B5ActionPerformed
 
     private void B6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B6ActionPerformed
-        if("".equals(Operacoes)){
-            A.setText("");
-        }
-        Operacoes += "6";
-        A.append("6");
+        addToExpression("6");
     }//GEN-LAST:event_B6ActionPerformed
 
     private void B7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B7ActionPerformed
-        if("".equals(Operacoes)){
-            A.setText("");
-        }
-        Operacoes += "7";
-        A.append("7");
+        addToExpression("7");
     }//GEN-LAST:event_B7ActionPerformed
 
     private void B8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B8ActionPerformed
-        if("".equals(Operacoes)){
-            A.setText("");
-        }
-        Operacoes += "8";
-        A.append("8");
+        addToExpression("8");
     }//GEN-LAST:event_B8ActionPerformed
 
     private void B9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B9ActionPerformed
-        if("".equals(Operacoes)){
-            A.setText("");
-        }
-        Operacoes += "9";
-        A.append("9");
+        addToExpression("9");
     }//GEN-LAST:event_B9ActionPerformed
 
     private void B0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0ActionPerformed
-        if("".equals(Operacoes)){
-            A.setText("");
-        }
-        Operacoes += "0";
-        A.append("0");
+        addToExpression("0");
     }//GEN-LAST:event_B0ActionPerformed
 
     private void BmaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BmaisActionPerformed
-        if("".equals(Operacoes)){
+        if("".equals(expression)){
             A.setText("");
         }
-        Operacoes += "+";
+        expression += "+";
         A.append(" + ");
     }//GEN-LAST:event_BmaisActionPerformed
 
     private void BmenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BmenosActionPerformed
-        if("".equals(Operacoes)){
+        if("".equals(expression)){
             A.setText("");
         }
-        Operacoes += "-";
+        expression += "-";
         A.append(" - ");
     }//GEN-LAST:event_BmenosActionPerformed
 
     private void BmulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BmulActionPerformed
-        if("".equals(Operacoes)){
+        if("".equals(expression)){
             A.setText("");
         }
-        Operacoes += "*";
+        expression += "*";
         A.append(" * ");
     }//GEN-LAST:event_BmulActionPerformed
 
     private void BdivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BdivActionPerformed
-        if("".equals(Operacoes)){
+        if("".equals(expression)){
             A.setText("");
         }
-        Operacoes += "/";
+        expression += "/";
         A.append(" / ");
     }//GEN-LAST:event_BdivActionPerformed
 
@@ -890,21 +848,21 @@ public class MainFrame extends javax.swing.JFrame {
             Bvir.setBackground(new java.awt.Color(255, 255, 0));
         }  
         if(cont != 0 && cont % 4 == 0) Ab.setText("");
-        if(dep_mod) System.out.println("OPERACOES : "+Operacoes);
+        if(dep_mod) System.out.println("OPERACOES : "+expression);
         if(dep_mod) System.out.println("A.GETTEXT() : "+A.getText());
         if(null == A.getText()) {
-            Operacoes O = new Operacoes(Operacoes);
+            Operacoes O = new Operacoes(expression);
             float resultado = O.main();
             boolean verifica = O.getvalidade();
             if (verifica) {
-                String R = retornaResultado(resultado);
-                Operacoes = R;
+                String R = defineResult(resultado);
+                expression = R;
                 A.setText("");
                 A.append(R);
             } else {
                 A.setText("");
                 A.append(m);
-                Operacoes = "";
+                expression = "";
             }
         } else switch (A.getText()) {
             case "Error":
@@ -919,74 +877,74 @@ public class MainFrame extends javax.swing.JFrame {
             default:         
                 Ab.append(A.getText()+"\n= ");
                 cont++;
-                Operacoes O = new Operacoes(Operacoes);
+                Operacoes O = new Operacoes(expression);
                 float resultado = O.main();
                 boolean verifica = O.getvalidade();
                 if (verifica) {
-                    String R = retornaResultado(resultado);
-                    Operacoes = R;
+                    String R = defineResult(resultado);
+                    expression = R;
                     A.setText(R);
                     Ab.append(R+"\n\n");
                 } else {
                     A.setText("");
                     A.append(m);
                     Ab.append(m+"\n\n");
-                    Operacoes = "";
+                    expression = "";
                 }   
                 break;
         }
-        if(dep_mod) System.out.println("OPERACOES FIM : "+Operacoes);
+        if(dep_mod) System.out.println("OPERACOES FIM : "+expression);
         if(dep_mod) System.out.println("A.GETTEXT() FIM : "+A.getText());
     }//GEN-LAST:event_Fim
 
     private void BdotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BdotActionPerformed
-        if("".equals(Operacoes)){
+        if("".equals(expression)){
             A.setText("");
         }
-        Operacoes += ".";
+        expression += ".";
         A.append(".");
     }//GEN-LAST:event_BdotActionPerformed
 
     private void BexpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BexpActionPerformed
-        if("".equals(Operacoes)){
+        if("".equals(expression)){
             A.setText("");
         }
-        Operacoes += "^";
+        expression += "^";
         A.append(" ^ ");
     }//GEN-LAST:event_BexpActionPerformed
 
     private void BopcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BopcActionPerformed
-        if("".equals(Operacoes)){
+        if("".equals(expression)){
             A.setText("");
         }
-        Operacoes += "(";
+        expression += "(";
         A.append("(");
     }//GEN-LAST:event_BopcActionPerformed
 
     private void BclcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BclcActionPerformed
-        if("".equals(Operacoes)){
+        if("".equals(expression)){
             A.setText("");
         }
-        Operacoes += ")";
+        expression += ")";
         A.append(")");
     }//GEN-LAST:event_BclcActionPerformed
 
     private void BradActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BradActionPerformed
-        if("".equals(Operacoes)){
+        if("".equals(expression)){
             A.setText("");
         }
-        Operacoes += "r";
+        expression += "r";
         A.append("²√");
     }//GEN-LAST:event_BradActionPerformed
 
     private void BDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BDeleteActionPerformed
-        if("".equals(Operacoes)){
+        if("".equals(expression)){
             A.setText("");
         }
-        if (Operacoes != null || !"".equals(Operacoes)) {
+        if (expression != null || !"".equals(expression)) {
             String aux = "";
             String Opf = "";
-            char[] Op_char = Operacoes.toCharArray();
+            char[] Op_char = expression.toCharArray();
             int i = 0;
             A.setText("");
             if (Op_char.length > 1) {
@@ -1088,46 +1046,46 @@ public class MainFrame extends javax.swing.JFrame {
                 Opf += Op_char[i];
                 i++;
             }
-            Operacoes = Opf;
+            expression = Opf;
             
         }
     }//GEN-LAST:event_BDeleteActionPerformed
 
     private void Brad2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Brad2ActionPerformed
-        if("".equals(Operacoes)){
+        if("".equals(expression)){
             A.setText("");
         }
-        Operacoes += "R";
+        expression += "R";
         A.append("√");
     }//GEN-LAST:event_Brad2ActionPerformed
 
     private void Bpor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bpor1ActionPerformed
-        if("".equals(Operacoes)){
+        if("".equals(expression)){
             A.setText("");
         }
-        Operacoes += "p(";
+        expression += "p(";
         if(Pt.isSelected()) A.append("% de (");
         else A.append("% of (");
     }//GEN-LAST:event_Bpor1ActionPerformed
 
     private void BlognActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BlognActionPerformed
-        if("".equals(Operacoes)){
+        if("".equals(expression)){
             A.setText("");
         }
-        Operacoes += "L(";
+        expression += "L(";
         A.append("log (");
     }//GEN-LAST:event_BlognActionPerformed
 
     private void BlnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BlnActionPerformed
-        if("".equals(Operacoes)){
+        if("".equals(expression)){
             A.setText("");
         }
-        Operacoes += "l(";
+        expression += "l(";
         A.append("ln (");
     }//GEN-LAST:event_BlnActionPerformed
 
     private void BvirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BvirActionPerformed
-        if("".equals(Operacoes)){
+        if("".equals(expression)){
             A.setText("");
         }
         if (MPitem.isSelected()) {
@@ -1135,20 +1093,20 @@ public class MainFrame extends javax.swing.JFrame {
         } else if (MCitem.isSelected()) {
             Bvir.setBackground(new java.awt.Color(255, 255, 0));
         }
-        Operacoes += ",";
+        expression += ",";
         A.append(", ");
     }//GEN-LAST:event_BvirActionPerformed
 
     private void BperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BperActionPerformed
-        if("".equals(Operacoes)){
+        if("".equals(expression)){
             A.setText("");
         }
-        Operacoes += "T";
+        expression += "T";
         A.append("P ");
     }//GEN-LAST:event_BperActionPerformed
 
     private void BcombActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcombActionPerformed
-       if("".equals(Operacoes)){
+       if("".equals(expression)){
             A.setText("");
         }
         if (MPitem.isSelected()) {
@@ -1156,12 +1114,12 @@ public class MainFrame extends javax.swing.JFrame {
         } else if (MCitem.isSelected()) {
             Bvir.setBackground(new java.awt.Color(255, 20, 20));
         }
-        Operacoes += "M";
+        expression += "M";
         A.append("C ");
     }//GEN-LAST:event_BcombActionPerformed
 
     private void BarrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BarrActionPerformed
-        if("".equals(Operacoes)){
+        if("".equals(expression)){
             A.setText("");
         }
         if (MPitem.isSelected()) {
@@ -1169,7 +1127,7 @@ public class MainFrame extends javax.swing.JFrame {
         } else if (MCitem.isSelected()) {
             Bvir.setBackground(new java.awt.Color(255, 20, 20));
         }
-        Operacoes += "J";
+        expression += "J";
         A.append("A ");
     }//GEN-LAST:event_BarrActionPerformed
 
@@ -1308,7 +1266,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void BLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BLActionPerformed
         A.setText("");
-        Operacoes = "";   
+        expression = "";   
         if (MPitem.isSelected()) {
             Bvir.setBackground(new java.awt.Color(204, 204, 204));
         } else if (MCitem.isSelected()) {
@@ -1317,62 +1275,62 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_BLActionPerformed
 
     private void BsenxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BsenxActionPerformed
-        if("".equals(Operacoes)){
+        if("".equals(expression)){
             A.setText("");
         }
-        Operacoes += "Q(";
+        expression += "Q(";
         if(Pt.isSelected()) A.append("sen (");
         else A.append("sin (");
     }//GEN-LAST:event_BsenxActionPerformed
 
     private void BcosxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcosxActionPerformed
-        if("".equals(Operacoes)){
+        if("".equals(expression)){
             A.setText("");
         }
-        Operacoes += "W(";
+        expression += "W(";
         A.append("cos (");
     }//GEN-LAST:event_BcosxActionPerformed
 
     private void BtgxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtgxActionPerformed
-        if("".equals(Operacoes)){
+        if("".equals(expression)){
             A.setText("");
         }
-        Operacoes += "K(";
+        expression += "K(";
         if(Pt.isSelected()) A.append("tg (");
         else A.append("tan (");
     }//GEN-LAST:event_BtgxActionPerformed
 
     private void BsecxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BsecxActionPerformed
-        if("".equals(Operacoes)){
+        if("".equals(expression)){
             A.setText("");
         }
-        Operacoes += "H(";
+        expression += "H(";
         A.append("sec (");
     }//GEN-LAST:event_BsecxActionPerformed
 
     private void BcsecxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcsecxActionPerformed
-        if("".equals(Operacoes)){
+        if("".equals(expression)){
             A.setText("");
         }
-        Operacoes += "h(";
+        expression += "h(";
         if(Pt.isSelected()) A.append("cossec (");
         else A.append("cosec (");
     }//GEN-LAST:event_BcsecxActionPerformed
 
     private void BctgxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BctgxActionPerformed
-        if("".equals(Operacoes)){
+        if("".equals(expression)){
             A.setText("");
         }
-        Operacoes += "k(";
+        expression += "k(";
         if(Pt.isSelected()) A.append("cotg (");
         else A.append("cotan (");
     }//GEN-LAST:event_BctgxActionPerformed
 
     private void Bfat1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bfat1ActionPerformed
-        if("".equals(Operacoes)){
+        if("".equals(expression)){
             A.setText("");
         }
-        Operacoes += "!";
+        expression += "!";
         A.append("!");
     }//GEN-LAST:event_Bfat1ActionPerformed
 
@@ -1404,7 +1362,7 @@ public class MainFrame extends javax.swing.JFrame {
         m = "Erro";
         A.setText("");
         Ab.setText("");
-        Operacoes = "";
+        expression = "";
     }//GEN-LAST:event_PtActionPerformed
 
     private void EngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EngActionPerformed
@@ -1435,7 +1393,7 @@ public class MainFrame extends javax.swing.JFrame {
         m = "Error";
         A.setText("");
         Ab.setText("");
-        Operacoes = "";
+        expression = "";
     }//GEN-LAST:event_EngActionPerformed
 
     private void TrigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrigActionPerformed
@@ -1522,7 +1480,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
     }
 
-    public static javax.swing.JTextArea define_A(javax.swing.JTextArea Ab, String R){
+    public static javax.swing.JTextArea defineExpressionArea(javax.swing.JTextArea Ab, String R){
         String aux = "";
         int i = 0;
         char[] c = R.toCharArray();
@@ -1540,7 +1498,7 @@ public class MainFrame extends javax.swing.JFrame {
         return Ab;
     }
     
-    public String retornaResultado(float resultado){
+    private String defineResult(float resultado){
         String resultadoS = "";
         //Verifica se o resultado possue o Notação cientifica
         char[] resultadoChar = Float.toString(resultado).toCharArray();
@@ -1559,6 +1517,15 @@ public class MainFrame extends javax.swing.JFrame {
         }
         return resultadoS;
     }
+    
+    private void addToExpression(String s){
+        if("".equals(expression)){
+            A.setText("");
+        }
+        expression += s;
+        A.append(s);
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea A;
     private javax.swing.JCheckBoxMenuItem AC;
